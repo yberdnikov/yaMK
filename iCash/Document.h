@@ -10,4 +10,5 @@
 
 @interface Document : NSPersistentDocument
 
+- (IBAction)generateDummyData:(id)sender;
 @end

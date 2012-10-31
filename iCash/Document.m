@@ -7,6 +7,7 @@
 //
 
 #import "Document.h"
+#import "Transaction.h"
 
 @implementation Document
 
@@ -37,4 +38,13 @@
     return YES;
 }
 
+- (IBAction)generateDummyData:(id)sender {
+    NSLog(@"generate");
+    NSEntityDescription *transactionEntity = [[[self managedObjectModel] entitiesByName] objectForKey:@"Transaction"];
+    for (int i = 0; i < 100; i++) {
+        Transaction *t = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:[self managedObjectContext]];
+        [t setName:@"test"];
+        [t setValue:[NSNumber numberWithInt:i]];
+    }
+}
 @end

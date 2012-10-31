@@ -19,6 +19,12 @@
 		D8A145A11639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145A91639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145A71639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145AC1639AD1900DCB3A2 /* iCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145AB1639AD1900DCB3A2 /* iCashTests.m */; };
+		D8A145DB16419DCB00DCB3A2 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145DA16419DCB00DCB3A2 /* Category.m */; };
+		D8A145DE16419DCC00DCB3A2 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145DD16419DCC00DCB3A2 /* Account.m */; };
+		D8A145E116419DCC00DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */; };
+		D8A145E416419DCC00DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E316419DCC00DCB3A2 /* Currency.m */; };
+		D8A145E716419DCC00DCB3A2 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E616419DCC00DCB3A2 /* Transaction.m */; };
+		D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,17 @@
 		D8A145A81639AD1900DCB3A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8A145AA1639AD1900DCB3A2 /* iCashTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCashTests.h; sourceTree = "<group>"; };
 		D8A145AB1639AD1900DCB3A2 /* iCashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCashTests.m; sourceTree = "<group>"; };
+		D8A145D916419DCB00DCB3A2 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		D8A145DA16419DCB00DCB3A2 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		D8A145DC16419DCC00DCB3A2 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		D8A145DD16419DCC00DCB3A2 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		D8A145DF16419DCC00DCB3A2 /* PlaceOfSpending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpending.h; sourceTree = "<group>"; };
+		D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpending.m; sourceTree = "<group>"; };
+		D8A145E216419DCC00DCB3A2 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		D8A145E316419DCC00DCB3A2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
+		D8A145E516419DCC00DCB3A2 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		D8A145E616419DCC00DCB3A2 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransaction.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +135,14 @@
 		D8A145811639AD1900DCB3A2 /* iCash */ = {
 			isa = PBXGroup;
 			children = (
+				D8A145B516404FBC00DCB3A2 /* ManagedObjects */,
 				D8A1458D1639AD1900DCB3A2 /* Document.h */,
 				D8A1458E1639AD1900DCB3A2 /* Document.m */,
 				D8A145901639AD1900DCB3A2 /* Document.xib */,
 				D8A145931639AD1900DCB3A2 /* MainMenu.xib */,
 				D8A145961639AD1900DCB3A2 /* Document.xcdatamodeld */,
 				D8A145821639AD1900DCB3A2 /* Supporting Files */,
+				D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -157,6 +176,23 @@
 				D8A145A71639AD1900DCB3A2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8A145B516404FBC00DCB3A2 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				D8A145E516419DCC00DCB3A2 /* Transaction.h */,
+				D8A145E616419DCC00DCB3A2 /* Transaction.m */,
+				D8A145E216419DCC00DCB3A2 /* Currency.h */,
+				D8A145E316419DCC00DCB3A2 /* Currency.m */,
+				D8A145DF16419DCC00DCB3A2 /* PlaceOfSpending.h */,
+				D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */,
+				D8A145DC16419DCC00DCB3A2 /* Account.h */,
+				D8A145DD16419DCC00DCB3A2 /* Account.m */,
+				D8A145D916419DCB00DCB3A2 /* Category.h */,
+				D8A145DA16419DCB00DCB3A2 /* Category.m */,
+			);
+			name = ManagedObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +270,7 @@
 				D8A1458C1639AD1900DCB3A2 /* Credits.rtf in Resources */,
 				D8A145921639AD1900DCB3A2 /* Document.xib in Resources */,
 				D8A145951639AD1900DCB3A2 /* MainMenu.xib in Resources */,
+				D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +308,11 @@
 				D8A145881639AD1900DCB3A2 /* main.m in Sources */,
 				D8A1458F1639AD1900DCB3A2 /* Document.m in Sources */,
 				D8A145981639AD1900DCB3A2 /* Document.xcdatamodeld in Sources */,
+				D8A145DB16419DCB00DCB3A2 /* Category.m in Sources */,
+				D8A145DE16419DCC00DCB3A2 /* Account.m in Sources */,
+				D8A145E116419DCC00DCB3A2 /* PlaceOfSpending.m in Sources */,
+				D8A145E416419DCC00DCB3A2 /* Currency.m in Sources */,
+				D8A145E716419DCC00DCB3A2 /* Transaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +504,7 @@
 				D8A145B11639AD1900DCB3A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8A145B21639AD1900DCB3A2 /* Build configuration list for PBXNativeTarget "iCashTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +513,7 @@
 				D8A145B41639AD1900DCB3A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
