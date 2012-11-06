@@ -2,22 +2,23 @@
 //  Account.h
 //  iCash
 //
-//  Created by Vitaly Merenkov on 31.10.12.
+//  Created by Vitaly Merenkov on 05.11.12.
 //  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Category, Transaction;
+@class Account, Transaction;
 
 @interface Account : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * type;
-@property (nonatomic, retain) Category *category;
+@property (nonatomic, retain) Account *parent;
 @property (nonatomic, retain) NSSet *recipientTransaction;
 @property (nonatomic, retain) NSSet *sourceTransaction;
+@property (nonatomic, retain) NSSet *subAccounts;
 @end
 
 @interface Account (CoreDataGeneratedAccessors)
@@ -32,4 +33,18 @@
 - (void)addSourceTransaction:(NSSet *)values;
 - (void)removeSourceTransaction:(NSSet *)values;
 
+- (void)addSubAccountsObject:(Account *)value;
+- (void)removeSubAccountsObject:(Account *)value;
+- (void)addSubAccounts:(NSSet *)values;
+- (void)removeSubAccounts:(NSSet *)values;
+
+- (NSImage *) typeImage;
+- (void) setTypeImage:(NSImage *)image;
+
 @end
+
+typedef enum {
+    Income = 1,
+    Outcome = 2,
+    Balance = 3
+} AccountType;

@@ -2,7 +2,7 @@
 //  Transaction.m
 //  iCash
 //
-//  Created by Vitaly Merenkov on 31.10.12.
+//  Created by Vitaly Merenkov on 05.11.12.
 //  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
 //
 
@@ -14,8 +14,10 @@
 
 @implementation Transaction
 
+@dynamic amount;
 @dynamic date;
 @dynamic name;
+@dynamic typeOfAmount;
 @dynamic value;
 @dynamic currency;
 @dynamic placeOfSpending;

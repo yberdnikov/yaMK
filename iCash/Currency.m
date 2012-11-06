@@ -2,7 +2,7 @@
 //  Currency.m
 //  iCash
 //
-//  Created by Vitaly Merenkov on 31.10.12.
+//  Created by Vitaly Merenkov on 04.11.12.
 //  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
 //
 

@@ -7,7 +7,6 @@
 //
 
 #import "Document.h"
-#import "Transaction.h"
 
 @implementation Document
 
@@ -15,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
+        _sortDesc = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     }
     return self;
 }
@@ -39,12 +38,70 @@
 }
 
 - (IBAction)generateDummyData:(id)sender {
-    NSLog(@"generate");
-    NSEntityDescription *transactionEntity = [[[self managedObjectModel] entitiesByName] objectForKey:@"Transaction"];
-    for (int i = 0; i < 100; i++) {
-        Transaction *t = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:[self managedObjectContext]];
-        [t setName:@"test"];
-        [t setValue:[NSNumber numberWithInt:i]];
+    NSLog(@"generate %@", [self managedObjectContext]);
+    NSEntityDescription *categoryEntity = [[[self managedObjectModel] entitiesByName] objectForKey:@"Account"];
+    for (int i = 0; i < 10; i++) {
+        NSManagedObject *t = [[NSManagedObject alloc] initWithEntity:categoryEntity insertIntoManagedObjectContext:[self managedObjectContext]];
+        [t setValue:@"aaa" forKey:@"name"];
+        for (int j = 0; j < 5; j++) {
+            NSManagedObject *bbb = [[NSManagedObject alloc] initWithEntity:categoryEntity insertIntoManagedObjectContext:[self managedObjectContext]];
+            [bbb setValue:@"bbb" forKey:@"name"];
+            [bbb setValue:t forKey:@"parent"];
+        }
     }
 }
+
+- (IBAction)addIncomeAccount:(id)sender {
+    [self addAccount:sender type:Income];
+}
+
+- (IBAction)addOutcomeAccount:(id)sender {
+    [self addAccount:sender type:Outcome];
+}
+
+- (IBAction)addBalanceAccount:(id)sender {
+    [self addAccount:sender type:Balance];
+}
+
+- (void)addAccount:(id)sender
+              type:(AccountType)t {
+    NSTreeNode *selectedNode;
+    NSLog(@"selectedRow = %ld", [_outlineView selectedRow]);
+    // We are inserting as a child of the last selected node. If there are none selected, insert it as a child of the treeData itself
+    if ([_outlineView selectedRow] != -1) {
+        selectedNode = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    }
+       
+    Account *nodeData = nil;
+    if (selectedNode) {
+        nodeData = [selectedNode representedObject];
+    }
+    NSLog(@"account.name = %@", [nodeData name]);
+    NSEntityDescription *accountEntity = [[[self managedObjectModel] entitiesByName] objectForKey:@"Account"];
+    Account *newAccount = [[Account alloc] initWithEntity:accountEntity insertIntoManagedObjectContext:[self managedObjectContext]];
+    [newAccount setParent:nodeData];
+    [newAccount setType:[NSNumber numberWithInt:t]];
+    [newAccount setTypeImage:[newAccount typeImage]];
+    
+}
+
+- (IBAction)removeAccount:(id)sender {
+    NSTreeNode *selectedNode;
+    NSLog(@"selectedRow = %ld", [_outlineView selectedRow]);
+    // We are inserting as a child of the last selected node. If there are none selected, insert it as a child of the treeData itself
+    if ([_outlineView selectedRow] != -1) {
+        selectedNode = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    }
+    
+    Account *account = nil;
+    if (selectedNode) {
+        account = [selectedNode representedObject];
+        [[self managedObjectContext] deleteObject:account];
+    }
+}
+
+- (NSSortDescriptor *) sortDesc {
+    return _sortDesc;
+}
+
 @end

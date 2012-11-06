@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
+		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145881639AD1900DCB3A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145871639AD1900DCB3A2 /* main.m */; };
@@ -19,12 +21,9 @@
 		D8A145A11639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145A91639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145A71639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145AC1639AD1900DCB3A2 /* iCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145AB1639AD1900DCB3A2 /* iCashTests.m */; };
-		D8A145DB16419DCB00DCB3A2 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145DA16419DCB00DCB3A2 /* Category.m */; };
-		D8A145DE16419DCC00DCB3A2 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145DD16419DCC00DCB3A2 /* Account.m */; };
-		D8A145E116419DCC00DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */; };
-		D8A145E416419DCC00DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E316419DCC00DCB3A2 /* Currency.m */; };
-		D8A145E716419DCC00DCB3A2 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145E616419DCC00DCB3A2 /* Transaction.m */; };
 		D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */; };
+		D8A1468A164664F600DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A14689164664F600DCB3A2 /* Currency.m */; };
+		D8A14690164664F600DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		D8782D3A1647ED66008C3055 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		D8782D3C1647ED67008C3055 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		D8782D3D1647ED67008C3055 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		D8A145771639AD1900DCB3A2 /* iCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D8A1457E1639AD1900DCB3A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,17 +62,11 @@
 		D8A145A81639AD1900DCB3A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8A145AA1639AD1900DCB3A2 /* iCashTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCashTests.h; sourceTree = "<group>"; };
 		D8A145AB1639AD1900DCB3A2 /* iCashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCashTests.m; sourceTree = "<group>"; };
-		D8A145D916419DCB00DCB3A2 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		D8A145DA16419DCB00DCB3A2 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		D8A145DC16419DCC00DCB3A2 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		D8A145DD16419DCC00DCB3A2 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
-		D8A145DF16419DCC00DCB3A2 /* PlaceOfSpending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpending.h; sourceTree = "<group>"; };
-		D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpending.m; sourceTree = "<group>"; };
-		D8A145E216419DCC00DCB3A2 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
-		D8A145E316419DCC00DCB3A2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
-		D8A145E516419DCC00DCB3A2 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		D8A145E616419DCC00DCB3A2 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransaction.xib; sourceTree = "<group>"; };
+		D8A14688164664F600DCB3A2 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
+		D8A14689164664F600DCB3A2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
+		D8A1468E164664F600DCB3A2 /* PlaceOfSpending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpending.h; sourceTree = "<group>"; };
+		D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpending.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,16 +178,14 @@
 		D8A145B516404FBC00DCB3A2 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				D8A145E516419DCC00DCB3A2 /* Transaction.h */,
-				D8A145E616419DCC00DCB3A2 /* Transaction.m */,
-				D8A145E216419DCC00DCB3A2 /* Currency.h */,
-				D8A145E316419DCC00DCB3A2 /* Currency.m */,
-				D8A145DF16419DCC00DCB3A2 /* PlaceOfSpending.h */,
-				D8A145E016419DCC00DCB3A2 /* PlaceOfSpending.m */,
-				D8A145DC16419DCC00DCB3A2 /* Account.h */,
-				D8A145DD16419DCC00DCB3A2 /* Account.m */,
-				D8A145D916419DCB00DCB3A2 /* Category.h */,
-				D8A145DA16419DCB00DCB3A2 /* Category.m */,
+				D8A1468E164664F600DCB3A2 /* PlaceOfSpending.h */,
+				D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */,
+				D8A14688164664F600DCB3A2 /* Currency.h */,
+				D8A14689164664F600DCB3A2 /* Currency.m */,
+				D8782D391647ED66008C3055 /* Transaction.h */,
+				D8782D3A1647ED66008C3055 /* Transaction.m */,
+				D8782D3C1647ED67008C3055 /* Account.h */,
+				D8782D3D1647ED67008C3055 /* Account.m */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -308,11 +303,10 @@
 				D8A145881639AD1900DCB3A2 /* main.m in Sources */,
 				D8A1458F1639AD1900DCB3A2 /* Document.m in Sources */,
 				D8A145981639AD1900DCB3A2 /* Document.xcdatamodeld in Sources */,
-				D8A145DB16419DCB00DCB3A2 /* Category.m in Sources */,
-				D8A145DE16419DCC00DCB3A2 /* Account.m in Sources */,
-				D8A145E116419DCC00DCB3A2 /* PlaceOfSpending.m in Sources */,
-				D8A145E416419DCC00DCB3A2 /* Currency.m in Sources */,
-				D8A145E716419DCC00DCB3A2 /* Transaction.m in Sources */,
+				D8A1468A164664F600DCB3A2 /* Currency.m in Sources */,
+				D8A14690164664F600DCB3A2 /* PlaceOfSpending.m in Sources */,
+				D8782D3B1647ED66008C3055 /* Transaction.m in Sources */,
+				D8782D3E1647ED67008C3055 /* Account.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

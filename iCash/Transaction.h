@@ -2,7 +2,7 @@
 //  Transaction.h
 //  iCash
 //
-//  Created by Vitaly Merenkov on 31.10.12.
+//  Created by Vitaly Merenkov on 05.11.12.
 //  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
 //
 
@@ -13,8 +13,10 @@
 
 @interface Transaction : NSManagedObject
 
+@property (nonatomic, retain) NSDecimalNumber * amount;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * typeOfAmount;
 @property (nonatomic, retain) NSNumber * value;
 @property (nonatomic, retain) Currency *currency;
 @property (nonatomic, retain) PlaceOfSpending *placeOfSpending;
