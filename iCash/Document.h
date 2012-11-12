@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "Account.h"
 
+@class AddIncomeWC;
+
 @interface Document : NSPersistentDocument
 
 @end

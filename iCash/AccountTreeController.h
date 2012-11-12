@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "Account.h"
 
+@class AddIncomeWC;
+
 @interface AccountTreeController : NSTreeController 
 
 - (IBAction)addIncomeAccount:(id)sender;
@@ -17,6 +19,9 @@
 - (void)addAccount:(id)sender
               type:(AccountType)t;
 - (IBAction)removeAccount:(id)sender;
+- (IBAction)showAddIncomeWindow:(id)sender;
+- (Account *)selectedAccount;
 
+@property AddIncomeWC *aiwc;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @end

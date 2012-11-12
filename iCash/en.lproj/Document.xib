@@ -669,35 +669,53 @@
 			<object class="NSMenu" id="10322417">
 				<string key="NSTitle">Accounts Menu</string>
 				<array class="NSMutableArray" key="NSMenuItems">
+					<object class="NSMenuItem" id="890873503">
+						<reference key="NSMenu" ref="10322417"/>
+						<string key="NSTitle">Create Income</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<object class="NSCustomResource" key="NSOnImage" id="773745756">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">NSMenuCheckmark</string>
+						</object>
+						<object class="NSCustomResource" key="NSMixedImage" id="124260075">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">NSMenuMixedState</string>
+						</object>
+					</object>
+					<object class="NSMenuItem" id="597716102">
+						<reference key="NSMenu" ref="10322417"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
+					</object>
 					<object class="NSMenuItem" id="215897669">
 						<reference key="NSMenu" ref="10322417"/>
 						<string key="NSTitle">Create Income Account</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<object class="NSCustomResource" key="NSOnImage" id="127824036">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuCheckmark</string>
-						</object>
-						<object class="NSCustomResource" key="NSMixedImage" id="536494097">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuMixedState</string>
-						</object>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
 					</object>
 					<object class="NSMenuItem" id="618542338">
 						<reference key="NSMenu" ref="10322417"/>
 						<string key="NSTitle">Create Outcome Account</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="127824036"/>
-						<reference key="NSMixedImage" ref="536494097"/>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
 					</object>
 					<object class="NSMenuItem" id="503045645">
 						<reference key="NSMenu" ref="10322417"/>
 						<string key="NSTitle">Create Balance Account</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="127824036"/>
-						<reference key="NSMixedImage" ref="536494097"/>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
 					</object>
 					<object class="NSMenuItem" id="634726266">
 						<reference key="NSMenu" ref="10322417"/>
@@ -706,16 +724,16 @@
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="127824036"/>
-						<reference key="NSMixedImage" ref="536494097"/>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
 					</object>
 					<object class="NSMenuItem" id="527434506">
 						<reference key="NSMenu" ref="10322417"/>
 						<string key="NSTitle">Remove</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="127824036"/>
-						<reference key="NSMixedImage" ref="536494097"/>
+						<reference key="NSOnImage" ref="773745756"/>
+						<reference key="NSMixedImage" ref="124260075"/>
 					</object>
 				</array>
 			</object>
@@ -841,6 +859,14 @@
 						<reference key="destination" ref="778717695"/>
 					</object>
 					<int key="connectionID">100546</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showAddIncomeWindow:</string>
+						<reference key="source" ref="577795386"/>
+						<reference key="destination" ref="890873503"/>
+					</object>
+					<int key="connectionID">100552</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -982,6 +1008,22 @@
 						<reference key="destination" ref="611720902"/>
 					</object>
 					<int key="connectionID">100506</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: objectValue.valueSum</string>
+						<reference key="source" ref="611720902"/>
+						<reference key="destination" ref="572943638"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="611720902"/>
+							<reference key="NSDestination" ref="572943638"/>
+							<string key="NSLabel">value: objectValue.valueSum</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">objectValue.valueSum</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">100553</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1303,6 +1345,8 @@
 							<reference ref="503045645"/>
 							<reference ref="634726266"/>
 							<reference ref="527434506"/>
+							<reference ref="597716102"/>
+							<reference ref="890873503"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Accounts Menu</string>
@@ -1672,6 +1716,16 @@
 						<reference key="object" ref="761670817"/>
 						<reference key="parent" ref="568628114"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">100549</int>
+						<reference key="object" ref="597716102"/>
+						<reference key="parent" ref="10322417"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">100550</int>
+						<reference key="object" ref="890873503"/>
+						<reference key="parent" ref="10322417"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1778,6 +1832,8 @@
 				<string key="100519.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100537.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100540.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="100549.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="100550.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBWindowTemplateEditedContentRect">{{133, 170}, {507, 413}}</string>
 				<array class="NSMutableArray" key="6.IBNSViewMetadataConstraints">
@@ -1795,7 +1851,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100548</int>
+			<int key="maxID">100553</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1807,6 +1863,7 @@
 						<string key="addIncomeAccount:">id</string>
 						<string key="addOutcomeAccount:">id</string>
 						<string key="removeAccount:">id</string>
+						<string key="showAddIncomeWindow:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addBalanceAccount:">
@@ -1823,6 +1880,10 @@
 						</object>
 						<object class="IBActionInfo" key="removeAccount:">
 							<string key="name">removeAccount:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showAddIncomeWindow:">
+							<string key="name">showAddIncomeWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

@@ -28,6 +28,8 @@
         <relationship name="recipient" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="recipientTransaction" inverseEntity="Account" syncable="YES"/>
         <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="sourceTransaction" inverseEntity="Account" syncable="YES"/>
     </entity>
+    <fetchRequest name="findAccountByNameType" entity="Account" predicateString="name == $NAME AND type == $TYPE"/>
+    <fetchRequest name="findIncomeAccounts" entity="Account" predicateString="type == 1"/>
     <elements>
         <element name="Account" positionX="7" positionY="-469" width="128" height="135"/>
         <element name="Currency" positionX="423" positionY="-549" width="128" height="88"/>

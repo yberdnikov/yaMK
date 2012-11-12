@@ -10,6 +10,8 @@
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
 		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
 		D8782D61164AD34D008C3055 /* AccountTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D60164AD34D008C3055 /* AccountTreeController.m */; };
+		D8782D6C16501CA4008C3055 /* IncomeTransaction.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8782D6B16501CA4008C3055 /* IncomeTransaction.xib */; };
+		D8782D7216502604008C3055 /* AddIncomeWC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D7116502604008C3055 /* AddIncomeWC.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145881639AD1900DCB3A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145871639AD1900DCB3A2 /* main.m */; };
@@ -44,6 +46,9 @@
 		D8782D3D1647ED67008C3055 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		D8782D5F164AD34D008C3055 /* AccountTreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTreeController.h; sourceTree = "<group>"; };
 		D8782D60164AD34D008C3055 /* AccountTreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTreeController.m; sourceTree = "<group>"; };
+		D8782D6B16501CA4008C3055 /* IncomeTransaction.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeTransaction.xib; sourceTree = "<group>"; };
+		D8782D7016502604008C3055 /* AddIncomeWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIncomeWC.h; sourceTree = "<group>"; };
+		D8782D7116502604008C3055 /* AddIncomeWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddIncomeWC.m; sourceTree = "<group>"; };
 		D8A145771639AD1900DCB3A2 /* iCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D8A1457E1639AD1900DCB3A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -139,12 +144,15 @@
 				D8A1458D1639AD1900DCB3A2 /* Document.h */,
 				D8A1458E1639AD1900DCB3A2 /* Document.m */,
 				D8A145901639AD1900DCB3A2 /* Document.xib */,
+				D8782D6B16501CA4008C3055 /* IncomeTransaction.xib */,
 				D8A145931639AD1900DCB3A2 /* MainMenu.xib */,
 				D8A145961639AD1900DCB3A2 /* Document.xcdatamodeld */,
 				D8A145821639AD1900DCB3A2 /* Supporting Files */,
 				D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */,
 				D8782D5F164AD34D008C3055 /* AccountTreeController.h */,
 				D8782D60164AD34D008C3055 /* AccountTreeController.m */,
+				D8782D7016502604008C3055 /* AddIncomeWC.h */,
+				D8782D7116502604008C3055 /* AddIncomeWC.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 				D8A145921639AD1900DCB3A2 /* Document.xib in Resources */,
 				D8A145951639AD1900DCB3A2 /* MainMenu.xib in Resources */,
 				D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */,
+				D8782D6C16501CA4008C3055 /* IncomeTransaction.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +322,7 @@
 				D8782D3B1647ED66008C3055 /* Transaction.m in Sources */,
 				D8782D3E1647ED67008C3055 /* Account.m in Sources */,
 				D8782D61164AD34D008C3055 /* AccountTreeController.m in Sources */,
+				D8782D7216502604008C3055 /* AddIncomeWC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
