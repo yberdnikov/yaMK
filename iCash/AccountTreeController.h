@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "Account.h"
 
-@class AddIncomeWC;
+@class CreateIncomeController;
 
 @interface AccountTreeController : NSTreeController 
 
@@ -22,6 +22,7 @@
 - (IBAction)showAddIncomeWindow:(id)sender;
 - (Account *)selectedAccount;
 
-@property AddIncomeWC *aiwc;
+@property (weak) IBOutlet CreateIncomeController *createIncomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet NSPopover *incomePopover;
 @end

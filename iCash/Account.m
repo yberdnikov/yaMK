@@ -39,25 +39,27 @@
 }
 
 - (double) valueSum {
+    NSLog(@"[ account %@", [self name]);
     double income = 0;
     double outcome = 0;
     
     if ([[self type] intValue] == Balance || [[self type] intValue] == Outcome) {
-        for (Transaction *inT in [self recipientTransaction]) {
-            income += [[inT value] doubleValue];
-        }
+        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
+        
     }
-    
     if ([[self type] intValue] == Balance) {
-        for (Transaction *outT in [self sourceTransaction]) {
-            outcome += [[outT value] doubleValue];
-        }
+        outcome = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
     } else if ([[self type] intValue] == Income) {
-        for (Transaction *outT in [self sourceTransaction]) {
-            income += [[outT value] doubleValue];
-        }
+        income = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
     }
-    return (income - outcome);
+    NSLog(@"income = %f", income);
+    NSLog(@"outcome = %f", outcome);
+    double result = 0;
+    for (Account *child in [self subAccounts]) {
+        result += [child valueSum];
+    }
+    NSLog(@"] %f", result + (income - outcome));
+    return result + (income - outcome);
 }
 
 - (void) setValueSum:(double)value {

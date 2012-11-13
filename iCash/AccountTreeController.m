@@ -7,7 +7,7 @@
 //
 
 #import "AccountTreeController.h"
-#import "AddIncomeWC.h"
+#import "CreateIncomeController.h"
 
 @implementation AccountTreeController
 - (void)awakeFromNib {
@@ -68,11 +68,9 @@
 
 
 - (IBAction)showAddIncomeWindow:(id)sender {
-    if (!_aiwc) {
-        _aiwc = [[AddIncomeWC alloc] initWithWindowNibName:@"IncomeTransaction"];
-    }
-    [_aiwc setRecipientAccount: [self selectedAccount]];
-    [_aiwc showWindow:self];
+    [_createIncomeCO setRecipientAccount: [self selectedAccount]];
+    NSLog(@"selected account = %@",[[self selectedAccount] name]);
+    [[self incomePopover] showRelativeToRect:[_outlineView rectOfRow:[_outlineView selectedRow]] ofView:_outlineView preferredEdge:NSMaxXEdge];
 }
 
 - (Account *) selectedAccount {
@@ -81,6 +79,7 @@
     // We are inserting as a child of the last selected node. If there are none selected, insert it as a child of the treeData itself
     if ([_outlineView selectedRow] != -1) {
         selectedNode = [_outlineView itemAtRow:[_outlineView selectedRow]];
+        NSLog(@"selected item = %@",[_outlineView itemAtRow:[_outlineView selectedRow]]);
     }
     Account *nodeData = nil;
     if (selectedNode) {
