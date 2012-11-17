@@ -18,7 +18,6 @@
         <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="placeOfSpending" inverseEntity="Transaction" syncable="YES"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeOfAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -34,6 +33,6 @@
         <element name="Account" positionX="7" positionY="-469" width="128" height="135"/>
         <element name="Currency" positionX="423" positionY="-549" width="128" height="88"/>
         <element name="PlaceOfSpending" positionX="495" positionY="-375" width="128" height="73"/>
-        <element name="Transaction" positionX="243" positionY="-531" width="128" height="180"/>
+        <element name="Transaction" positionX="243" positionY="-531" width="128" height="165"/>
     </elements>
 </model>

@@ -12,17 +12,6 @@
 
 @implementation CreateIncomeController
 
-//- (id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        // Initialization code here.
-//        [self setMom:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel]];
-//        [self setMoc:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext] ];
-//    }
-//    return self;
-//}
-
 - (IBAction)createIncome:(id)sender {
     NSLog(@"createIncome");
     NSManagedObjectModel *_mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
@@ -43,6 +32,14 @@
     [income setValue:[NSNumber numberWithInt:[_transactionValue intValue]]];
     [income setName:[_transactionDescription stringValue]];
     [income setRecipient:[self recipientAccount]];
+    [income setDate:[_transactionDate dateValue]];
+    [self resetFields];
     
+}
+
+- (void)resetFields {
+    [_transactionDescription setStringValue:@""];
+    [_incomeAccountsCB deselectItemAtIndex:[_incomeAccountsCB indexOfSelectedItem]];
+    [_transactionValue setStringValue:@""];
 }
 @end

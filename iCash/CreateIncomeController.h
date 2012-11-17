@@ -24,6 +24,7 @@
 @property (strong) IBOutlet NSArrayController *incomeAccountsAC;
 @property (weak) IBOutlet NSTextField *transactionDescription;
 @property (weak) IBOutlet NSTextField *transactionValue;
+@property (weak) IBOutlet NSDatePicker *transactionDate;
 
 - (IBAction)createIncome:(id)sender;
 

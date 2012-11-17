@@ -10,6 +10,8 @@
 #import "CreateIncomeController.h"
 
 @implementation AccountTreeController
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -28,7 +30,6 @@
         }
     }
 }
-
 
 - (IBAction)addIncomeAccount:(id)sender {
     [self addAccount:sender type:Income];
