@@ -10,11 +10,10 @@
 
 @class Transaction;
 @class Account;
+@class AccountFinder;
 
-@interface CreateIncomeController : NSObject<NSPopoverDelegate> {
-    @private
-    
-}
+@interface CreateIncomeController : NSObject<NSPopoverDelegate>
+
 @property (strong) Account *recipientAccount;
 @property NSArray *incomeAccounts;
 @property (weak) IBOutlet NSComboBox *incomeAccountsCB;
@@ -24,6 +23,10 @@
 @property (weak) IBOutlet NSTextField *transactionValue;
 @property (weak) IBOutlet NSDatePicker *transactionDate;
 @property BOOL consider;
+@property (weak) IBOutlet AccountFinder *accountFinder;
+
+@property (weak) NSManagedObjectContext *moc;
+@property (weak) NSManagedObjectModel *mom;
 
 - (IBAction)createIncome:(id)sender;
 

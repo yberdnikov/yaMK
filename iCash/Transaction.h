@@ -13,10 +13,9 @@
 
 @interface Transaction : NSManagedObject
 
-@property (nonatomic, retain) NSDecimalNumber * amount;
+@property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * typeOfAmount;
 @property (nonatomic, retain) NSNumber * value;
 @property (nonatomic, retain) Currency *currency;
 @property (nonatomic, retain) PlaceOfSpending *placeOfSpending;

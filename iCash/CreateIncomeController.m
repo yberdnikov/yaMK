@@ -9,13 +9,13 @@
 #import "CreateIncomeController.h"
 #import "Account.h"
 #import "Transaction.h"
+#import "AccountFinder.h"
 
 @implementation CreateIncomeController
 
 - (IBAction)createIncome:(id)sender {
     NSLog(@"createIncome");
-    NSManagedObjectModel *_mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
-    NSManagedObjectContext *_moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
+    
     NSString *selectedAccountName = [_incomeAccountsCB stringValue];
        
     NSLog(@"recipientAccount name = %@", [[self recipientAccount] name]);
@@ -32,7 +32,7 @@
     
     Transaction *income = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
     if (_consider) {
-        Account *selectedAccount = [self findIncomeAccount:selectedAccountName];
+        Account *selectedAccount = [_accountFinder findAccount:selectedAccountName type:Income];
         if (selectedAccount) {
             [income setSource:selectedAccount];
             [income setName:[_transactionDescription stringValue]];
@@ -58,20 +58,10 @@
     [_transactionValue setStringValue:@""];
 }
 
-- (Account *) findIncomeAccount:(NSString *)name {
-    NSManagedObjectModel *_mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
-    NSManagedObjectContext *_moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
-    NSFetchRequest *findAccountByNameType = [_mom fetchRequestFromTemplateWithName:@"findAccountByNameType" substitutionVariables:@{@"NAME" : name, @"TYPE" : [NSNumber numberWithInt:Income]}];
-    NSError *error;
-    NSArray *selectedAccounts = [_moc executeFetchRequest:findAccountByNameType error:&error];
-    Account *selectedAccount;
-    if ([selectedAccounts count] > 0) {
-        selectedAccount = selectedAccounts[0];
-    }
-    return selectedAccount;
-}
-
 -(void)popoverWillShow:(NSNotification *)notification {
+    _mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
+    _moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
+    
     [self setConsider:YES];
     [_transactionDate setDateValue:[NSDate date]];
     [_createButton setKeyEquivalent:@"\r"];

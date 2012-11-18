@@ -8,6 +8,7 @@
 
 #import "AccountTreeController.h"
 #import "CreateIncomeController.h"
+#import "CreateOutcomeController.h"
 
 @implementation AccountTreeController
 
@@ -68,10 +69,15 @@
 }
 
 
-- (IBAction)showAddIncomeWindow:(id)sender {
+- (IBAction)showAddIncome:(id)sender {
     [_createIncomeCO setRecipientAccount: [self selectedAccount]];
     NSLog(@"selected account = %@",[[self selectedAccount] name]);
     [[self incomePopover] showRelativeToRect:[_outlineView rectOfRow:[_outlineView selectedRow]] ofView:_outlineView preferredEdge:NSMaxXEdge];
+}
+
+- (IBAction)showAddOutcome:(id)sender {
+    [_createOutcomeCO setRecipientAccount:[self selectedAccount]];
+    [[self outcomePopover] showRelativeToRect:[_outlineView rectOfRow:[_outlineView selectedRow]] ofView:_outlineView preferredEdge:NSMaxXEdge];
 }
 
 - (Account *) selectedAccount {

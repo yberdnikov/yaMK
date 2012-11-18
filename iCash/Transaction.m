@@ -17,7 +17,6 @@
 @dynamic amount;
 @dynamic date;
 @dynamic name;
-@dynamic typeOfAmount;
 @dynamic value;
 @dynamic currency;
 @dynamic placeOfSpending;

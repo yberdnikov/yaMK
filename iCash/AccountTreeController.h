@@ -10,6 +10,7 @@
 #import "Account.h"
 
 @class CreateIncomeController;
+@class CreateOutcomeController;
 
 @interface AccountTreeController : NSTreeController 
 
@@ -19,10 +20,13 @@
 - (void)addAccount:(id)sender
               type:(AccountType)t;
 - (IBAction)removeAccount:(id)sender;
-- (IBAction)showAddIncomeWindow:(id)sender;
+- (IBAction)showAddIncome:(id)sender;
+- (IBAction)showAddOutcome:(id)sender;
 - (Account *)selectedAccount;
 
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
+@property (weak) IBOutlet CreateOutcomeController *createOutcomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSPopover *incomePopover;
+@property (weak) IBOutlet NSPopover *outcomePopover;
 @end
