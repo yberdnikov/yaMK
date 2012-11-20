@@ -19,16 +19,12 @@
         Account *sourceAccount = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
         NSLog(@"recipient account = %@", [sourceAccount name]);
         if (sourceAccount) {
-            NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
-            Transaction *transaction = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
-            [transaction setRecipient:_recipientAccount];
-            [transaction setSource:sourceAccount];
-            [transaction setName:[_name stringValue]];
-            [transaction setDate:[_date dateValue]];
-            [transaction setAmount:[NSNumber numberWithDouble:[_amount doubleValue]]];
-            [transaction setValue:[NSNumber numberWithDouble:[_price doubleValue]]];
-            if ([_placeOfSpendig stringValue]) {
-                [transaction setPlaceOfSpending:[self findOrCreatePlaceOfSpending:[_placeOfSpendig stringValue]]];
+            if ([_amount intValue]) {
+                for (int i = 0; i < [_amount intValue]; i++) {
+                    [self createTransactionWithAccount:sourceAccount];
+                }
+            } else {
+                [self createTransactionWithAccount:sourceAccount];
             }
         } else {
             //TODO show error
@@ -46,7 +42,7 @@
     NSLog(@"price = %f", [_price doubleValue]);
     NSLog(@"date = %@", [_date dateValue]);
     NSLog(@"recipient = %@", [_sourceAccount stringValue]);
-    if ([_name stringValue] && [_amount doubleValue] > 0 && [_price doubleValue] >=0
+    if ([_name stringValue] && [_price doubleValue] >=0
         &&[_date dateValue] && [_sourceAccount stringValue]) {
         return YES;
     } else {
@@ -70,5 +66,23 @@
     [self setMoc:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext]];
     
     [_date setDateValue:[NSDate date]];
+}
+
+- (void) createTransactionWithAccount:(Account *)sourceAccount {
+    NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
+    Transaction *transaction = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
+    [transaction setRecipient:_recipientAccount];
+    [transaction setSource:sourceAccount];
+    [transaction setName:[_name stringValue]];
+    [transaction setDate:[_date dateValue]];
+    if ([_volume doubleValue]) {
+        [transaction setAmount:[NSNumber numberWithDouble:[_volume doubleValue]]];
+    } else {
+        [transaction setAmount:[NSNumber numberWithInt:1]];
+    }
+    [transaction setValue:[NSNumber numberWithDouble:[_price doubleValue]]];
+    if ([_placeOfSpendig stringValue]) {
+        [transaction setPlaceOfSpending:[self findOrCreatePlaceOfSpending:[_placeOfSpendig stringValue]]];
+    }
 }
 @end

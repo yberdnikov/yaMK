@@ -19,6 +19,7 @@
 @property (weak) IBOutlet NSComboBox *sourceAccount;
 @property (weak) IBOutlet NSTextField *name;
 @property (weak) IBOutlet NSTextField *amount;
+@property (weak) IBOutlet NSTextField *volume;
 @property (weak) IBOutlet NSTextField *price;
 @property (weak) IBOutlet NSButton *addButton;
 @property (weak) IBOutlet AccountFinder *accountFinder;
