@@ -15,12 +15,23 @@
 @implementation Transaction
 
 @dynamic amount;
-@dynamic date;
 @dynamic name;
+@dynamic date;
 @dynamic value;
 @dynamic currency;
 @dynamic placeOfSpending;
 @dynamic recipient;
 @dynamic source;
+
+- (void) setDate:(NSDate *)date {
+    [self willChangeValueForKey:@"date"];
+    
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    NSDateComponents *dateComps = [cal components:unitFlags fromDate:date];
+    [self setPrimitiveValue:[cal dateFromComponents:dateComps] forKey:@"date"];
+    [self didChangeValueForKey:@"date"];
+}
+
 
 @end

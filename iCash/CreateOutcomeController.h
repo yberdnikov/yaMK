@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @class AccountFinder;
-
 @class Account;
 
-@interface CreateOutcomeController : NSObject<NSPopoverDelegate>
+@interface CreateOutcomeController : NSObject<NSPopoverDelegate, NSDatePickerCellDelegate>
 
 @property (weak) IBOutlet NSTextField *placeOfSpendig;
 @property (weak) IBOutlet NSDatePicker *date;
@@ -24,6 +23,8 @@
 @property (weak) IBOutlet NSButton *addButton;
 @property (weak) IBOutlet AccountFinder *accountFinder;
 @property (weak) Account *recipientAccount;
+@property (weak) IBOutlet NSArrayController *otaController;
+@property (weak) IBOutlet NSTableView *outcomeTransactions;
 
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;
