@@ -36,6 +36,7 @@
     }
     [self clearTransactionFields];
     [self computeFilterPredicate:[_date dateValue]];
+    [[_name window] makeFirstResponder:_name];
 }
 
 - (BOOL)isInputFieldsCorrect {

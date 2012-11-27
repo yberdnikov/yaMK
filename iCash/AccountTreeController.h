@@ -23,10 +23,12 @@
 - (IBAction)showAddIncome:(id)sender;
 - (IBAction)showAddOutcome:(id)sender;
 - (Account *)selectedAccount;
+- (void)selectionDidChange:(NSNotification *)notification;
 
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
 @property (weak) IBOutlet CreateOutcomeController *createOutcomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSPopover *incomePopover;
 @property (weak) IBOutlet NSPopover *outcomePopover;
+@property (weak) IBOutlet NSArrayController *selectedAccountArrC;
 @end

@@ -42,7 +42,6 @@
 - (void) setTypeImage:(NSImage *)image;
 - (double) valueSum;
 - (void) setValueSum:(double)value;
-- (NSArray *)viewedTransactions;
 
 @end
 

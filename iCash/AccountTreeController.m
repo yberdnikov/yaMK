@@ -17,6 +17,7 @@
     [super awakeFromNib];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(coreDataEntityDidChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:[self managedObjectContext]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectionDidChange:) name:NSOutlineViewSelectionDidChangeNotification object:[self outlineView]];
 }
 
 - (void)coreDataEntityDidChange:(NSNotification *)notification {
@@ -93,6 +94,29 @@
         nodeData = [selectedNode representedObject];
     }
     return nodeData;
+}
+
+- (void)selectionDidChange:(NSNotification *)notification {
+    Account *account = [self selectedAccount];
+    NSLog(@"selection did change account = %@", [account name]);
+    [_selectedAccountArrC setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
+    [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:account]]];
+}
+
+- (NSMutableArray *)buildPredicate:(Account *) account {
+    NSMutableArray *predicates = [NSMutableArray array];
+    if ([[account type] intValue] == Balance) {
+        [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+        [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+    } else if ([[account type] intValue] == Outcome) {
+        [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+    } else if ([[account type] intValue] == Income) {
+        [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+    }
+    for (Account *child in [account subAccounts]) {
+        [predicates addObjectsFromArray:[self buildPredicate:child]];
+    }
+    return predicates;
 }
 
 @end

@@ -72,19 +72,4 @@
     
 }
 
-- (NSArray *)viewedTransactions {
-    NSMutableArray *transactions = [NSMutableArray array];
-    if ([[self type] intValue] == Balance) {
-        [transactions addObjectsFromArray:[[self recipientTransaction] sortedArrayUsingDescriptors:nil]];
-        [transactions addObjectsFromArray:[[self sourceTransaction] sortedArrayUsingDescriptors:nil]];
-    } else if ([[self type] intValue] == Outcome) {
-        [transactions addObjectsFromArray:[[self recipientTransaction] sortedArrayUsingDescriptors:nil]];
-    } else if ([[self type] intValue] == Income) {
-        [transactions addObjectsFromArray:[[self sourceTransaction] sortedArrayUsingDescriptors:nil]];
-    }
-    for (Account *child in [self subAccounts]) {
-        [transactions addObjectsFromArray:[child viewedTransactions]];
-    }
-    return transactions;
-}
 @end
