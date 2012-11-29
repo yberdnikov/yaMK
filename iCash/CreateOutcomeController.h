@@ -29,5 +29,8 @@
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;
 
+@property (weak) NSArray *outcomeTransactionsSortDescriptors;
+
+
 - (IBAction)createTransaction:(id)sender;
 @end

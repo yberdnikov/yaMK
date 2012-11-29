@@ -31,4 +31,5 @@
 @property (weak) IBOutlet NSPopover *incomePopover;
 @property (weak) IBOutlet NSPopover *outcomePopover;
 @property (weak) IBOutlet NSArrayController *selectedAccountArrC;
+@property (weak) NSArray *transactionsSortDescriptors;
 @end

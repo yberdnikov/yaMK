@@ -39,6 +39,14 @@
     [[_name window] makeFirstResponder:_name];
 }
 
+- (NSArray *)outcomeTransactionsSortDescriptors {
+    return [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+}
+
+- (void) setOutcomeTransactionsSortDescriptors:(NSArray *)outcomeTransactionsSortDescriptors {
+    
+}
+
 - (BOOL)isInputFieldsCorrect {
     NSLog(@"name = %@", [_name stringValue]);
     NSLog(@"amount = %f", [_amount doubleValue]);

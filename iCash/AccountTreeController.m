@@ -96,10 +96,17 @@
     return nodeData;
 }
 
+- (void)setTransactionsSortDescriptors:(NSArray *)transactionsSortDescriptors {
+    
+}
+
+- (NSArray *)transactionsSortDescriptors {
+    return [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];;
+}
+
 - (void)selectionDidChange:(NSNotification *)notification {
     Account *account = [self selectedAccount];
     NSLog(@"selection did change account = %@", [account name]);
-    [_selectedAccountArrC setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
     [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:account]]];
 }
 
