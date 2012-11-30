@@ -28,6 +28,7 @@
 		D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */; };
 		D8A1468A164664F600DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A14689164664F600DCB3A2 /* Currency.m */; };
 		D8A14690164664F600DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */; };
+		D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A929DC1667D7BF001C6988 /* CreateMoveController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		D8A14689164664F600DCB3A2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		D8A1468E164664F600DCB3A2 /* PlaceOfSpending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpending.h; sourceTree = "<group>"; };
 		D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpending.m; sourceTree = "<group>"; };
+		D8A929DB1667D7BF001C6988 /* CreateMoveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMoveController.h; sourceTree = "<group>"; };
+		D8A929DC1667D7BF001C6988 /* CreateMoveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMoveController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				D8782DF516591762008C3055 /* CreateOutcomeController.m */,
 				D8782DF816591B14008C3055 /* AccountFinder.h */,
 				D8782DF916591B14008C3055 /* AccountFinder.m */,
+				D8A929DB1667D7BF001C6988 /* CreateMoveController.h */,
+				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				D8782D7216502604008C3055 /* CreateIncomeController.m in Sources */,
 				D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */,
 				D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */,
+				D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

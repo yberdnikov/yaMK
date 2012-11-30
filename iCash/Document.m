@@ -7,6 +7,7 @@
 //
 
 #import "Document.h"
+#import "CreateMoveController.h"
 
 @implementation Document
 
@@ -36,18 +37,9 @@
     return YES;
 }
 
-- (IBAction)generateDummyData:(id)sender {
-    NSLog(@"generate %@", [self managedObjectContext]);
-    NSEntityDescription *categoryEntity = [[[self managedObjectModel] entitiesByName] objectForKey:@"Account"];
-    for (int i = 0; i < 10; i++) {
-        NSManagedObject *t = [[NSManagedObject alloc] initWithEntity:categoryEntity insertIntoManagedObjectContext:[self managedObjectContext]];
-        [t setValue:@"aaa" forKey:@"name"];
-        for (int j = 0; j < 5; j++) {
-            NSManagedObject *bbb = [[NSManagedObject alloc] initWithEntity:categoryEntity insertIntoManagedObjectContext:[self managedObjectContext]];
-            [bbb setValue:@"bbb" forKey:@"name"];
-            [bbb setValue:t forKey:@"parent"];
-        }
-    }
+- (IBAction)showCreateMove:(id)sender {
+    NSButton *moveButton = sender;
+    [[self movePopover] showRelativeToRect:[moveButton visibleRect] ofView:sender preferredEdge:NSMaxYEdge];
 }
 
 @end

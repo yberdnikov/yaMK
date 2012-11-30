@@ -9,8 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "Account.h"
 
-@class CreateIncomeController;
+@class CreateMoveController;
 
 @interface Document : NSPersistentDocument
+
+- (IBAction)showCreateMove:(id)sender;
+@property (weak) IBOutlet NSPopover *movePopover;
+@property (weak) IBOutlet CreateMoveController *createMoveCO;
 
 @end
