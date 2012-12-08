@@ -15,4 +15,9 @@
 @dynamic name;
 @dynamic transaction;
 
+- (void) setName:(NSString *)name {
+    [self setPrimitiveValue:[name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] forKey:@"name"];
+    [self didChangeValueForKey:@"name"];
+}
+
 @end

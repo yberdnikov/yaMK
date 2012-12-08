@@ -68,7 +68,11 @@
     PlaceOfSpending *place;
     if ([foundPlaces count] > 0) {
         place = foundPlaces[0];
+    } else {
+        place = [[PlaceOfSpending alloc] initWithEntity:[[_mom entitiesByName] objectForKey:@"PlaceOfSpending"] insertIntoManagedObjectContext:_moc];
+        [place setName:name];
     }
+    NSLog(@"place = %@", place);
     return place;
 }
 

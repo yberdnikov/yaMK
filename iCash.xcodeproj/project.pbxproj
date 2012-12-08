@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */; };
+		D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */; };
+		D81ED1651673B0E8007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */; };
+		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
 		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
 		D8782D61164AD34D008C3055 /* AccountTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D60164AD34D008C3055 /* AccountTreeController.m */; };
@@ -25,7 +29,6 @@
 		D8A145A11639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145A91639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145A71639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145AC1639AD1900DCB3A2 /* iCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145AB1639AD1900DCB3A2 /* iCashTests.m */; };
-		D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */; };
 		D8A1468A164664F600DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A14689164664F600DCB3A2 /* Currency.m */; };
 		D8A14690164664F600DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */; };
 		D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A929DC1667D7BF001C6988 /* CreateMoveController.m */; };
@@ -42,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpendingFieldDelegate.h; sourceTree = "<group>"; };
+		D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpendingFieldDelegate.m; sourceTree = "<group>"; };
+		D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithAutoComplition.h; sourceTree = "<group>"; };
+		D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithAutoComplition.m; sourceTree = "<group>"; };
+		D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionNameFieldDelegate.h; sourceTree = "<group>"; };
+		D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionNameFieldDelegate.m; sourceTree = "<group>"; };
+		D81ED1661673C459007BB14C /* AutoCompitionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompitionFinder.h; sourceTree = "<group>"; };
+		D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompitionFinder.m; sourceTree = "<group>"; };
 		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		D8782D3A1647ED66008C3055 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		D8782D3C1647ED67008C3055 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -75,7 +86,6 @@
 		D8A145A81639AD1900DCB3A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8A145AA1639AD1900DCB3A2 /* iCashTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCashTests.h; sourceTree = "<group>"; };
 		D8A145AB1639AD1900DCB3A2 /* iCashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCashTests.m; sourceTree = "<group>"; };
-		D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTransaction.xib; sourceTree = "<group>"; };
 		D8A14688164664F600DCB3A2 /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currency.h; sourceTree = "<group>"; };
 		D8A14689164664F600DCB3A2 /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currency.m; sourceTree = "<group>"; };
 		D8A1468E164664F600DCB3A2 /* PlaceOfSpending.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpending.h; sourceTree = "<group>"; };
@@ -154,7 +164,6 @@
 				D8A145931639AD1900DCB3A2 /* MainMenu.xib */,
 				D8A145961639AD1900DCB3A2 /* Document.xcdatamodeld */,
 				D8A145821639AD1900DCB3A2 /* Supporting Files */,
-				D8A145EC1641AC2C00DCB3A2 /* AddTransaction.xib */,
 				D8782D5F164AD34D008C3055 /* AccountTreeController.h */,
 				D8782D60164AD34D008C3055 /* AccountTreeController.m */,
 				D8782D7016502604008C3055 /* CreateIncomeController.h */,
@@ -165,6 +174,14 @@
 				D8782DF916591B14008C3055 /* AccountFinder.m */,
 				D8A929DB1667D7BF001C6988 /* CreateMoveController.h */,
 				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
+				D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */,
+				D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */,
+				D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */,
+				D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */,
+				D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */,
+				D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */,
+				D81ED1661673C459007BB14C /* AutoCompitionFinder.h */,
+				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -290,7 +307,6 @@
 				D8A1458C1639AD1900DCB3A2 /* Credits.rtf in Resources */,
 				D8A145921639AD1900DCB3A2 /* Document.xib in Resources */,
 				D8A145951639AD1900DCB3A2 /* MainMenu.xib in Resources */,
-				D8A145ED1641AC2C00DCB3A2 /* AddTransaction.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +353,10 @@
 				D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */,
 				D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */,
 				D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */,
+				D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */,
+				D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */,
+				D81ED1651673B0E8007BB14C /* TransactionNameFieldDelegate.m in Sources */,
+				D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
