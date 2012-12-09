@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */; };
 		D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */; };
-		D81ED1651673B0E8007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */; };
+		D81ED1651673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1641673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.m */; };
 		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
 		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
@@ -49,8 +49,8 @@
 		D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpendingFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithAutoComplition.h; sourceTree = "<group>"; };
 		D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithAutoComplition.m; sourceTree = "<group>"; };
-		D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionNameFieldDelegate.h; sourceTree = "<group>"; };
-		D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionNameFieldDelegate.m; sourceTree = "<group>"; };
+		D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeTransactionNameFieldDelegate.h; sourceTree = "<group>"; };
+		D81ED1641673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeTransactionNameFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED1661673C459007BB14C /* AutoCompitionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompitionFinder.h; sourceTree = "<group>"; };
 		D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompitionFinder.m; sourceTree = "<group>"; };
 		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 				D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */,
 				D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */,
 				D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */,
-				D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */,
-				D81ED1641673B0E8007BB14C /* TransactionNameFieldDelegate.m */,
+				D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */,
+				D81ED1641673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.m */,
 				D81ED1661673C459007BB14C /* AutoCompitionFinder.h */,
 				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
 			);
@@ -355,7 +355,7 @@
 				D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */,
 				D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */,
 				D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */,
-				D81ED1651673B0E8007BB14C /* TransactionNameFieldDelegate.m in Sources */,
+				D81ED1651673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.m in Sources */,
 				D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

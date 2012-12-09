@@ -73,6 +73,7 @@
         NSModeSwitchFunctionKey != keyCode
         && keyCode != 127
         && keyCode != 32
+        && keyCode != 27
         ) {
 //    if (keyCode != NSDeleteFunctionKey
 //        && keyCode != NSDeleteCharFunctionKey
