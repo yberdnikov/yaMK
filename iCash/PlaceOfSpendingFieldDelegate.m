@@ -23,6 +23,6 @@ indexOfSelectedItem:(NSInteger *)index {
     NSManagedObjectModel *mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
     NSFetchRequest *fetchRequest = [mom fetchRequestFromTemplateWithName:@"findPlaceOfSpendingStartsWithName" substitutionVariables:@{@"NAME" : nameStartsWith}];
     
-    return [AutoCompitionFinder findByFetchRequest:fetchRequest];
+    return [AutoCompitionFinder findByFetchRequest:fetchRequest startWith:nameStartsWith];
 }
 @end

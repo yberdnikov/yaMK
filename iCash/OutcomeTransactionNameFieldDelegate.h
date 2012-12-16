@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class CreateOutcomeController;
+
 @interface OutcomeTransactionNameFieldDelegate : NSObject<NSControlTextEditingDelegate>
+
+@property (weak) NSString *recipientName;
+@property (weak) IBOutlet CreateOutcomeController *coc;
 
 @end

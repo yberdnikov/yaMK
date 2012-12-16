@@ -11,6 +11,7 @@
 #import "Transaction.h"
 #import "AccountFinder.h"
 #import "PlaceOfSpending.h"
+#import "OutcomeTransactionNameFieldDelegate.h"
 
 @implementation CreateOutcomeController
 
@@ -86,6 +87,7 @@
     [_addButton setKeyEquivalent:@"\r"];
         
     [self computeFilterPredicate:[_date dateValue]];
+    [_nameFieldDelegate setRecipientName:[_recipientAccount name]];
 }
 
 - (void) clearTransactionFields {
@@ -131,5 +133,30 @@
 
 - (void) datePickerCell:(NSDatePickerCell *)aDatePickerCell validateProposedDateValue:(NSDate *__autoreleasing *)proposedDateValue timeInterval:(NSTimeInterval *)proposedTimeInterval {
     [self computeFilterPredicate:*proposedDateValue];
+}
+
+-(void)setDefaultValues {
+    Transaction *foundTransaction;
+    NSFetchRequest *findAccountByNameType = [_mom fetchRequestFromTemplateWithName:@"findTransactionByName" substitutionVariables:@{@"NAME" : [_name stringValue]}];
+    [findAccountByNameType setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
+    NSError *error;
+    NSArray *foundTransactions = [_moc executeFetchRequest:findAccountByNameType error:&error];
+    if ([foundTransactions count] > 0) {
+        foundTransaction = foundTransactions[0];
+    }
+    if (foundTransaction) {
+        [self setDefaultValues: foundTransaction];
+    }
+}
+
+-(void)setDefaultValues:(Transaction *)t {
+   
+    if ([_volume doubleValue] <= 0) {
+        [_volume setDoubleValue:[[t amount] doubleValue]];
+        [_price setDoubleValue:[[t value] doubleValue]];
+    } else {
+        [_price setDoubleValue:([[t value] doubleValue] / [[t amount] doubleValue] * [_volume doubleValue])];
+    }
+    
 }
 @end

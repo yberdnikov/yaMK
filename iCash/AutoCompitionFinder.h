@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface AutoCompitionFinder : NSObject
-+ (NSArray *) findByFetchRequest:(NSFetchRequest *)request;
++ (NSArray *) findByFetchRequest:(NSFetchRequest *)request
+                       startWith:(NSString *)sw;
 @end

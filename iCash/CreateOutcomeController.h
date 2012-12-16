@@ -10,6 +10,7 @@
 
 @class AccountFinder;
 @class Account;
+@class OutcomeTransactionNameFieldDelegate;
 
 @interface CreateOutcomeController : NSObject<NSPopoverDelegate, NSDatePickerCellDelegate>
 
@@ -25,12 +26,14 @@
 @property (weak) Account *recipientAccount;
 @property (weak) IBOutlet NSArrayController *otaController;
 @property (weak) IBOutlet NSTableView *outcomeTransactions;
+@property (weak) IBOutlet OutcomeTransactionNameFieldDelegate *nameFieldDelegate;
 
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;
 
 @property (weak) NSArray *outcomeTransactionsSortDescriptors;
 
-
 - (IBAction)createTransaction:(id)sender;
+
+-(void)setDefaultValues;
 @end

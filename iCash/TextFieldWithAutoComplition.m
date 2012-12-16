@@ -74,17 +74,16 @@
         && keyCode != 127
         && keyCode != 32
         && keyCode != 27
+        && keyCode != 9
         ) {
-//    if (keyCode != NSDeleteFunctionKey
-//        && keyCode != NSDeleteCharFunctionKey
-//        && keyCode != NSDeleteLineFunctionKey
-//        && keyCode != 63233
-//        && keyCode != 32
-//        && keyCode != 115
-//        && keyCode != 9 && keyCode != 127 && keyCode != NSLeftArrowFunctionKey && keyCode != NSRightArrowFunctionKey) {
         [self.currentEditor complete:self];
     }
     [super keyUp:theEvent];
+}
+
+-(void) complete:(id)sender {
+    NSLog(@"complete");
+    [super complete:sender];
 }
 
 @end

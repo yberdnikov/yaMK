@@ -31,7 +31,7 @@
     <fetchRequest name="findIncomeAccounts" entity="Account" predicateString="type == 1"/>
     <fetchRequest name="findPlaceOfSpendingByName" entity="PlaceOfSpending" predicateString="name == $NAME"/>
     <fetchRequest name="findPlaceOfSpendingStartsWithName" entity="PlaceOfSpending" predicateString="name BEGINSWITH $NAME"/>
-    <fetchRequest name="findTransactionStartsWithName" entity="Transaction" predicateString="name BEGINSWITH $NAME"/>
+    <fetchRequest name="findTransactionByName" entity="Transaction" predicateString="name == $NAME"/>
     <elements>
         <element name="Account" positionX="7" positionY="-469" width="128" height="135"/>
         <element name="Currency" positionX="423" positionY="-549" width="128" height="88"/>

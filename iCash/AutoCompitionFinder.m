@@ -9,7 +9,8 @@
 #import "AutoCompitionFinder.h"
 
 @implementation AutoCompitionFinder
-+ (NSArray *) findByFetchRequest:(NSFetchRequest *)request {
++ (NSArray *) findByFetchRequest:(NSFetchRequest *)request
+                       startWith:(NSString *)sw{
     NSManagedObjectContext *moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
     
     NSError *error;
@@ -19,9 +20,21 @@
     
     for (uint i = 0; i < [foundTransactions count]; i++) {
         NSString *transactionName = [[foundTransactions objectAtIndex:i] name];
-        NSLog(@"name = %@", transactionName);
-        if (transactionName != nil && ![result containsObject:transactionName]) {
-            [result addObject:transactionName];
+        if ([sw rangeOfString:@" "].location != NSNotFound) {
+            NSLog(@"name = %@", [transactionName substringToIndex:[sw length] - 1]);
+            NSLog(@"last space position = %lu", [sw  rangeOfString:@" " options:NSBackwardsSearch].location + 1);
+            NSUInteger lastSpacePosition = [transactionName length] - [[transactionName substringToIndex:[sw length] - 1] rangeOfString:@" " options:NSBackwardsSearch].location;
+            NSString *lastWord = [transactionName substringFromIndex:[sw  rangeOfString:@" " options:NSBackwardsSearch].location + 1];//[transactionName substringFromIndex:(lastSpacePosition + 1)];
+            NSLog(@"lastWord = %@", lastWord);
+            if (lastWord != nil && ![result containsObject:lastWord] && [transactionName substringFromIndex:[sw length]] > 0) {
+                [result addObject:lastWord];
+            }
+        } else {
+            NSLog(@"name = %@", transactionName);
+            if (transactionName != nil && ![result containsObject:transactionName]) {
+                
+                [result addObject:transactionName];
+            }
         }
     }
     return result;
