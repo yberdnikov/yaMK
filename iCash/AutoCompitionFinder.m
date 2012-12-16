@@ -23,7 +23,6 @@
         if ([sw rangeOfString:@" "].location != NSNotFound) {
             NSLog(@"name = %@", [transactionName substringToIndex:[sw length] - 1]);
             NSLog(@"last space position = %lu", [sw  rangeOfString:@" " options:NSBackwardsSearch].location + 1);
-            NSUInteger lastSpacePosition = [transactionName length] - [[transactionName substringToIndex:[sw length] - 1] rangeOfString:@" " options:NSBackwardsSearch].location;
             NSString *lastWord = [transactionName substringFromIndex:[sw  rangeOfString:@" " options:NSBackwardsSearch].location + 1];//[transactionName substringFromIndex:(lastSpacePosition + 1)];
             NSLog(@"lastWord = %@", lastWord);
             if (lastWord != nil && ![result containsObject:lastWord] && [transactionName substringFromIndex:[sw length]] > 0) {

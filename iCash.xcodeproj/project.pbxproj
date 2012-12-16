@@ -118,6 +118,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82A4B6D167E370E00F123AA /* Transaction Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8782D7016502604008C3055 /* CreateIncomeController.h */,
+				D8782D7116502604008C3055 /* CreateIncomeController.m */,
+				D8782DF416591762008C3055 /* CreateOutcomeController.h */,
+				D8782DF516591762008C3055 /* CreateOutcomeController.m */,
+				D8A929DB1667D7BF001C6988 /* CreateMoveController.h */,
+				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
+			);
+			name = "Transaction Controllers";
+			sourceTree = "<group>";
+		};
+		D82A4B6E167E375500F123AA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */,
+				D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */,
+				D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */,
+				D81ED16E16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m */,
+				D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */,
+				D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
 		D8A1456C1639AD1900DCB3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -166,27 +192,17 @@
 				D8A145901639AD1900DCB3A2 /* Document.xib */,
 				D8A145931639AD1900DCB3A2 /* MainMenu.xib */,
 				D8A145961639AD1900DCB3A2 /* Document.xcdatamodeld */,
+				D82A4B6D167E370E00F123AA /* Transaction Controllers */,
 				D8A145821639AD1900DCB3A2 /* Supporting Files */,
 				D8782D5F164AD34D008C3055 /* AccountTreeController.h */,
 				D8782D60164AD34D008C3055 /* AccountTreeController.m */,
-				D8782D7016502604008C3055 /* CreateIncomeController.h */,
-				D8782D7116502604008C3055 /* CreateIncomeController.m */,
-				D8782DF416591762008C3055 /* CreateOutcomeController.h */,
-				D8782DF516591762008C3055 /* CreateOutcomeController.m */,
 				D8782DF816591B14008C3055 /* AccountFinder.h */,
 				D8782DF916591B14008C3055 /* AccountFinder.m */,
-				D8A929DB1667D7BF001C6988 /* CreateMoveController.h */,
-				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
-				D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */,
-				D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */,
+				D82A4B6E167E375500F123AA /* Delegates */,
 				D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */,
 				D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */,
-				D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */,
-				D81ED16E16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m */,
 				D81ED1661673C459007BB14C /* AutoCompitionFinder.h */,
 				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
-				D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */,
-				D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
