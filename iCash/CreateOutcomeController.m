@@ -11,7 +11,7 @@
 #import "Transaction.h"
 #import "AccountFinder.h"
 #import "PlaceOfSpending.h"
-#import "OutcomeTransactionNameFieldDelegate.h"
+#import "TransactionNameFieldDelegate.h"
 
 @implementation CreateOutcomeController
 
@@ -135,21 +135,7 @@
     [self computeFilterPredicate:*proposedDateValue];
 }
 
--(void)setDefaultValues {
-    Transaction *foundTransaction;
-    NSFetchRequest *findAccountByNameType = [_mom fetchRequestFromTemplateWithName:@"findTransactionByName" substitutionVariables:@{@"NAME" : [_name stringValue]}];
-    [findAccountByNameType setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]]];
-    NSError *error;
-    NSArray *foundTransactions = [_moc executeFetchRequest:findAccountByNameType error:&error];
-    if ([foundTransactions count] > 0) {
-        foundTransaction = foundTransactions[0];
-    }
-    if (foundTransaction) {
-        [self setDefaultValues: foundTransaction];
-    }
-}
-
--(void)setDefaultValues:(Transaction *)t {
+-(void)setDefaultValuesFromTrsansaction:(Transaction *)t {
    
     if ([_volume doubleValue] <= 0) {
         [_volume setDoubleValue:[[t amount] doubleValue]];

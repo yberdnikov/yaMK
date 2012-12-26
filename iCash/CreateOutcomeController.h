@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TransactionController.h"
+#import "BasicTrsansactionController.h"
 
 @class AccountFinder;
 @class Account;
-@class OutcomeTransactionNameFieldDelegate;
+@class TransactionNameFieldDelegate;
 
-@interface CreateOutcomeController : NSObject<NSPopoverDelegate, NSDatePickerCellDelegate>
+@interface CreateOutcomeController : BasicTrsansactionController<NSPopoverDelegate, NSDatePickerCellDelegate, TransactionController>
 
 @property (weak) IBOutlet NSTextField *placeOfSpendig;
 @property (weak) IBOutlet NSDatePicker *date;
@@ -26,7 +28,7 @@
 @property (weak) Account *recipientAccount;
 @property (weak) IBOutlet NSArrayController *otaController;
 @property (weak) IBOutlet NSTableView *outcomeTransactions;
-@property (weak) IBOutlet OutcomeTransactionNameFieldDelegate *nameFieldDelegate;
+@property (weak) IBOutlet TransactionNameFieldDelegate *nameFieldDelegate;
 
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;
@@ -35,5 +37,4 @@
 
 - (IBAction)createTransaction:(id)sender;
 
--(void)setDefaultValues;
 @end

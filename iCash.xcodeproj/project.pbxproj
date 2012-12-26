@@ -10,7 +10,7 @@
 		D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */; };
 		D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */; };
 		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
-		D81ED16F16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED16E16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m */; };
+		D81ED16F16750779007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */; };
 		D81ED172167668D1007BB14C /* OutcomeValumeFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
 		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
@@ -18,6 +18,7 @@
 		D8782D7216502604008C3055 /* CreateIncomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D7116502604008C3055 /* CreateIncomeController.m */; };
 		D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF516591762008C3055 /* CreateOutcomeController.m */; };
 		D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF916591B14008C3055 /* AccountFinder.m */; };
+		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
 		D8A145881639AD1900DCB3A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A145871639AD1900DCB3A2 /* main.m */; };
@@ -50,10 +51,10 @@
 		D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpendingFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithAutoComplition.h; sourceTree = "<group>"; };
 		D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithAutoComplition.m; sourceTree = "<group>"; };
-		D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeTransactionNameFieldDelegate.h; sourceTree = "<group>"; };
+		D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionNameFieldDelegate.h; sourceTree = "<group>"; };
 		D81ED1661673C459007BB14C /* AutoCompitionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompitionFinder.h; sourceTree = "<group>"; };
 		D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompitionFinder.m; sourceTree = "<group>"; };
-		D81ED16E16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeTransactionNameFieldDelegate.m; sourceTree = "<group>"; };
+		D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionNameFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeValumeFieldDelegate.h; sourceTree = "<group>"; };
 		D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeValumeFieldDelegate.m; sourceTree = "<group>"; };
 		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
@@ -68,6 +69,9 @@
 		D8782DF516591762008C3055 /* CreateOutcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateOutcomeController.m; sourceTree = "<group>"; };
 		D8782DF816591B14008C3055 /* AccountFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountFinder.h; sourceTree = "<group>"; };
 		D8782DF916591B14008C3055 /* AccountFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountFinder.m; sourceTree = "<group>"; };
+		D8A136D5168A221000D64A2C /* TransactionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionController.h; sourceTree = "<group>"; };
+		D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTrsansactionController.h; sourceTree = "<group>"; };
+		D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTrsansactionController.m; sourceTree = "<group>"; };
 		D8A145771639AD1900DCB3A2 /* iCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D8A1457E1639AD1900DCB3A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +131,8 @@
 				D8782DF516591762008C3055 /* CreateOutcomeController.m */,
 				D8A929DB1667D7BF001C6988 /* CreateMoveController.h */,
 				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
+				D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */,
+				D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */,
 			);
 			name = "Transaction Controllers";
 			sourceTree = "<group>";
@@ -136,8 +142,8 @@
 			children = (
 				D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */,
 				D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */,
-				D81ED1631673B0E8007BB14C /* OutcomeTransactionNameFieldDelegate.h */,
-				D81ED16E16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m */,
+				D81ED1631673B0E8007BB14C /* TransactionNameFieldDelegate.h */,
+				D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */,
 				D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */,
 				D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */,
 			);
@@ -203,6 +209,7 @@
 				D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */,
 				D81ED1661673C459007BB14C /* AutoCompitionFinder.h */,
 				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
+				D8A136D5168A221000D64A2C /* TransactionController.h */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -377,8 +384,9 @@
 				D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */,
 				D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */,
 				D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */,
-				D81ED16F16750779007BB14C /* OutcomeTransactionNameFieldDelegate.m in Sources */,
+				D81ED16F16750779007BB14C /* TransactionNameFieldDelegate.m in Sources */,
 				D81ED172167668D1007BB14C /* OutcomeValumeFieldDelegate.m in Sources */,
+				D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

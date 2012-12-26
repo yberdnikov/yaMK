@@ -7,19 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "TransactionController.h"
+#import "BasicTrsansactionController.h"
 
 @class Transaction;
 @class Account;
 @class AccountFinder;
 
-@interface CreateIncomeController : NSObject<NSPopoverDelegate>
+@interface CreateIncomeController : BasicTrsansactionController<NSPopoverDelegate, TransactionController>
 
 @property (strong) Account *recipientAccount;
 @property NSArray *incomeAccounts;
 @property (weak) IBOutlet NSComboBox *incomeAccountsCB;
 @property (weak) IBOutlet NSButton *createButton;
 @property (strong) IBOutlet NSArrayController *incomeAccountsAC;
-@property (weak) IBOutlet NSTextField *transactionDescription;
+@property (weak) IBOutlet NSTextField *name;
 @property (weak) IBOutlet NSTextField *transactionValue;
 @property (weak) IBOutlet NSDatePicker *transactionDate;
 @property BOOL consider;

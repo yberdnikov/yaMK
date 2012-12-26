@@ -635,6 +635,7 @@
 																<string key="NSFrame">{{1, 563}, {678, 16}}</string>
 																<reference key="NSSuperview" ref="780119778"/>
 																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView"/>
 																<string key="NSReuseIdentifierKey">_NS:60</string>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																<int key="NSsFlags">1</int>
@@ -1046,6 +1047,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="NSFrame">{{14, 13}, {452, 32}}</string>
 						<reference key="NSSuperview" ref="365150486"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="99207664">
@@ -1621,6 +1623,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="NSFrame">{{376, 13}, {90, 32}}</string>
 						<reference key="NSSuperview" ref="813243022"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="218290029">
@@ -1794,7 +1797,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="NSFrame">{{20, 176}, {239, 22}}</string>
 						<reference key="NSSuperview" ref="813243022"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="575416994"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="653867344">
@@ -2100,10 +2103,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				<string key="NSClassName">PlaceOfSpendingFieldDelegate</string>
 			</object>
 			<object class="NSCustomObject" id="912038363">
-				<string key="NSClassName">OutcomeTransactionNameFieldDelegate</string>
+				<string key="NSClassName">TransactionNameFieldDelegate</string>
 			</object>
 			<object class="NSCustomObject" id="280241850">
 				<string key="NSClassName">OutcomeValumeFieldDelegate</string>
+			</object>
+			<object class="NSCustomObject" id="494376518">
+				<string key="NSClassName">TransactionNameFieldDelegate</string>
 			</object>
 			<object class="NSArrayController" id="768875293">
 				<bool key="NSEditable">YES</bool>
@@ -2174,6 +2180,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="NSFrame">{{14, 13}, {383, 32}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="926678857">
@@ -2846,6 +2853,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<int key="connectionID">100848</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="626437936"/>
+						<reference key="destination" ref="494376518"/>
+					</object>
+					<int key="connectionID">101444</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">managedObjectContext: managedObjectContext</string>
 						<reference key="source" ref="358760922"/>
@@ -2876,14 +2891,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="destination" ref="522474756"/>
 					</object>
 					<int key="connectionID">100657</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">transactionDescription</string>
-						<reference key="source" ref="645652102"/>
-						<reference key="destination" ref="626437936"/>
-					</object>
-					<int key="connectionID">100658</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2924,6 +2931,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="destination" ref="284612739"/>
 					</object>
 					<int key="connectionID">101012</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">name</string>
+						<reference key="source" ref="645652102"/>
+						<reference key="destination" ref="626437936"/>
+					</object>
+					<int key="connectionID">101441</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4019,11 +4034,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">coc</string>
+						<string key="label">basicTransCntrl</string>
 						<reference key="source" ref="912038363"/>
 						<reference key="destination" ref="581238195"/>
 					</object>
-					<int key="connectionID">101413</int>
+					<int key="connectionID">101443</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -4032,6 +4047,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="destination" ref="581238195"/>
 					</object>
 					<int key="connectionID">101415</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">basicTransCntrl</string>
+						<reference key="source" ref="494376518"/>
+						<reference key="destination" ref="645652102"/>
+					</object>
+					<int key="connectionID">101442</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -7774,6 +7797,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="objectID">101378</int>
 						<reference key="object" ref="912038363"/>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Outcome Name Field Delegate</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">101384</int>
@@ -7849,6 +7873,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="objectID">101437</int>
 						<reference key="object" ref="413664306"/>
 						<reference key="parent" ref="813243022"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">101439</int>
+						<reference key="object" ref="494376518"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Income Name Field Delegate</string>
 					</object>
 				</array>
 			</object>
@@ -8448,6 +8478,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				<string key="101414.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="101436.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="101437.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="101439.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBWindowTemplateEditedContentRect">{{133, 170}, {507, 413}}</string>
 				<array class="NSMutableArray" key="6.IBNSViewMetadataConstraints">
@@ -8462,7 +8493,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">101437</int>
+			<int key="maxID">101444</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8551,8 +8582,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">CreateIncomeController</string>
+					<string key="className">BasicTrsansactionController</string>
 					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BasicTrsansactionController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CreateIncomeController</string>
+					<string key="superclassName">BasicTrsansactionController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">createIncome:</string>
 						<string key="NS.object.0">id</string>
@@ -8569,8 +8608,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="createButton">NSButton</string>
 						<string key="incomeAccountsAC">NSArrayController</string>
 						<string key="incomeAccountsCB">NSComboBox</string>
+						<string key="name">NSTextField</string>
 						<string key="transactionDate">NSDatePicker</string>
-						<string key="transactionDescription">NSTextField</string>
 						<string key="transactionValue">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -8590,13 +8629,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<string key="name">incomeAccountsCB</string>
 							<string key="candidateClassName">NSComboBox</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="name">
+							<string key="name">name</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="transactionDate">
 							<string key="name">transactionDate</string>
 							<string key="candidateClassName">NSDatePicker</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="transactionDescription">
-							<string key="name">transactionDescription</string>
-							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="transactionValue">
 							<string key="name">transactionValue</string>
@@ -8663,7 +8702,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CreateOutcomeController</string>
-					<string key="superclassName">NSObject</string>
+					<string key="superclassName">BasicTrsansactionController</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">createTransaction:</string>
 						<string key="NS.object.0">id</string>
@@ -8681,7 +8720,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="amount">NSTextField</string>
 						<string key="date">NSDatePicker</string>
 						<string key="name">NSTextField</string>
-						<string key="nameFieldDelegate">OutcomeTransactionNameFieldDelegate</string>
+						<string key="nameFieldDelegate">TransactionNameFieldDelegate</string>
 						<string key="otaController">NSArrayController</string>
 						<string key="outcomeTransactions">NSTableView</string>
 						<string key="placeOfSpendig">NSTextField</string>
@@ -8712,7 +8751,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						</object>
 						<object class="IBToOneOutletInfo" key="nameFieldDelegate">
 							<string key="name">nameFieldDelegate</string>
-							<string key="candidateClassName">OutcomeTransactionNameFieldDelegate</string>
+							<string key="candidateClassName">TransactionNameFieldDelegate</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="otaController">
 							<string key="name">otaController</string>
@@ -8786,25 +8825,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">OutcomeTransactionNameFieldDelegate</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">coc</string>
-						<string key="NS.object.0">CreateOutcomeController</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">coc</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">coc</string>
-							<string key="candidateClassName">CreateOutcomeController</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/OutcomeTransactionNameFieldDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">OutcomeValumeFieldDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="outlets">
@@ -8837,6 +8857,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/TextFieldWithAutoComplition.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TransactionNameFieldDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">basicTransCntrl</string>
+						<string key="NS.object.0">BasicTrsansactionController</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">basicTransCntrl</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">basicTransCntrl</string>
+							<string key="candidateClassName">BasicTrsansactionController</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/TransactionNameFieldDelegate.h</string>
 					</object>
 				</object>
 			</array>

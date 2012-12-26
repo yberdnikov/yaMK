@@ -35,7 +35,7 @@
         Account *selectedAccount = [_accountFinder findAccount:selectedAccountName type:Income];
         if (selectedAccount) {
             [income setSource:selectedAccount];
-            [income setName:[_transactionDescription stringValue]];
+            [income setName:[_name stringValue]];
         } else {
             NSAlert *alert = [[NSAlert alloc] init];
             NSString *error = [NSString stringWithFormat:@"Account with name '%@' is not found.", selectedAccountName];
@@ -53,7 +53,7 @@
 }
 
 - (void)resetFields {
-    [_transactionDescription setStringValue:@""];
+    [_name setStringValue:@""];
     [_incomeAccountsCB deselectItemAtIndex:[_incomeAccountsCB indexOfSelectedItem]];
     [_transactionValue setStringValue:@""];
 }
@@ -65,5 +65,9 @@
     [self setConsider:YES];
     [_transactionDate setDateValue:[NSDate date]];
     [_createButton setKeyEquivalent:@"\r"];
+}
+
+-(void)setDefaultValuesFromTrsansaction:(Transaction *)t {
+    [_transactionValue setDoubleValue:[[t value] doubleValue]];
 }
 @end
