@@ -19,6 +19,9 @@
 @dynamic recipientTransaction;
 @dynamic sourceTransaction;
 @dynamic subAccounts;
+@dynamic colorRed;
+@dynamic colorBlue;
+@dynamic colorGreen;
 
 - (NSImage *) typeImage
 {

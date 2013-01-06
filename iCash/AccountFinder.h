@@ -13,5 +13,7 @@
 
 - (Account *) findAccount:(NSString *)name
                      type:(AccountType)type;
+- (Account *) findAccount:(NSString *)name;
+- (NSArray *) findAccounts:(AccountType)type;
 
 @end

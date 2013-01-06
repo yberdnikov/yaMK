@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSSet *recipientTransaction;
 @property (nonatomic, retain) NSSet *sourceTransaction;
 @property (nonatomic, retain) NSSet *subAccounts;
+@property (nonatomic, retain) NSNumber * colorRed;
+@property (nonatomic, retain) NSNumber * colorBlue;
+@property (nonatomic, retain) NSNumber * colorGreen;
 @end
 
 @interface Account (CoreDataGeneratedAccessors)
