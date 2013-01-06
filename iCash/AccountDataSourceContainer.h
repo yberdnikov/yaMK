@@ -1,5 +1,5 @@
 //
-//  AllAccountsDatasource.h
+//  AccountDataSourceContainer.h
 //  iCash
 //
 //  Created by Vitaly Merenkov on 06.01.13.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PieChartDatasource.h"
+#import "Account.h"
 
-@interface AllAccountsDatasource : NSObject<PieChartDatasource>
+@interface AccountDataSourceContainer : NSObject
 
-@property NSDictionary *data;
+@property double value;
+@property Account *account;
 
 @end
