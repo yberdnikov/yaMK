@@ -80,4 +80,14 @@
     [self didChangeValueForKey:@"name"];
 }
 
+- (NSColor *) color {
+    return [NSColor colorWithDeviceRed:[[self colorRed] doubleValue] green:[[self colorGreen] doubleValue] blue:[[self colorBlue] doubleValue] alpha:1];
+}
+
+- (void) setColor:(NSColor *)color {
+    [self setColorRed:[NSNumber numberWithDouble:[color redComponent]]];
+    [self setColorGreen:[NSNumber numberWithDouble:[color greenComponent]]];
+    [self setColorBlue:[NSNumber numberWithDouble:[color blueComponent]]];
+}
+
 @end

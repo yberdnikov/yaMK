@@ -59,7 +59,7 @@
         [greenPath lineToPoint: NSMakePoint(size_x/2, size_y/2) ] ;
         [greenPath stroke] ;
         Account *a = [[data valueForKey:name] valueForKey:@"account"];
-        [[NSColor colorWithDeviceRed:[[a colorRed] doubleValue] green:[[a colorGreen] doubleValue] blue:[[a colorBlue] doubleValue] alpha:1] set];
+        [[a color] set];
         // and fill it
         [greenPath fill] ;
         startAngle = endAngle;
