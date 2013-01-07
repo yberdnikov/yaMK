@@ -126,13 +126,14 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
                               title:(NSString *)name
                                rect:(CGRect)rect
 {
-    double pointCenX = centerX + (radius / 2) * cos(radians(startAngle + 360 * perc / 2));
-    double pointCenY = centerY + (radius / 2) * sin(radians(startAngle + 360 * perc / 2));
+    double centerOfAngle = startAngle + 360 * perc / 2;
+    double pointCenX = centerX + (radius / 2) * cos(radians(centerOfAngle));
+    double pointCenY = centerY + (radius / 2) * sin(radians(centerOfAngle));
     CGContextSetRGBFillColor(context, 0, 0, 0, 1);
     CGContextAddArc(context, pointCenX, pointCenY, 2, 0, 2*M_PI, 1);
     CGContextFillPath(context);
-    double lineEndX = centerX + (radius * 1.2) * cos(radians(startAngle + 360 * perc / 2));
-    double lineEndY = centerY + (radius * 1.2) * sin(radians(startAngle + 360 * perc / 2));
+    double lineEndX = centerX + (radius * 1.2) * cos(radians(centerOfAngle));
+    double lineEndY = centerY + (radius * 1.2) * sin(radians(centerOfAngle));
     CGContextMoveToPoint(context, pointCenX, pointCenY);
     CGContextAddLineToPoint(context, lineEndX, lineEndY);
     
