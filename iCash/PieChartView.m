@@ -9,6 +9,26 @@
 #import "PieChartView.h"
 #import "AllAccountsDatasource.h"
 #import "AccountFinder.h"
+#import "math.h"
+
+
+//#### utility code
+//#define PI 3.14159265358979323846
+
+static inline double radians(double degrees) { return degrees * M_PI / 180; }
+
+static void
+drawAnX(CGContextRef gc)
+{
+    CGPoint p;
+    
+    p = CGContextGetPathCurrentPoint(gc);
+    CGContextMoveToPoint(gc, p.x + 3, p.y + 3);
+    CGContextAddLineToPoint(gc, p.x - 3, p.y - 3);
+    CGContextMoveToPoint(gc, p.x + 3, p.y - 3);
+    CGContextAddLineToPoint(gc, p.x - 3, p.y + 3);
+    CGContextStrokePath(gc);
+}
 
 @implementation PieChartView
 
@@ -23,50 +43,66 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)drawRect:(NSRect)rect
 {
+    CGRect pageRect;
+    CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    double centerX = rect.size.width / 2;
+    double centerY = rect.size.height / 2;
     
-    // compute size and radius
-    double size_x = [self frame].size.width;
-    double size_y = [self frame].size.height;
     double radius = 0;
-    if (size_x < size_y) {
-        radius = size_x/3;
+    if (rect.size.width < rect.size.height) {
+        radius = rect.size.width/3;
     } else {
-        radius = size_y/3;
+        radius = rect.size.height/3;
     }
-        
+    
+    //#################################################################
+    //##    Insert sample drawing code here
+    //##
+    //##    Note that at this point, the current context CTM is set up such that
+    //##        that the context size corresponds to the size of the view
+    //##        i.e. one unit in the context == one pixel
+    //##    Also, the origin is in the bottom left of the view with +y pointing up
+    //##
+    //#################################################################
+    
+    pageRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
+    
+    CGContextBeginPage(context, &pageRect);
+    
+    //  Start with black fill and stroke colors
+    
+    CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+    
+    //  The current path for the context starts out empty
+    assert(CGContextIsPathEmpty(context));
+    
     NSDictionary *data = [_dataSource getData];
     double startAngle = 0;
     double endAngle = 0;
+    
+    CGContextBeginPath(context);
+    
     NSArray *keys = [data allKeys];
     for (NSString *name in keys) {
-        NSBezierPath *greenPath = [NSBezierPath bezierPath] ;
-        [[NSColor blackColor] set] ;
-        // set some line width
-        [greenPath setLineWidth: 2 ];
         double perc = [[[data valueForKey:name] valueForKey:@"value"] doubleValue];
         endAngle = startAngle + 360 * perc;
-        // move to the center so that we have a closed slice
-        // size_x and size_y are the height and width of the view
-        
-        [greenPath moveToPoint: NSMakePoint( size_x/2, size_y/2 ) ] ;
-        
-        // draw an arc (perc is a certain percentage ; something between 0 and 1
-        [greenPath appendBezierPathWithArcWithCenter:NSMakePoint( size_x/2, size_y/2) radius:radius startAngle:startAngle endAngle: endAngle];
-        
-        // close the slice , by drawing a line to the center
-        [greenPath lineToPoint: NSMakePoint(size_x/2, size_y/2) ] ;
-        [greenPath stroke] ;
         Account *a = [[data valueForKey:name] valueForKey:@"account"];
-        [[a color] set];
-        // and fill it
-        [greenPath fill] ;
+        CGContextSetRGBFillColor(context, [[a colorRed] doubleValue], [[a colorGreen] doubleValue], [[a colorBlue] doubleValue], 1);
+        CGContextAddArc(context, centerX, centerY, radius, radians(startAngle), radians(endAngle), 0);
+        CGContextAddLineToPoint(context, centerX, centerY);
+        CGContextFillPath(context);
         startAngle = endAngle;
-        greenPath = [NSBezierPath bezierPath] ;
-        [[NSColor blackColor] set] ;
-        [greenPath setLineWidth: 2 ];
     }
+        
+    CGContextSaveGState(context);
+    
+    CGContextRestoreGState(context);
+    
+    CGContextEndPage(context);
+    
+    CGContextFlush(context);
 }
 
 @end
