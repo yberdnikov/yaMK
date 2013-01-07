@@ -21,8 +21,8 @@
     NSLog(@"recipientAccount name = %@", [[self recipientAccount] name]);
     NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
     
-    NSLog(@"value = %d", [_transactionValue intValue]);
-    if ([_transactionValue intValue] <= 0) {
+    NSLog(@"value = %f", [_transactionValue doubleValue]);
+    if ([_transactionValue doubleValue] <= 0) {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:@"Value is not set or negative, please use only positive number for this field."];
         [alert setAlertStyle:NSWarningAlertStyle];
@@ -47,7 +47,7 @@
     }
     [income setRecipient:[self recipientAccount]];
     [income setDate:[_transactionDate dateValue]];
-    [income setValue:[NSNumber numberWithInt:[_transactionValue intValue]]];
+    [income setValue:[NSNumber numberWithInt:([_transactionValue doubleValue] * 100)]];
     [self resetFields];
     
 }

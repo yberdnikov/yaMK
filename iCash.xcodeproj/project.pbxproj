@@ -34,6 +34,8 @@
 		D8A1468A164664F600DCB3A2 /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A14689164664F600DCB3A2 /* Currency.m */; };
 		D8A14690164664F600DCB3A2 /* PlaceOfSpending.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */; };
 		D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A929DC1667D7BF001C6988 /* CreateMoveController.m */; };
+		D8BD7958169B58AC0055800E /* 2-3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */; };
+		D8BD795B169B5AF80055800E /* PriceValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD795A169B5AF80055800E /* PriceValueTransformer.m */; };
 		D8F4461E1699D80A006CD4C0 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F4461D1699D80A006CD4C0 /* PieChartView.m */; };
 		D8F446241699D83D006CD4C0 /* AccountAddColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446211699D83D006CD4C0 /* AccountAddColor.m */; };
 		D8F446251699D83D006CD4C0 /* AllAccountsDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446231699D83D006CD4C0 /* AllAccountsDatasource.m */; };
@@ -105,6 +107,10 @@
 		D8A1468F164664F600DCB3A2 /* PlaceOfSpending.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpending.m; sourceTree = "<group>"; };
 		D8A929DB1667D7BF001C6988 /* CreateMoveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateMoveController.h; sourceTree = "<group>"; };
 		D8A929DC1667D7BF001C6988 /* CreateMoveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateMoveController.m; sourceTree = "<group>"; };
+		D8BD7953169B56CB0055800E /* Document 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Document 3.xcdatamodel"; sourceTree = "<group>"; };
+		D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "2-3.xcmappingmodel"; sourceTree = "<group>"; };
+		D8BD7959169B5AF70055800E /* PriceValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceValueTransformer.h; sourceTree = "<group>"; };
+		D8BD795A169B5AF80055800E /* PriceValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceValueTransformer.m; sourceTree = "<group>"; };
 		D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Document 2.xcdatamodel"; sourceTree = "<group>"; };
 		D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDatasource.h; sourceTree = "<group>"; };
 		D8F4461C1699D80A006CD4C0 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
@@ -233,6 +239,9 @@
 				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
 				D8A136D5168A221000D64A2C /* TransactionController.h */,
 				D8F446281699D8A1006CD4C0 /* 1-2.xcmappingmodel */,
+				D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */,
+				D8BD7959169B5AF70055800E /* PriceValueTransformer.h */,
+				D8BD795A169B5AF80055800E /* PriceValueTransformer.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -432,6 +441,8 @@
 				D8F446291699D8A1006CD4C0 /* 1-2.xcmappingmodel in Sources */,
 				D8F446301699E9F0006CD4C0 /* PieChartController.m in Sources */,
 				D8F44634169A00EA006CD4C0 /* AccountDataSourceContainer.m in Sources */,
+				D8BD7958169B58AC0055800E /* 2-3.xcmappingmodel in Sources */,
+				D8BD795B169B5AF80055800E /* PriceValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,10 +651,11 @@
 		D8A145961639AD1900DCB3A2 /* Document.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D8BD7953169B56CB0055800E /* Document 3.xcdatamodel */,
 				D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */,
 				D8A145971639AD1900DCB3A2 /* Document.xcdatamodel */,
 			);
-			currentVersion = D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */;
+			currentVersion = D8BD7953169B56CB0055800E /* Document 3.xcdatamodel */;
 			path = Document.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

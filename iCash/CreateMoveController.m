@@ -34,7 +34,7 @@
             [transaction setSource:source];
             [transaction setName:@"-->"];
             [transaction setDate:[_datePicker dateValue]];
-            [transaction setValue:[NSNumber numberWithDouble:[_value doubleValue]]];
+            [transaction setValue:[NSNumber numberWithInt:([_value doubleValue] * 100)]];
         } else {
             //TODO show error
             return;
