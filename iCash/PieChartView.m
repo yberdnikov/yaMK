@@ -13,22 +13,8 @@
 
 
 //#### utility code
-//#define PI 3.14159265358979323846
 
 static inline double radians(double degrees) { return degrees * M_PI / 180; }
-
-static void
-drawAnX(CGContextRef gc)
-{
-    CGPoint p;
-    
-    p = CGContextGetPathCurrentPoint(gc);
-    CGContextMoveToPoint(gc, p.x + 3, p.y + 3);
-    CGContextAddLineToPoint(gc, p.x - 3, p.y - 3);
-    CGContextMoveToPoint(gc, p.x + 3, p.y - 3);
-    CGContextAddLineToPoint(gc, p.x - 3, p.y + 3);
-    CGContextStrokePath(gc);
-}
 
 @implementation PieChartView
 
@@ -89,13 +75,24 @@ drawAnX(CGContextRef gc)
         double perc = [[[data valueForKey:name] valueForKey:@"value"] doubleValue];
         endAngle = startAngle + 360 * perc;
         Account *a = [[data valueForKey:name] valueForKey:@"account"];
-        CGContextSetRGBFillColor(context, [[a colorRed] doubleValue], [[a colorGreen] doubleValue], [[a colorBlue] doubleValue], 1);
-        CGContextAddArc(context, centerX, centerY, radius, radians(startAngle), radians(endAngle), 0);
-        CGContextAddLineToPoint(context, centerX, centerY);
-        CGContextFillPath(context);
+        CGColorRef color = [a color].CGColor;
+        //draw sector
+        [self drawSectorWithContext:context centerX:centerX centerY:centerY radius:radius startAngle:startAngle endAngle:endAngle color:color];
+        if (perc > 0.05) {
+            //draw comment
+            [self drawSectorTitleWithContext:context
+                                     centerX:centerX
+                                     centerY:centerY
+                                      radius:radius
+                                  startAngle:startAngle
+                                    endAngle:endAngle
+                                     percent:perc
+                                       title:name
+                                        rect:pageRect];
+        }
         startAngle = endAngle;
     }
-        
+    
     CGContextSaveGState(context);
     
     CGContextRestoreGState(context);
@@ -104,5 +101,96 @@ drawAnX(CGContextRef gc)
     
     CGContextFlush(context);
 }
+
+- (void) drawSectorWithContext:(CGContextRef)context
+                       centerX:(double)centerX
+                       centerY:(double)centerY
+                        radius:(double)radius
+                    startAngle:(double)startAngle
+                      endAngle:(double)endAngle
+                         color:(CGColorRef)color
+                      {
+    CGContextSetFillColorWithColor(context, color);
+    CGContextAddArc(context, centerX, centerY, radius, radians(startAngle), radians(endAngle), 0);
+    CGContextAddLineToPoint(context, centerX, centerY);
+    CGContextFillPath(context);
+}
+
+- (void) drawSectorTitleWithContext:(CGContextRef)context
+                            centerX:(double)centerX
+                            centerY:(double)centerY
+                             radius:(double)radius
+                         startAngle:(double)startAngle
+                           endAngle:(double)endAngle
+                            percent:(double)perc
+                              title:(NSString *)name
+                               rect:(CGRect)rect
+{
+    double pointCenX = centerX + (radius / 2) * cos(radians(startAngle + 360 * perc / 2));
+    double pointCenY = centerY + (radius / 2) * sin(radians(startAngle + 360 * perc / 2));
+    CGContextSetRGBFillColor(context, 0, 0, 0, 1);
+    CGContextAddArc(context, pointCenX, pointCenY, 2, 0, 2*M_PI, 1);
+    CGContextFillPath(context);
+    double lineEndX = centerX + (radius * 1.2) * cos(radians(startAngle + 360 * perc / 2));
+    double lineEndY = centerY + (radius * 1.2) * sin(radians(startAngle + 360 * perc / 2));
+    CGContextMoveToPoint(context, pointCenX, pointCenY);
+    CGContextAddLineToPoint(context, lineEndX, lineEndY);
+    
+    NSMutableString *labelText = [NSMutableString stringWithString:name];
+    [labelText appendString:@" "];
+    [labelText appendString:[[NSNumber numberWithInt:(perc * 100)] stringValue]];
+    [labelText appendString:@"%"];
+    BOOL moveLeft = NO;
+    if (lineEndX < centerX) {
+        moveLeft = YES;
+    }
+    CGRect textRect = [self drawText: context rect:rect pointX:lineEndX + 1 pointY:lineEndY + 6 text:labelText moveLeft:moveLeft];
+    
+    if (moveLeft) {
+        CGContextAddLineToPoint(context, lineEndX - textRect.size.width, lineEndY);
+    } else {
+        CGContextAddLineToPoint(context, lineEndX + textRect.size.width, lineEndY);
+    }
+    CGContextStrokePath(context);
+}
+
+- (CGRect) drawText:(CGContextRef)context
+             rect:(CGRect)contextRect
+           pointX:(CGFloat)pointX
+           pointY:(CGFloat)pointY
+             text:(NSString *)text
+         moveLeft:(BOOL)move
+{
+    // Prepare font
+    CTFontRef font = CTFontCreateWithName(CFSTR("Times"), 18, NULL);
+    
+    // Create an attributed string
+    CFStringRef keys[] = { kCTFontAttributeName };
+    CFTypeRef values[] = { font };
+    CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
+                                              sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    CFStringRef str = (__bridge CFStringRef)text;
+    CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, str, attr);
+    CFRelease(attr);
+    
+    // Draw the string
+    CTLineRef line = CTLineCreateWithAttributedString(attrString);
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);  //Use this one when using standard view coordinates
+    //CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0)); //Use this one if the view's coordinates are flipped
+    CGRect lineBounds = CTLineGetImageBounds(line, context);
+    if (move) {
+        CGContextSetTextPosition(context, pointX - lineBounds.size.width, pointY);
+    } else {
+        CGContextSetTextPosition(context, pointX, pointY);
+    }
+    CTLineDraw(line, context);
+        
+    // Clean up
+    CFRelease(line);
+    CFRelease(attrString);
+    CFRelease(font);
+    return lineBounds;
+}
+
 
 @end
