@@ -1462,6 +1462,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<reference key="NSTextColor" ref="17285371"/>
 							<int key="NSVisibleItemCount">5</int>
 							<bool key="NSHasVerticalScroller">YES</bool>
+							<bool key="NSCompletes">YES</bool>
 							<reference key="NSDelegate" ref="1069991576"/>
 							<object class="NSComboTableView" key="NSTableView" id="709232518">
 								<reference key="NSNextResponder"/>
@@ -2032,7 +2033,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomView" id="597691494">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSDatePicker" id="465043422">
@@ -2040,6 +2041,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{271, 78}, {123, 27}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1027497762"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
@@ -2087,6 +2089,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{14, 13}, {383, 32}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="926678857">
@@ -2110,6 +2113,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{20, 48}, {246, 26}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="103269588"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
@@ -2126,6 +2130,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<reference key="NSTextColor" ref="17285371"/>
 							<int key="NSVisibleItemCount">5</int>
 							<bool key="NSHasVerticalScroller">YES</bool>
+							<bool key="NSCompletes">YES</bool>
 							<reference key="NSDelegate" ref="1027497762"/>
 							<object class="NSComboTableView" key="NSTableView" id="483003615">
 								<reference key="NSNextResponder"/>
@@ -2192,6 +2197,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{20, 76}, {246, 26}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="465043422"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
@@ -2208,6 +2214,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<reference key="NSTextColor" ref="17285371"/>
 							<int key="NSVisibleItemCount">5</int>
 							<bool key="NSHasVerticalScroller">YES</bool>
+							<bool key="NSCompletes">YES</bool>
 							<reference key="NSDelegate" ref="346070735"/>
 							<object class="NSComboTableView" key="NSTableView" id="837982385">
 								<reference key="NSNextResponder"/>
@@ -2274,6 +2281,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{271, 50}, {120, 22}}</string>
 						<reference key="NSSuperview" ref="597691494"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="872545422"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
@@ -2330,6 +2338,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					</object>
 				</array>
 				<string key="NSFrameSize">{411, 120}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="346070735"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">NSView</string>
@@ -2669,7 +2679,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 										<int key="NSCellFlags2">-1874851840</int>
 										<string key="NSContents">Table View Cell</string>
 										<reference key="NSSupport" ref="976328701"/>
-										<object class="NSNumberFormatter" key="NSFormatter" id="705842054">
+										<object class="NSNumberFormatter" key="NSFormatter" id="556273309">
 											<dictionary class="NSMutableDictionary" key="NS.attributes">
 												<boolean value="YES" key="allowsFloats"/>
 												<boolean value="YES" key="alwaysShowsDecimalSeparator"/>
@@ -6663,7 +6673,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="objectID">100505</int>
 						<reference key="object" ref="227172878"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="705842054"/>
+							<reference ref="556273309"/>
 						</array>
 						<reference key="parent" ref="611720902"/>
 					</object>
@@ -7654,7 +7664,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">101491</int>
-						<reference key="object" ref="705842054"/>
+						<reference key="object" ref="556273309"/>
 						<reference key="parent" ref="227172878"/>
 					</object>
 				</array>

@@ -141,7 +141,7 @@
         [_volume setDoubleValue:[[t amount] doubleValue]];
         [_price setDoubleValue:[[t value] doubleValue] / 100];
     } else {
-        [_price setDoubleValue:([[t value] doubleValue] /100 / [[t amount] doubleValue] * [_volume doubleValue] / 100)];
+        [_price setDoubleValue:([[t value] doubleValue] /100 / [[t amount] doubleValue] * [_volume doubleValue])];
     }
     
 }
