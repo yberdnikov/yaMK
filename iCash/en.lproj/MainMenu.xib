@@ -1566,7 +1566,6 @@
 							<string key="NSFrameSize">{610, 426}</string>
 							<reference key="NSSuperview" ref="400709471"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">PlotView</string>
 						</object>
@@ -2277,6 +2276,22 @@
 						<reference key="destination" ref="297125105"/>
 					</object>
 					<int key="connectionID">569</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotPieChartBalance:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="65746456"/>
+					</object>
+					<int key="connectionID">570</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotPieChartIncome:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="268445124"/>
+					</object>
+					<int key="connectionID">571</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3710,7 +3725,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">569</int>
+			<int key="maxID">571</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3743,17 +3758,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PlotDiagramController</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">plotPieChartOutcome:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">plotPieChartOutcome:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="plotPieChartBalance:">id</string>
+						<string key="plotPieChartIncome:">id</string>
+						<string key="plotPieChartOutcome:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="plotPieChartBalance:">
+							<string key="name">plotPieChartBalance:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="plotPieChartIncome:">
+							<string key="name">plotPieChartIncome:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="plotPieChartOutcome:">
 							<string key="name">plotPieChartOutcome:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="plotPanel">NSPanel</string>
 						<string key="plotView">PlotView</string>

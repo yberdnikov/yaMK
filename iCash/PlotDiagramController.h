@@ -15,5 +15,7 @@
 @property IBOutlet NSPanel *plotPanel;
 
 -(IBAction)plotPieChartOutcome:(id)sender;
+-(IBAction)plotPieChartIncome:(id)sender;
+-(IBAction)plotPieChartBalance:(id)sender;
 
 @end

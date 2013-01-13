@@ -15,5 +15,7 @@
                      type:(AccountType)type;
 - (Account *) findAccount:(NSString *)name;
 - (NSArray *) findAccounts:(AccountType)type;
+- (NSArray *) findAccounts:(AccountType)type
+                 ascending:(BOOL)asc;
 
 @end

@@ -39,9 +39,13 @@
 		D8DB6FB716A1B11B0009BEAF /* PlotDiagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FB616A1B11B0009BEAF /* PlotDiagramController.m */; };
 		D8DB6FBB16A1B1930009BEAF /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FBA16A1B1930009BEAF /* PlotView.m */; };
 		D8DB6FBE16A1BE4C0009BEAF /* Plotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */; };
+		D8DB6FC516A1D20C0009BEAF /* MaxValueOutcomeAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FC416A1D20C0009BEAF /* MaxValueOutcomeAccounts.m */; };
+		D8DB6FCA16A2A31C0009BEAF /* PieChartAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */; };
+		D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */; };
+		D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */; };
 		D8F4461E1699D80A006CD4C0 /* PieChartPlotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */; };
 		D8F446241699D83D006CD4C0 /* AccountAddColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446211699D83D006CD4C0 /* AccountAddColor.m */; };
-		D8F446251699D83D006CD4C0 /* AllOutcomeAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446231699D83D006CD4C0 /* AllOutcomeAccountsDataSource.m */; };
+		D8F446251699D83D006CD4C0 /* PieChartOutcomeAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */; };
 		D8F446291699D8A1006CD4C0 /* 1-2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8F446281699D8A1006CD4C0 /* 1-2.xcmappingmodel */; };
 		D8F44634169A00EA006CD4C0 /* DataSourceContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F44633169A00EA006CD4C0 /* DataSourceContainer.m */; };
 /* End PBXBuildFile section */
@@ -119,14 +123,22 @@
 		D8DB6FBA16A1B1930009BEAF /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotView.m; sourceTree = "<group>"; };
 		D8DB6FBC16A1BE4C0009BEAF /* Plotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plotter.h; sourceTree = "<group>"; };
 		D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plotter.m; sourceTree = "<group>"; };
+		D8DB6FC316A1D20C0009BEAF /* MaxValueOutcomeAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxValueOutcomeAccounts.h; sourceTree = "<group>"; };
+		D8DB6FC416A1D20C0009BEAF /* MaxValueOutcomeAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaxValueOutcomeAccounts.m; sourceTree = "<group>"; };
+		D8DB6FC816A2A31C0009BEAF /* PieChartAccountsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartAccountsDataSource.h; sourceTree = "<group>"; };
+		D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartAccountsDataSource.m; sourceTree = "<group>"; };
+		D8DB6FCB16A2A4A70009BEAF /* PieChartIncomeAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartIncomeAccounts.h; sourceTree = "<group>"; };
+		D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartIncomeAccounts.m; sourceTree = "<group>"; };
+		D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartBalanceAccounts.h; sourceTree = "<group>"; };
+		D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartBalanceAccounts.m; sourceTree = "<group>"; };
 		D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Document 2.xcdatamodel"; sourceTree = "<group>"; };
 		D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDatasource.h; sourceTree = "<group>"; };
 		D8F4461C1699D80A006CD4C0 /* PieChartPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartPlotter.h; sourceTree = "<group>"; };
 		D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartPlotter.m; sourceTree = "<group>"; };
 		D8F446201699D83D006CD4C0 /* AccountAddColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAddColor.h; sourceTree = "<group>"; };
 		D8F446211699D83D006CD4C0 /* AccountAddColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAddColor.m; sourceTree = "<group>"; };
-		D8F446221699D83D006CD4C0 /* AllOutcomeAccountsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllOutcomeAccountsDataSource.h; sourceTree = "<group>"; };
-		D8F446231699D83D006CD4C0 /* AllOutcomeAccountsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOutcomeAccountsDataSource.m; sourceTree = "<group>"; };
+		D8F446221699D83D006CD4C0 /* PieChartOutcomeAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartOutcomeAccounts.h; sourceTree = "<group>"; };
+		D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartOutcomeAccounts.m; sourceTree = "<group>"; };
 		D8F446281699D8A1006CD4C0 /* 1-2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "1-2.xcmappingmodel"; sourceTree = "<group>"; };
 		D8F44632169A00EA006CD4C0 /* DataSourceContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceContainer.h; sourceTree = "<group>"; };
 		D8F44633169A00EA006CD4C0 /* DataSourceContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceContainer.m; sourceTree = "<group>"; };
@@ -298,11 +310,27 @@
 			name = ManagedObjects;
 			sourceTree = "<group>";
 		};
+		D8DB6FC716A1D2150009BEAF /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				D8F446221699D83D006CD4C0 /* PieChartOutcomeAccounts.h */,
+				D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */,
+				D8DB6FC316A1D20C0009BEAF /* MaxValueOutcomeAccounts.h */,
+				D8DB6FC416A1D20C0009BEAF /* MaxValueOutcomeAccounts.m */,
+				D8DB6FC816A2A31C0009BEAF /* PieChartAccountsDataSource.h */,
+				D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */,
+				D8DB6FCB16A2A4A70009BEAF /* PieChartIncomeAccounts.h */,
+				D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */,
+				D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */,
+				D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
 		D8F4461F1699D817006CD4C0 /* Plotting */ = {
 			isa = PBXGroup;
 			children = (
-				D8F446221699D83D006CD4C0 /* AllOutcomeAccountsDataSource.h */,
-				D8F446231699D83D006CD4C0 /* AllOutcomeAccountsDataSource.m */,
+				D8DB6FC716A1D2150009BEAF /* DataSources */,
 				D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */,
 				D8F4461C1699D80A006CD4C0 /* PieChartPlotter.h */,
 				D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */,
@@ -447,7 +475,7 @@
 				D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */,
 				D8F4461E1699D80A006CD4C0 /* PieChartPlotter.m in Sources */,
 				D8F446241699D83D006CD4C0 /* AccountAddColor.m in Sources */,
-				D8F446251699D83D006CD4C0 /* AllOutcomeAccountsDataSource.m in Sources */,
+				D8F446251699D83D006CD4C0 /* PieChartOutcomeAccounts.m in Sources */,
 				D8F446291699D8A1006CD4C0 /* 1-2.xcmappingmodel in Sources */,
 				D8F44634169A00EA006CD4C0 /* DataSourceContainer.m in Sources */,
 				D8BD7958169B58AC0055800E /* 2-3.xcmappingmodel in Sources */,
@@ -455,6 +483,10 @@
 				D8DB6FB716A1B11B0009BEAF /* PlotDiagramController.m in Sources */,
 				D8DB6FBB16A1B1930009BEAF /* PlotView.m in Sources */,
 				D8DB6FBE16A1BE4C0009BEAF /* Plotter.m in Sources */,
+				D8DB6FC516A1D20C0009BEAF /* MaxValueOutcomeAccounts.m in Sources */,
+				D8DB6FCA16A2A31C0009BEAF /* PieChartAccountsDataSource.m in Sources */,
+				D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */,
+				D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
