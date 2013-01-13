@@ -51,6 +51,7 @@
 @end
 
 typedef enum {
+    Unknown = 0,
     Income = 1,
     Outcome = 2,
     Balance = 3

@@ -37,11 +37,7 @@
     return YES;
 }
 
-- (IBAction)showCreateMove:(id)sender {
-    [_movePanel makeKeyAndOrderFront:sender];
-    [_createMoveCO afterWindowShow:sender];
-//    [[self movePopover] showRelativeToRect:[[moveItem view] visibleRect] ofView:[moveItem view] preferredEdge:NSMaxYEdge];
-}
+
 
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL*)url
                                            ofType:(NSString*)fileType

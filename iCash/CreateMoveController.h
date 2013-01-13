@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BasicTrsansactionController.h"
+#import "TransactionController.h"
 
 @class AccountFinder;
 
-@interface CreateMoveController : NSObject
+@interface CreateMoveController : BasicTrsansactionController<TransactionController>
 
 @property (weak) IBOutlet NSComboBox *sourceAccount;
 @property (weak) IBOutlet NSComboBox *recipientAccount;
@@ -25,5 +27,4 @@
 @property (weak) NSManagedObjectModel *mom;
 
 - (IBAction)createMoveTransaction:(id)sender;
-- (void)afterWindowShow:(id)sender;
 @end

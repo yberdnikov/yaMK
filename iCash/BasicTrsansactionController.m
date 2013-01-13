@@ -32,4 +32,8 @@
     NSLog(@"default implementation, nothing was done!");
 }
 
+-(void)prepareCreation {
+    NSLog(@"default implementation, nothing was done!");
+}
+
 @end

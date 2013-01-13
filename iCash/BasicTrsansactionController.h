@@ -14,5 +14,6 @@
 @interface BasicTrsansactionController : NSObject<TransactionController>
 
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)transaction;
+-(void)prepareCreation;
 
 @end

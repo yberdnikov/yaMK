@@ -73,11 +73,11 @@
         place = [[PlaceOfSpending alloc] initWithEntity:[[_mom entitiesByName] objectForKey:@"PlaceOfSpending"] insertIntoManagedObjectContext:_moc];
         [place setName:name];
     }
-    NSLog(@"place = %@", place);
     return place;
 }
 
-- (void) popoverWillShow:(NSNotification *)notification {
+- (void) prepareCreation {
+    NSLog(@"prepareCreation Begin");
     [self setMom:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel]];
     [self setMoc:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext]];
     
@@ -88,6 +88,7 @@
         
     [self computeFilterPredicate:[_date dateValue]];
     [_nameFieldDelegate setRecipientName:[_recipientAccount name]];
+    NSLog(@"prepareCreation End");
 }
 
 - (void) clearTransactionFields {
@@ -120,6 +121,7 @@
 }
 
 - (void)computeFilterPredicate:(NSDate *) ddate {
+    NSLog(@"computeFilterPredicate Begin");
     NSMutableArray *predicates = [NSMutableArray arrayWithObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[_recipientAccount name]]]];
     if (ddate) {
         NSCalendar *cal = [NSCalendar currentCalendar];
@@ -129,6 +131,7 @@
         [predicates addObject:[NSPredicate predicateWithFormat:@"date == %@" argumentArray:[NSArray arrayWithObject:[cal dateFromComponents:dateComps]]]];
     }
     [_otaController setFetchPredicate: [NSCompoundPredicate andPredicateWithSubpredicates:predicates]];
+        NSLog(@"computeFilterPredicate End");
 }
 
 - (void) datePickerCell:(NSDatePickerCell *)aDatePickerCell validateProposedDateValue:(NSDate *__autoreleasing *)proposedDateValue timeInterval:(NSTimeInterval *)proposedTimeInterval {

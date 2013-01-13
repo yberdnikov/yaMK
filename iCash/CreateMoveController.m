@@ -67,7 +67,7 @@
     }
 }
 
-- (void)afterWindowShow:(id)sender {
+- (void)prepareCreation {
     [self setMom:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel]];
     [self setMoc:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext]];
     [_sourceAccount setStringValue:@""];

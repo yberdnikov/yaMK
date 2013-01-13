@@ -14,7 +14,7 @@
 @class Account;
 @class AccountFinder;
 
-@interface CreateIncomeController : BasicTrsansactionController<NSPopoverDelegate, TransactionController>
+@interface CreateIncomeController : BasicTrsansactionController<TransactionController>
 
 @property (strong) Account *recipientAccount;
 @property NSArray *incomeAccounts;

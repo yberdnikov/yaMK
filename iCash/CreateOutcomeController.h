@@ -14,7 +14,7 @@
 @class Account;
 @class TransactionNameFieldDelegate;
 
-@interface CreateOutcomeController : BasicTrsansactionController<NSPopoverDelegate, NSDatePickerCellDelegate, TransactionController>
+@interface CreateOutcomeController : BasicTrsansactionController<NSDatePickerCellDelegate, TransactionController>
 
 @property (weak) IBOutlet NSTextField *placeOfSpendig;
 @property (weak) IBOutlet NSDatePicker *date;

@@ -4,7 +4,7 @@
         <attribute name="colorBlue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="colorGreen" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="colorRed" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="..." syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="subAccounts" inverseEntity="Account" syncable="YES"/>
         <relationship name="recipientTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="recipient" inverseEntity="Transaction" syncable="YES"/>

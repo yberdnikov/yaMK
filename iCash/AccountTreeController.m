@@ -9,6 +9,7 @@
 #import "AccountTreeController.h"
 #import "CreateIncomeController.h"
 #import "CreateOutcomeController.h"
+#import "ToolbarActionController.h"
 
 @implementation AccountTreeController
 
@@ -69,18 +70,6 @@
             nil];
 }
 
-
-- (IBAction)showAddIncome:(id)sender {
-    [_createIncomeCO setRecipientAccount: [self selectedAccount]];
-    NSLog(@"selected account = %@",[[self selectedAccount] name]);
-    [[self incomePopover] showRelativeToRect:[_outlineView rectOfRow:[_outlineView selectedRow]] ofView:_outlineView preferredEdge:NSMaxXEdge];
-}
-
-- (IBAction)showAddOutcome:(id)sender {
-    [_createOutcomeCO setRecipientAccount:[self selectedAccount]];
-    [[self outcomePopover] showRelativeToRect:[_outlineView rectOfRow:[_outlineView selectedRow]] ofView:_outlineView preferredEdge:NSMaxXEdge];
-}
-
 - (Account *) selectedAccount {
     NSTreeNode *selectedNode;
     NSLog(@"selectedRow = %ld", [_outlineView selectedRow]);
@@ -108,6 +97,11 @@
     Account *account = [self selectedAccount];
     NSLog(@"selection did change account = %@", [account name]);
     [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:account]]];
+    if (account) {
+        [_toolbarActionCO setSelectedAccount:account];
+    } else {
+        [_toolbarActionCO setSelectedAccount:nil];
+    }
 }
 
 - (NSMutableArray *)buildPredicate:(Account *) account {

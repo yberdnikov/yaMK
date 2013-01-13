@@ -58,7 +58,7 @@
     [_transactionValue setStringValue:@""];
 }
 
--(void)popoverWillShow:(NSNotification *)notification {
+-(void)prepareCreation {
     _mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
     _moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
     
