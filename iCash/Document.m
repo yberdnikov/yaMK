@@ -38,8 +38,9 @@
 }
 
 - (IBAction)showCreateMove:(id)sender {
-    NSButton *moveButton = sender;
-    [[self movePopover] showRelativeToRect:[moveButton visibleRect] ofView:sender preferredEdge:NSMaxYEdge];
+    [_movePanel makeKeyAndOrderFront:sender];
+    [_createMoveCO afterWindowShow:sender];
+//    [[self movePopover] showRelativeToRect:[[moveItem view] visibleRect] ofView:[moveItem view] preferredEdge:NSMaxYEdge];
 }
 
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL*)url

@@ -67,7 +67,7 @@
     }
 }
 
-- (void) popoverWillShow:(NSNotification *)notification {
+- (void)afterWindowShow:(id)sender {
     [self setMom:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel]];
     [self setMoc:[[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext]];
     [_sourceAccount setStringValue:@""];

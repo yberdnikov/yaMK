@@ -10,7 +10,7 @@
 
 @class AccountFinder;
 
-@interface CreateMoveController : NSObject<NSPopoverDelegate>
+@interface CreateMoveController : NSObject
 
 @property (weak) IBOutlet NSComboBox *sourceAccount;
 @property (weak) IBOutlet NSComboBox *recipientAccount;
@@ -25,4 +25,5 @@
 @property (weak) NSManagedObjectModel *mom;
 
 - (IBAction)createMoveTransaction:(id)sender;
+- (void)afterWindowShow:(id)sender;
 @end

@@ -18,6 +18,7 @@
 		D8782D7216502604008C3055 /* CreateIncomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D7116502604008C3055 /* CreateIncomeController.m */; };
 		D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF516591762008C3055 /* CreateOutcomeController.m */; };
 		D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF916591B14008C3055 /* AccountFinder.m */; };
+		D898120116A2F7FF0063C91C /* CreateTransactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120016A2F7FF0063C91C /* CreateTransactionController.m */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
@@ -83,6 +84,8 @@
 		D8782DF516591762008C3055 /* CreateOutcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateOutcomeController.m; sourceTree = "<group>"; };
 		D8782DF816591B14008C3055 /* AccountFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountFinder.h; sourceTree = "<group>"; };
 		D8782DF916591B14008C3055 /* AccountFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountFinder.m; sourceTree = "<group>"; };
+		D89811FF16A2F7FF0063C91C /* CreateTransactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTransactionController.h; sourceTree = "<group>"; };
+		D898120016A2F7FF0063C91C /* CreateTransactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTransactionController.m; sourceTree = "<group>"; };
 		D8A136D5168A221000D64A2C /* TransactionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionController.h; sourceTree = "<group>"; };
 		D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTrsansactionController.h; sourceTree = "<group>"; };
 		D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTrsansactionController.m; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
 				D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */,
 				D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */,
+				D89811FF16A2F7FF0063C91C /* CreateTransactionController.h */,
+				D898120016A2F7FF0063C91C /* CreateTransactionController.m */,
 			);
 			name = "Transaction Controllers";
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				D8DB6FCA16A2A31C0009BEAF /* PieChartAccountsDataSource.m in Sources */,
 				D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */,
 				D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */,
+				D898120116A2F7FF0063C91C /* CreateTransactionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

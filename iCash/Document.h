@@ -16,5 +16,6 @@
 - (IBAction)showCreateMove:(id)sender;
 @property (weak) IBOutlet NSPopover *movePopover;
 @property (weak) IBOutlet CreateMoveController *createMoveCO;
+@property (strong) IBOutlet NSPanel *movePanel;
 
 @end
