@@ -41,27 +41,27 @@
     
 }
 
-- (double) valueSum {
+- (NSInteger) valueSum {
     NSLog(@"[ account %@", [self name]);
-    double income = 0;
-    double outcome = 0;
+    NSInteger income = 0;
+    NSInteger outcome = 0;
     
     if ([[self type] intValue] == Balance) {
-        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
-        outcome = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
+        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] integerValue];
+        outcome = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] integerValue];
         NSLog(@"Balance");
-        NSLog(@"income = %f", income);
-        NSLog(@"outcome = %f", outcome);
+        NSLog(@"income = %lu", income);
+        NSLog(@"outcome = %lu", outcome);
     } else if ([[self type] intValue] == Outcome) {
-        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
+        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] integerValue];
         NSLog(@"Outcome");
-        NSLog(@"income = %f", income);
-        NSLog(@"outcome = %f", outcome);
+        NSLog(@"income = %lu", income);
+        NSLog(@"outcome = %lu", outcome);
     } else if ([[self type] intValue] == Income) {
-        income = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] doubleValue];
+        income = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] integerValue];
         NSLog(@"Income");
-        NSLog(@"income = %f", income);
-        NSLog(@"outcome = %f", outcome);
+        NSLog(@"income = %lu", income);
+        NSLog(@"outcome = %lu", outcome);
     }
     double result = 0;
     for (Account *child in [self subAccounts]) {
@@ -71,7 +71,7 @@
     return result + (income - outcome);
 }
 
-- (void) setValueSum:(double)value {
+- (void) setValueSum:(NSInteger)value {
     
 }
 

@@ -43,8 +43,8 @@
 
 - (NSImage *) typeImage;
 - (void) setTypeImage:(NSImage *)image;
-- (double) valueSum;
-- (void) setValueSum:(double)value;
+- (NSInteger) valueSum;
+- (void) setValueSum:(NSInteger)value;
 - (NSColor *) color;
 - (void) setColor:(NSColor *)color;
 

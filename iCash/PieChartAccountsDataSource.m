@@ -33,11 +33,14 @@
         }
         for (Account *account in accounts) {
             if (![[account parent] parent] && [account parent]) {
-                double percentVal = [account valueSum] / sum;
-                DataSourceContainer *cont = [[DataSourceContainer alloc] init];
-                [cont setColor:[account color]];
-                [cont setValue:percentVal];
-                [result setObject:cont forKey:[account name]];
+                NSInteger valueSum = [account valueSum];
+                if (valueSum != 0) {
+                    double percentVal = valueSum / sum;
+                    DataSourceContainer *cont = [[DataSourceContainer alloc] init];
+                    [cont setColor:[account color]];
+                    [cont setValue:percentVal];
+                    [result setObject:cont forKey:[account name]];
+                }
             }
         }
         [self setData:result];
