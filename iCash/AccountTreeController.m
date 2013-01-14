@@ -65,9 +65,7 @@
 
 - (NSArray *)sortDescriptors {
     NSLog(@"get sort descriptor");
-    return [NSArray arrayWithObjects:
-            [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],
-            nil];
+    return [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 }
 
 - (Account *) selectedAccount {
@@ -90,7 +88,7 @@
 }
 
 - (NSArray *)transactionsSortDescriptors {
-    return [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];;
+    return [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];
 }
 
 - (void)selectionDidChange:(NSNotification *)notification {

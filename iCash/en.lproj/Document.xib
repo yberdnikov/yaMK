@@ -226,7 +226,7 @@
 							</object>
 						</object>
 					</dictionary>
-					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
+					<array key="NSToolbarIBAllowedItems">
 						<reference ref="22851964"/>
 						<reference ref="1066963983"/>
 						<reference ref="314110870"/>
@@ -1055,7 +1055,9 @@
 			<object class="NSArrayController" id="768875293">
 				<bool key="NSEditable">YES</bool>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
-				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
+				<object class="_NSManagedProxy" key="_NSManagedProxy">
+					<string key="NSEntityName">PlaceOfSpending</string>
+				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
