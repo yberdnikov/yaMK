@@ -89,12 +89,17 @@
 
 - (NSArray *)transactionsSortDescriptors {
     return [NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], nil];
+    return nil;
 }
 
 - (void)selectionDidChange:(NSNotification *)notification {
     Account *account = [self selectedAccount];
     NSLog(@"selection did change account = %@", [account name]);
-    [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:account]]];
+    if (account) {
+        [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:account]]];
+    } else {
+        [_selectedAccountArrC setFilterPredicate:nil];
+    }
     if (account) {
         [_toolbarActionCO setSelectedAccount:account];
     } else {
@@ -104,6 +109,7 @@
 
 - (NSMutableArray *)buildPredicate:(Account *) account {
     NSMutableArray *predicates = [NSMutableArray array];
+    
     if ([[account type] intValue] == Balance) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
         [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
@@ -118,4 +124,28 @@
     return predicates;
 }
 
+- (NSArray *)transactionPredicate {
+    Account *account = [self selectedAccount];
+    NSMutableArray *predicates = [NSMutableArray array];
+    if (account) {
+        if ([[account type] intValue] == Balance) {
+            [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+            [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+        } else if ([[account type] intValue] == Outcome) {
+            [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+        } else if ([[account type] intValue] == Income) {
+            [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
+        }
+        for (Account *child in [account subAccounts]) {
+            [predicates addObjectsFromArray:[self buildPredicate:child]];
+        }
+    } else {
+        return nil;
+    }
+    return predicates;
+}
+
+- (void)setTransactionPredicate:(NSArray *)arr {
+    
+}
 @end

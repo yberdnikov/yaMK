@@ -11,7 +11,7 @@
 
 @class CreateIncomeController;
 @class CreateOutcomeController;
-@class ToolbarActionController; 
+@class ToolbarActionController;
 
 @interface AccountTreeController : NSTreeController 
 
@@ -23,13 +23,12 @@
 - (IBAction)removeAccount:(id)sender;
 - (Account *)selectedAccount;
 - (void)selectionDidChange:(NSNotification *)notification;
+- (NSArray *)transactionPredicate;
+- (void)setTransactionPredicate:(NSArray *)arr;
 
 @property (weak) IBOutlet ToolbarActionController *toolbarActionCO;
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
-@property (weak) IBOutlet CreateOutcomeController *createOutcomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
-@property (weak) IBOutlet NSPopover *incomePopover;
-@property (weak) IBOutlet NSPopover *outcomePopover;
 @property (weak) IBOutlet NSArrayController *selectedAccountArrC;
 @property (weak) NSArray *transactionsSortDescriptors;
 

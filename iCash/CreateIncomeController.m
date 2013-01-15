@@ -47,7 +47,7 @@
     }
     [income setRecipient:[self recipientAccount]];
     [income setDate:[_transactionDate dateValue]];
-    [income setValue:[NSNumber numberWithInt:([_transactionValue doubleValue] * 100)]];
+    [income setValue:[NSNumber numberWithUnsignedInteger:([_transactionValue doubleValue] * 100)]];
     [self resetFields];
     
 }
