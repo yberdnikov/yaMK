@@ -53,7 +53,9 @@
     [newAccount setParent:[self selectedAccount]];
     [newAccount setType:[NSNumber numberWithInt:t]];
     [newAccount setTypeImage:[newAccount typeImage]];
-    
+    [newAccount setColorRed:[NSNumber numberWithDouble:((double)arc4random() / 0x100000000)]];
+    [newAccount setColorGreen:[NSNumber numberWithDouble:((double)arc4random() / 0x100000000)]];
+    [newAccount setColorBlue:[NSNumber numberWithDouble:((double)arc4random() / 0x100000000)]];
 }
 
 - (IBAction)removeAccount:(id)sender {

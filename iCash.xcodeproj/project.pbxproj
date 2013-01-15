@@ -19,6 +19,7 @@
 		D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF516591762008C3055 /* CreateOutcomeController.m */; };
 		D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF916591B14008C3055 /* AccountFinder.m */; };
 		D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* ToolbarActionController.m */; };
+		D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
@@ -86,6 +87,8 @@
 		D8782DF916591B14008C3055 /* AccountFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountFinder.m; sourceTree = "<group>"; };
 		D898120516A32D5E0063C91C /* ToolbarActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarActionController.h; sourceTree = "<group>"; };
 		D898120616A32D5E0063C91C /* ToolbarActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarActionController.m; sourceTree = "<group>"; };
+		D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStandardAccountStructure.h; sourceTree = "<group>"; };
+		D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStandardAccountStructure.m; sourceTree = "<group>"; };
 		D8A136D5168A221000D64A2C /* TransactionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionController.h; sourceTree = "<group>"; };
 		D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTrsansactionController.h; sourceTree = "<group>"; };
 		D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTrsansactionController.m; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 		D898120816A32D8D0063C91C /* Transformations */ = {
 			isa = PBXGroup;
 			children = (
+				D8F446201699D83D006CD4C0 /* AccountAddColor.h */,
+				D8F446211699D83D006CD4C0 /* AccountAddColor.m */,
 				D8F446281699D8A1006CD4C0 /* 1-2.xcmappingmodel */,
 				D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */,
 				D8BD7959169B5AF70055800E /* PriceValueTransformer.h */,
@@ -249,8 +254,6 @@
 		D8A145811639AD1900DCB3A2 /* iCash */ = {
 			isa = PBXGroup;
 			children = (
-				D8F446201699D83D006CD4C0 /* AccountAddColor.h */,
-				D8F446211699D83D006CD4C0 /* AccountAddColor.m */,
 				D8F4461F1699D817006CD4C0 /* Plotting */,
 				D8A145B516404FBC00DCB3A2 /* ManagedObjects */,
 				D8A1458D1639AD1900DCB3A2 /* Document.h */,
@@ -273,6 +276,8 @@
 				D898120516A32D5E0063C91C /* ToolbarActionController.h */,
 				D898120616A32D5E0063C91C /* ToolbarActionController.m */,
 				D898120816A32D8D0063C91C /* Transformations */,
+				D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */,
+				D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 				D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */,
 				D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */,
 				D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */,
+				D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
