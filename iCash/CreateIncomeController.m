@@ -65,6 +65,7 @@
     [self setConsider:YES];
     [_transactionDate setDateValue:[NSDate date]];
     [_createButton setKeyEquivalent:@"\r"];
+    [_incomeAccountsAC rearrangeObjects];
 }
 
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)t {

@@ -76,5 +76,6 @@
     [[_sourceAccount window] makeFirstResponder:_sourceAccount];
     [_moveButton setKeyEquivalent:@"\r"];
     [_datePicker setDateValue:[NSDate date]];
+    [_balanceAccountsAC rearrangeObjects];
 }
 @end

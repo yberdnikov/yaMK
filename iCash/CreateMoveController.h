@@ -22,6 +22,7 @@
 @property (weak) IBOutlet NSButton *moveButton;
 @property (weak) IBOutlet AccountFinder *accountFinder;
 @property (weak) IBOutlet NSDatePicker *datePicker;
+@property (weak) IBOutlet NSArrayController *balanceAccountsAC;
 
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;
