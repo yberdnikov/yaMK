@@ -35,7 +35,7 @@
         //TODO show error
         return;
     }
-    [self clearTransactionFields];
+    [self resetFields];
     [self computeFilterPredicate:[_date dateValue]];
     [[_name window] makeFirstResponder:_name];
 }
@@ -89,10 +89,11 @@
     [self computeFilterPredicate:[_date dateValue]];
     [_nameFieldDelegate setRecipientName:[_recipientAccount name]];
     [_balanceAccountsAC rearrangeObjects];
+    [self resetFields];
     NSLog(@"prepareCreation End");
 }
 
-- (void) clearTransactionFields {
+- (void) resetFields {
     [_amount setStringValue:@""];
     [_volume setStringValue:@""];
     [_name setStringValue:@""];

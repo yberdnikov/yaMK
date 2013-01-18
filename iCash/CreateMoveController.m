@@ -43,11 +43,11 @@
         //TODO show error
         return;
     }
-    [self clearTransactionFields];
+    [self resetFields];
     [[_sourceAccount window] makeFirstResponder:_sourceAccount];
 }
 
-- (void) clearTransactionFields {
+- (void) resetFields {
     [self setDate:[NSDate date]];
     [_sourceAccount setStringValue:@""];
     [_recipientAccount setStringValue:@""];
@@ -77,5 +77,6 @@
     [_moveButton setKeyEquivalent:@"\r"];
     [_datePicker setDateValue:[NSDate date]];
     [_balanceAccountsAC rearrangeObjects];
+    [self resetFields];
 }
 @end
