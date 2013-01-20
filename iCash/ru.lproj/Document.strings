@@ -1,0 +1,237 @@
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "5"; */
+"5.title" = "Window";
+
+/* Class = "NSMenu"; title = "Accounts Menu"; ObjectID = "100367"; */
+"100367.title" = "Меню Счетов";
+
+/* Class = "NSMenuItem"; title = "Create Income Account"; ObjectID = "100368"; */
+"100368.title" = "Создать Входящий Счет";
+
+/* Class = "NSMenuItem"; title = "Create Outcome Account"; ObjectID = "100369"; */
+"100369.title" = "Создать Исходящий Счет";
+
+/* Class = "NSMenuItem"; title = "Create Balance Account"; ObjectID = "100370"; */
+"100370.title" = "Создать Балансный Счет";
+
+/* Class = "NSMenuItem"; title = "Remove"; ObjectID = "100519"; */
+"100519.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Create"; ObjectID = "100624"; */
+"100624.title" = "Создать";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Value"; ObjectID = "100626"; */
+"100626.placeholderString" = "Value";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Description"; ObjectID = "100628"; */
+"100628.placeholderString" = "Описание";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "100629"; */
+"100629.placeholderString" = "Исходящий Счет";
+
+/* Class = "NSButtonCell"; title = "Consider"; ObjectID = "100835"; */
+"100835.title" = "Учитывать";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Description"; ObjectID = "100858"; */
+"100858.ibShadowedToolTip" = "Описание";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Price"; ObjectID = "100859"; */
+"100859.ibShadowedToolTip" = "Цена";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Amount"; ObjectID = "100861"; */
+"100861.ibShadowedToolTip" = "Количество";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Source Account"; ObjectID = "100864"; */
+"100864.ibShadowedToolTip" = "Исходящий Счет";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "100866"; */
+"100866.placeholderString" = "Исходящий Счет";
+
+/* Class = "NSButtonCell"; title = "Remove"; ObjectID = "100867"; */
+"100867.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Create"; ObjectID = "100869"; */
+"100869.title" = "Создать";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Amount"; ObjectID = "100871"; */
+"100871.placeholderString" = "Количество";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Price"; ObjectID = "100875"; */
+"100875.placeholderString" = "Цена";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Description"; ObjectID = "100877"; */
+"100877.placeholderString" = "Описание";
+
+/* Class = "NSTableColumn"; headerCell.title = "Price"; ObjectID = "100883"; */
+"100883.headerCell.title" = "Цена";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "100884"; */
+"100884.headerCell.title" = "Описание";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "100885"; */
+"100885.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "100886"; */
+"100886.title" = "Text Cell";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Place of Spending"; ObjectID = "100978"; */
+"100978.ibShadowedToolTip" = "Место Затрат";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Place of Spending"; ObjectID = "100979"; */
+"100979.placeholderString" = "Место Затрат";
+
+/* Class = "NSDatePicker"; ibShadowedToolTip = "Date of Spending"; ObjectID = "100985"; */
+"100985.ibShadowedToolTip" = "Дата Затрат";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Volume"; ObjectID = "101038"; */
+"101038.ibShadowedToolTip" = "Объем";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Volume"; ObjectID = "101039"; */
+"101039.placeholderString" = "Объем";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101070"; */
+"101070.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101074"; */
+"101074.title" = "Table View Cell";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "101109"; */
+"101109.placeholderString" = "Исходящий Счет";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Value"; ObjectID = "101113"; */
+"101113.placeholderString" = "Value";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Recipient Account"; ObjectID = "101200"; */
+"101200.placeholderString" = "Получающий Счет";
+
+/* Class = "NSButtonCell"; title = "Move"; ObjectID = "101214"; */
+"101214.title" = "Переместить";
+
+/* Class = "NSTextFieldCell"; title = "From Date"; ObjectID = "101542"; */
+"101542.title" = "От Даты";
+
+/* Class = "NSTextFieldCell"; title = "To Date"; ObjectID = "101546"; */
+"101546.title" = "До Даты";
+
+/* Class = "NSPanel"; title = "Filters"; ObjectID = "101627"; */
+"101627.title" = "Фильтры";
+
+/* Class = "NSButtonCell"; title = "Plot"; ObjectID = "101645"; */
+"101645.title" = "Нарисовать";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "101716"; */
+"101716.headerCell.title" = "Описание";
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101717"; */
+"101717.headerCell.title" = "Цена";
+
+/* Class = "NSTableColumn"; headerCell.title = "Source"; ObjectID = "101718"; */
+"101718.headerCell.title" = "Источник";
+
+/* Class = "NSTableColumn"; headerCell.title = "Date"; ObjectID = "101719"; */
+"101719.headerCell.title" = "Дата";
+
+/* Class = "NSTableColumn"; headerCell.title = "Recipient"; ObjectID = "101720"; */
+"101720.headerCell.title" = "Получатель";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101721"; */
+"101721.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101733"; */
+"101733.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101734"; */
+"101734.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101740"; */
+"101740.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101743"; */
+"101743.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101751"; */
+"101751.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101756"; */
+"101756.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101762"; */
+"101762.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101765"; */
+"101765.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101771"; */
+"101771.title" = "Table View Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Account"; ObjectID = "101776"; */
+"101776.headerCell.title" = "Счет";
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101777"; */
+"101777.headerCell.title" = "Сумма";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101778"; */
+"101778.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101784"; */
+"101784.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101786"; */
+"101786.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Account Name"; ObjectID = "101799"; */
+"101799.title" = "Название Счета";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Create Transaction"; ObjectID = "101844"; */
+"101844.paletteLabel" = "Создать Транзакцию";
+
+/* Class = "NSToolbarItem"; toolTip = "Create Transaction"; ObjectID = "101844"; */
+"101844.toolTip" = "Создать Транзакцию";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Move Funds"; ObjectID = "101846"; */
+"101846.paletteLabel" = "Переместить Средства";
+
+/* Class = "NSToolbarItem"; toolTip = "Move Funds"; ObjectID = "101846"; */
+"101846.toolTip" = "Переместить Средства";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Remove Transaction"; ObjectID = "101847"; */
+"101847.paletteLabel" = "Удалить Транзакцию";
+
+/* Class = "NSToolbarItem"; toolTip = "Remove Transaction"; ObjectID = "101847"; */
+"101847.toolTip" = "Удалить Транзакцию";
+
+/* Class = "NSPanel"; title = "Move Funds"; ObjectID = "101856"; */
+"101856.title" = "Переместить Средства";
+
+/* Class = "NSPanel"; title = "Create Outcome"; ObjectID = "101883"; */
+"101883.title" = "Создать Расход";
+
+/* Class = "NSPanel"; title = "Create Income"; ObjectID = "101924"; */
+"101924.title" = "Создать Приход";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Place of Spending"; ObjectID = "101996"; */
+"101996.ibShadowedToolTip" = "Место Затрат";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Source Account"; ObjectID = "102002"; */
+"102002.ibShadowedToolTip" = "Исходящий Счет";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Recepient Account"; ObjectID = "102008"; */
+"102008.ibShadowedToolTip" = "Получающий Счет";
+
+/* Class = "NSTextFieldCell"; title = "->"; ObjectID = "102016"; */
+"102016.title" = "->";
+
+/* Class = "NSDatePicker"; ibShadowedToolTip = "Date of Spending"; ObjectID = "102031"; */
+"102031.ibShadowedToolTip" = "Дата Затрат";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Description"; ObjectID = "102048"; */
+"102048.ibShadowedToolTip" = "Описание";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Volume"; ObjectID = "102054"; */
+"102054.ibShadowedToolTip" = "Объем";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Price"; ObjectID = "102064"; */
+"102064.ibShadowedToolTip" = "Цена";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "102209"; */
+"102209.title" = "Сохранить";

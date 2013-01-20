@@ -1,0 +1,237 @@
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "5"; */
+"5.title" = "Window";
+
+/* Class = "NSMenu"; title = "Accounts Menu"; ObjectID = "100367"; */
+"100367.title" = "Accounts Menu";
+
+/* Class = "NSMenuItem"; title = "Create Income Account"; ObjectID = "100368"; */
+"100368.title" = "Create Income Account";
+
+/* Class = "NSMenuItem"; title = "Create Outcome Account"; ObjectID = "100369"; */
+"100369.title" = "Create Outcome Account";
+
+/* Class = "NSMenuItem"; title = "Create Balance Account"; ObjectID = "100370"; */
+"100370.title" = "Create Balance Account";
+
+/* Class = "NSMenuItem"; title = "Remove"; ObjectID = "100519"; */
+"100519.title" = "Remove";
+
+/* Class = "NSButtonCell"; title = "Create"; ObjectID = "100624"; */
+"100624.title" = "Create";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Value"; ObjectID = "100626"; */
+"100626.placeholderString" = "Value";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Description"; ObjectID = "100628"; */
+"100628.placeholderString" = "Description";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "100629"; */
+"100629.placeholderString" = "Source Account";
+
+/* Class = "NSButtonCell"; title = "Consider"; ObjectID = "100835"; */
+"100835.title" = "Consider";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Description"; ObjectID = "100858"; */
+"100858.ibShadowedToolTip" = "Description";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Price"; ObjectID = "100859"; */
+"100859.ibShadowedToolTip" = "Price";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Amount"; ObjectID = "100861"; */
+"100861.ibShadowedToolTip" = "Amount";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Source Account"; ObjectID = "100864"; */
+"100864.ibShadowedToolTip" = "Source Account";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "100866"; */
+"100866.placeholderString" = "Source Account";
+
+/* Class = "NSButtonCell"; title = "Remove"; ObjectID = "100867"; */
+"100867.title" = "Remove";
+
+/* Class = "NSButtonCell"; title = "Create"; ObjectID = "100869"; */
+"100869.title" = "Create";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Amount"; ObjectID = "100871"; */
+"100871.placeholderString" = "Amount";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Price"; ObjectID = "100875"; */
+"100875.placeholderString" = "Price";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Description"; ObjectID = "100877"; */
+"100877.placeholderString" = "Description";
+
+/* Class = "NSTableColumn"; headerCell.title = "Price"; ObjectID = "100883"; */
+"100883.headerCell.title" = "Price";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "100884"; */
+"100884.headerCell.title" = "Description";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "100885"; */
+"100885.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "100886"; */
+"100886.title" = "Text Cell";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Place of Spending"; ObjectID = "100978"; */
+"100978.ibShadowedToolTip" = "Place of Spending";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Place of Spending"; ObjectID = "100979"; */
+"100979.placeholderString" = "Place of Spending";
+
+/* Class = "NSDatePicker"; ibShadowedToolTip = "Date of Spending"; ObjectID = "100985"; */
+"100985.ibShadowedToolTip" = "Date of Spending";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Volume"; ObjectID = "101038"; */
+"101038.ibShadowedToolTip" = "Volume";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Volume"; ObjectID = "101039"; */
+"101039.placeholderString" = "Volume";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101070"; */
+"101070.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101074"; */
+"101074.title" = "Table View Cell";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Source Account"; ObjectID = "101109"; */
+"101109.placeholderString" = "Source Account";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Value"; ObjectID = "101113"; */
+"101113.placeholderString" = "Value";
+
+/* Class = "NSComboBoxCell"; placeholderString = "Recipient Account"; ObjectID = "101200"; */
+"101200.placeholderString" = "Recipient Account";
+
+/* Class = "NSButtonCell"; title = "Move"; ObjectID = "101214"; */
+"101214.title" = "Move";
+
+/* Class = "NSTextFieldCell"; title = "From Date"; ObjectID = "101542"; */
+"101542.title" = "From Date";
+
+/* Class = "NSTextFieldCell"; title = "To Date"; ObjectID = "101546"; */
+"101546.title" = "To Date";
+
+/* Class = "NSPanel"; title = "Filters"; ObjectID = "101627"; */
+"101627.title" = "Filters";
+
+/* Class = "NSButtonCell"; title = "Plot"; ObjectID = "101645"; */
+"101645.title" = "Plot";
+
+/* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "101716"; */
+"101716.headerCell.title" = "Description";
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101717"; */
+"101717.headerCell.title" = "Price";
+
+/* Class = "NSTableColumn"; headerCell.title = "Source"; ObjectID = "101718"; */
+"101718.headerCell.title" = "Source";
+
+/* Class = "NSTableColumn"; headerCell.title = "Date"; ObjectID = "101719"; */
+"101719.headerCell.title" = "Date";
+
+/* Class = "NSTableColumn"; headerCell.title = "Recipient"; ObjectID = "101720"; */
+"101720.headerCell.title" = "Recipient";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101721"; */
+"101721.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101733"; */
+"101733.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101734"; */
+"101734.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101740"; */
+"101740.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101743"; */
+"101743.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101751"; */
+"101751.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101756"; */
+"101756.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101762"; */
+"101762.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101765"; */
+"101765.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101771"; */
+"101771.title" = "Table View Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "Account"; ObjectID = "101776"; */
+"101776.headerCell.title" = "Account";
+
+/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101777"; */
+"101777.headerCell.title" = "Sum";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101778"; */
+"101778.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "101784"; */
+"101784.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101786"; */
+"101786.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Account Name"; ObjectID = "101799"; */
+"101799.title" = "Account Name";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Create Transaction"; ObjectID = "101844"; */
+"101844.paletteLabel" = "Create Transaction";
+
+/* Class = "NSToolbarItem"; toolTip = "Create Transaction"; ObjectID = "101844"; */
+"101844.toolTip" = "Create Transaction";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Move Funds"; ObjectID = "101846"; */
+"101846.paletteLabel" = "Move Funds";
+
+/* Class = "NSToolbarItem"; toolTip = "Move Funds"; ObjectID = "101846"; */
+"101846.toolTip" = "Move Funds";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Remove Transaction"; ObjectID = "101847"; */
+"101847.paletteLabel" = "Remove Transaction";
+
+/* Class = "NSToolbarItem"; toolTip = "Remove Transaction"; ObjectID = "101847"; */
+"101847.toolTip" = "Remove Transaction";
+
+/* Class = "NSPanel"; title = "Move Funds"; ObjectID = "101856"; */
+"101856.title" = "Move Funds";
+
+/* Class = "NSPanel"; title = "Create Outcome"; ObjectID = "101883"; */
+"101883.title" = "Create Outcome";
+
+/* Class = "NSPanel"; title = "Create Income"; ObjectID = "101924"; */
+"101924.title" = "Create Income";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Place of Spending"; ObjectID = "101996"; */
+"101996.ibShadowedToolTip" = "Place of Spending";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Source Account"; ObjectID = "102002"; */
+"102002.ibShadowedToolTip" = "Source Account";
+
+/* Class = "NSComboBox"; ibShadowedToolTip = "Recepient Account"; ObjectID = "102008"; */
+"102008.ibShadowedToolTip" = "Recepient Account";
+
+/* Class = "NSTextFieldCell"; title = "->"; ObjectID = "102016"; */
+"102016.title" = "->";
+
+/* Class = "NSDatePicker"; ibShadowedToolTip = "Date of Spending"; ObjectID = "102031"; */
+"102031.ibShadowedToolTip" = "Date of Spending";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Description"; ObjectID = "102048"; */
+"102048.ibShadowedToolTip" = "Description";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Volume"; ObjectID = "102054"; */
+"102054.ibShadowedToolTip" = "Volume";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Price"; ObjectID = "102064"; */
+"102064.ibShadowedToolTip" = "Price";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "102209"; */
+"102209.title" = "Save";
