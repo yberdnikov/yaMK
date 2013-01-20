@@ -77,12 +77,10 @@
 		D85F1E7516AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D85F1E7616AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D85F1E7716AC5CC00015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D85F1E8416AC5D570015ABCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
-		D85F1E8516AC5D570015ABCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D85F1E8716AC5D6F0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Document.strings; sourceTree = "<group>"; };
-		D85F1E8816AC5D750015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Document.strings; sourceTree = "<group>"; };
-		D85F1E8A16AC5D790015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		D85F1E8B16AC5D800015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		D85F1E8C16AC722C0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D85F1E8D16AC722C0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D85F1E8E16AC722C0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
+		D85F1E8F16AC722C0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/Document.xib; sourceTree = "<group>"; };
 		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		D8782D3A1647ED66008C3055 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		D8782D3C1647ED67008C3055 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -565,9 +563,8 @@
 		D8A145901639AD1900DCB3A2 /* Document.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D85F1E8416AC5D570015ABCF /* Base */,
-				D85F1E8716AC5D6F0015ABCF /* en */,
-				D85F1E8816AC5D750015ABCF /* ru */,
+				D85F1E8E16AC722C0015ABCF /* en */,
+				D85F1E8F16AC722C0015ABCF /* ru */,
 			);
 			name = Document.xib;
 			sourceTree = "<group>";
@@ -575,9 +572,8 @@
 		D8A145931639AD1900DCB3A2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D85F1E8516AC5D570015ABCF /* Base */,
-				D85F1E8A16AC5D790015ABCF /* en */,
-				D85F1E8B16AC5D800015ABCF /* ru */,
+				D85F1E8C16AC722C0015ABCF /* en */,
+				D85F1E8D16AC722C0015ABCF /* ru */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

@@ -234,7 +234,7 @@
 								</object>
 								<object class="NSMenuItem" id="415486750">
 									<reference key="NSMenu" ref="720053764"/>
-									<string key="NSTitle">Generate Default Accounts</string>
+									<string key="NSTitle">Сгенерировать счета по умолчанию</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
@@ -714,29 +714,29 @@
 					</object>
 					<object class="NSMenuItem" id="887112174">
 						<reference key="NSMenu" ref="649796088"/>
-						<string key="NSTitle">Diagrams</string>
+						<string key="NSTitle">Диаграммы</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="1033313550"/>
 						<reference key="NSMixedImage" ref="310636482"/>
 						<string key="NSAction">submenuAction:</string>
 						<object class="NSMenu" key="NSSubmenu" id="192702144">
-							<string key="NSTitle">Diagrams</string>
+							<string key="NSTitle">Диаграммы</string>
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="623863872">
 									<reference key="NSMenu" ref="192702144"/>
-									<string key="NSTitle">Pie Chart</string>
+									<string key="NSTitle">Круговая Диаграмма</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 									<string key="NSAction">submenuAction:</string>
 									<object class="NSMenu" key="NSSubmenu" id="859583670">
-										<string key="NSTitle">Pie Chart</string>
+										<string key="NSTitle">Круговая Диаграмма</string>
 										<array class="NSMutableArray" key="NSMenuItems">
 											<object class="NSMenuItem" id="845210927">
 												<reference key="NSMenu" ref="859583670"/>
-												<string key="NSTitle">Outcome</string>
+												<string key="NSTitle">Расход</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -744,7 +744,7 @@
 											</object>
 											<object class="NSMenuItem" id="268445124">
 												<reference key="NSMenu" ref="859583670"/>
-												<string key="NSTitle">Income</string>
+												<string key="NSTitle">Приход</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -752,7 +752,7 @@
 											</object>
 											<object class="NSMenuItem" id="65746456">
 												<reference key="NSMenu" ref="859583670"/>
-												<string key="NSTitle">Balance</string>
+												<string key="NSTitle">Баланс</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -763,18 +763,18 @@
 								</object>
 								<object class="NSMenuItem" id="794906461">
 									<reference key="NSMenu" ref="192702144"/>
-									<string key="NSTitle">Bar Chart</string>
+									<string key="NSTitle">Гистограмма</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 									<string key="NSAction">submenuAction:</string>
 									<object class="NSMenu" key="NSSubmenu" id="237342730">
-										<string key="NSTitle">Bar Chart</string>
+										<string key="NSTitle">Гистограмма</string>
 										<array class="NSMutableArray" key="NSMenuItems">
 											<object class="NSMenuItem" id="656396589">
 												<reference key="NSMenu" ref="237342730"/>
-												<string key="NSTitle">Outcome</string>
+												<string key="NSTitle">Расход</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -782,7 +782,7 @@
 											</object>
 											<object class="NSMenuItem" id="52656705">
 												<reference key="NSMenu" ref="237342730"/>
-												<string key="NSTitle">Income</string>
+												<string key="NSTitle">Приход</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -790,7 +790,7 @@
 											</object>
 											<object class="NSMenuItem" id="902617285">
 												<reference key="NSMenu" ref="237342730"/>
-												<string key="NSTitle">Balance</string>
+												<string key="NSTitle">Баланс</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -801,18 +801,18 @@
 								</object>
 								<object class="NSMenuItem" id="315558763">
 									<reference key="NSMenu" ref="192702144"/>
-									<string key="NSTitle">Line Chart</string>
+									<string key="NSTitle">Линейная Диаграмма</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 									<string key="NSAction">submenuAction:</string>
 									<object class="NSMenu" key="NSSubmenu" id="517728182">
-										<string key="NSTitle">Line Chart</string>
+										<string key="NSTitle">Линейная Диаграмма</string>
 										<array class="NSMutableArray" key="NSMenuItems">
 											<object class="NSMenuItem" id="595993543">
 												<reference key="NSMenu" ref="517728182"/>
-												<string key="NSTitle">Price Dynamic</string>
+												<string key="NSTitle">Динамика Цен</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -1420,7 +1420,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{196, 112}, {610, 426}}</string>
 				<int key="NSWTFlags">-461896704</int>
-				<string key="NSWindowTitle">Diagram</string>
+				<string key="NSWindowTitle">Диаграмма</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<object class="NSToolbar" key="NSViewClass" id="575815504">
 					<object class="NSMutableString" key="NSToolbarIdentifier">
@@ -1564,7 +1564,7 @@
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="400709471">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSCustomView" id="297125105">
@@ -1578,7 +1578,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{610, 426}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="297125105"/>
 					<string key="NSReuseIdentifierKey">_NS:21</string>
 				</object>
