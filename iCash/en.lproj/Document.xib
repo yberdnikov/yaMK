@@ -296,7 +296,7 @@
 															<string key="NSFrameSize">{623, 637}</string>
 															<reference key="NSSuperview" ref="79406085"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="375052765"/>
+															<reference key="NSNextKeyView" ref="1031989431"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -425,7 +425,7 @@
 																</object>
 															</object>
 															<double key="NSRowHeight">25</double>
-															<int key="NSTvFlags">-767557632</int>
+															<int key="NSTvFlags">-759169024</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">4</int>
@@ -493,7 +493,7 @@
 											<string key="NSFrameSize">{625, 655}</string>
 											<reference key="NSSuperview" ref="117843977"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="1031989431"/>
+											<reference key="NSNextKeyView" ref="79406085"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="1034276789"/>
@@ -520,7 +520,7 @@
 															<string key="NSFrameSize">{1021, 637}</string>
 															<reference key="NSSuperview" ref="418095399"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="500555685"/>
+															<reference key="NSNextKeyView" ref="472381066"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -733,7 +733,7 @@
 															<reference key="NSBackgroundColor" ref="107105636"/>
 															<reference key="NSGridColor" ref="601868087"/>
 															<double key="NSRowHeight">25</double>
-															<int key="NSTvFlags">-700448768</int>
+															<int key="NSTvFlags">-692060160</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">4</int>
@@ -773,7 +773,6 @@
 													<string key="NSFrame">{{1, 563}, {678, 16}}</string>
 													<reference key="NSSuperview" ref="130995302"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -800,7 +799,7 @@
 											<string key="NSFrame">{{626, 0}, {1023, 655}}</string>
 											<reference key="NSSuperview" ref="117843977"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="472381066"/>
+											<reference key="NSNextKeyView" ref="418095399"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="486556573"/>
@@ -1094,9 +1093,6 @@
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
-			<object class="NSCustomObject" id="618141712">
-				<string key="NSClassName">ModifyTransactionSourceCBDelegate</string>
-			</object>
 			<object class="NSArrayController" id="690838685">
 				<bool key="NSEditable">YES</bool>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
@@ -1109,9 +1105,6 @@
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
-			</object>
-			<object class="NSCustomObject" id="96000526">
-				<string key="NSClassName">ModifyTransactionRecipientCBDelegate</string>
 			</object>
 			<object class="NSWindowTemplate" id="546642091">
 				<int key="NSWindowStyleMask">19</int>
@@ -1658,7 +1651,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 											<string key="NSFrameSize">{438, 95}</string>
 											<reference key="NSSuperview" ref="98115983"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="367710134"/>
+											<reference key="NSNextKeyView" ref="295995964"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1778,7 +1771,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 											<reference key="NSBackgroundColor" ref="107105636"/>
 											<reference key="NSGridColor" ref="601868087"/>
 											<double key="NSRowHeight">17</double>
-											<int key="NSTvFlags">-700448768</int>
+											<int key="NSTvFlags">-692060160</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
 											<int key="NSColumnAutoresizingStyle">4</int>
@@ -1845,7 +1838,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<string key="NSFrame">{{20, 55}, {440, 113}}</string>
 							<reference key="NSSuperview" ref="237658959"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="295995964"/>
+							<reference key="NSNextKeyView" ref="98115983"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="751193253"/>
@@ -2035,7 +2028,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 							<string key="NSFrame">{{376, 13}, {90, 32}}</string>
 							<reference key="NSSuperview" ref="237658959"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="218290029">
@@ -2576,7 +2568,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="NSFrame">{{14, 13}, {471, 32}}</string>
 						<reference key="NSSuperview" ref="252963448"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="888283139">
@@ -4825,54 +4816,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						</object>
 					</object>
 					<int key="connectionID">102181</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">comboBox</string>
-						<reference key="source" ref="618141712"/>
-						<reference key="destination" ref="697486507"/>
-					</object>
-					<int key="connectionID">102192</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">arrayController</string>
-						<reference key="source" ref="618141712"/>
-						<reference key="destination" ref="916127944"/>
-					</object>
-					<int key="connectionID">102193</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">modifyCO</string>
-						<reference key="source" ref="618141712"/>
-						<reference key="destination" ref="649892314"/>
-					</object>
-					<int key="connectionID">102194</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">arrayController</string>
-						<reference key="source" ref="96000526"/>
-						<reference key="destination" ref="690838685"/>
-					</object>
-					<int key="connectionID">102196</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">comboBox</string>
-						<reference key="source" ref="96000526"/>
-						<reference key="destination" ref="981160818"/>
-					</object>
-					<int key="connectionID">102197</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">modifyCO</string>
-						<reference key="source" ref="96000526"/>
-						<reference key="destination" ref="649892314"/>
-					</object>
-					<int key="connectionID">102198</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9421,16 +9364,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<string key="objectName">Modify Transaction Recepient Account</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">102190</int>
-						<reference key="object" ref="618141712"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">102195</int>
-						<reference key="object" ref="96000526"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">102205</int>
 						<reference key="object" ref="564125666"/>
 						<reference key="parent" ref="252963448"/>
@@ -10293,8 +10226,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 				<string key="102175.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102176.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102177.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="102190.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="102195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102205.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102206.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="102207.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
