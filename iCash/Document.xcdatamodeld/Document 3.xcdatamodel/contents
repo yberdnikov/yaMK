@@ -38,9 +38,9 @@
     <fetchRequest name="findPlaceOfSpendingStartsWithName" entity="PlaceOfSpending" predicateString="name BEGINSWITH $NAME"/>
     <fetchRequest name="findTransactionByName" entity="Transaction" predicateString="name == $NAME"/>
     <elements>
-        <element name="Account" positionX="7" positionY="-469" width="128" height="180"/>
-        <element name="Currency" positionX="423" positionY="-549" width="128" height="88"/>
-        <element name="PlaceOfSpending" positionX="495" positionY="-375" width="128" height="73"/>
-        <element name="Transaction" positionX="243" positionY="-531" width="128" height="165"/>
+        <element name="Account" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Currency" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PlaceOfSpending" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Transaction" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -38,6 +38,7 @@
 		D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A929DC1667D7BF001C6988 /* CreateMoveController.m */; };
 		D8BD7958169B58AC0055800E /* 2-3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */; };
 		D8BD795B169B5AF80055800E /* PriceValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD795A169B5AF80055800E /* PriceValueTransformer.m */; };
+		D8D9362A16AB163500CD3E94 /* ModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D9362916AB163500CD3E94 /* ModifyController.m */; };
 		D8DB6FB716A1B11B0009BEAF /* PlotDiagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FB616A1B11B0009BEAF /* PlotDiagramController.m */; };
 		D8DB6FBB16A1B1930009BEAF /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FBA16A1B1930009BEAF /* PlotView.m */; };
 		D8DB6FBE16A1BE4C0009BEAF /* Plotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */; };
@@ -123,6 +124,8 @@
 		D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "2-3.xcmappingmodel"; sourceTree = "<group>"; };
 		D8BD7959169B5AF70055800E /* PriceValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceValueTransformer.h; sourceTree = "<group>"; };
 		D8BD795A169B5AF80055800E /* PriceValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceValueTransformer.m; sourceTree = "<group>"; };
+		D8D9362816AB163500CD3E94 /* ModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyController.h; sourceTree = "<group>"; };
+		D8D9362916AB163500CD3E94 /* ModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyController.m; sourceTree = "<group>"; };
 		D8DB6FB516A1B11B0009BEAF /* PlotDiagramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotDiagramController.h; sourceTree = "<group>"; };
 		D8DB6FB616A1B11B0009BEAF /* PlotDiagramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotDiagramController.m; sourceTree = "<group>"; };
 		D8DB6FB916A1B1930009BEAF /* PlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotView.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				D8A929DC1667D7BF001C6988 /* CreateMoveController.m */,
 				D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */,
 				D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */,
+				D8D9362816AB163500CD3E94 /* ModifyController.h */,
+				D8D9362916AB163500CD3E94 /* ModifyController.m */,
 			);
 			name = "Transaction Controllers";
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */,
 				D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */,
 				D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */,
+				D8D9362A16AB163500CD3E94 /* ModifyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
