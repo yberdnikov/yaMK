@@ -66,6 +66,7 @@
     [_transactionDate setDateValue:[NSDate date]];
     [_createButton setKeyEquivalent:@"\r"];
     [_incomeAccountsAC rearrangeObjects];
+    [[_incomeAccountsCB window] makeFirstResponder:_incomeAccountsCB];
     [self resetFields];
 }
 

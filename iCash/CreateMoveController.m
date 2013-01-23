@@ -77,6 +77,7 @@
     [_moveButton setKeyEquivalent:@"\r"];
     [_datePicker setDateValue:[NSDate date]];
     [_balanceAccountsAC rearrangeObjects];
+    [[_sourceAccount window] makeFirstResponder:_sourceAccount];
     [self resetFields];
 }
 @end

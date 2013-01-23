@@ -89,6 +89,7 @@
     [self computeFilterPredicate:[_date dateValue]];
     [_nameFieldDelegate setRecipientName:[_recipientAccount name]];
     [_balanceAccountsAC rearrangeObjects];
+    [[_placeOfSpendig window] makeFirstResponder:_placeOfSpendig];
     [self resetFields];
     NSLog(@"prepareCreation End");
 }
