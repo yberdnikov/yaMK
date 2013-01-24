@@ -14,42 +14,57 @@
 @implementation CreateIncomeController
 
 - (IBAction)createIncome:(id)sender {
-    NSLog(@"createIncome");
-    
+    if ([self showErrorWindow]) {
+        return;
+    }
     NSString *selectedAccountName = [_incomeAccountsCB stringValue];
        
     NSLog(@"recipientAccount name = %@", [[self recipientAccount] name]);
     NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
-    
-    NSLog(@"value = %f", [_transactionValue doubleValue]);
-    if ([_transactionValue doubleValue] <= 0) {
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"Value is not set or negative, please use only positive number for this field."];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        [alert runModal];
-        return;
-    }
-    
+
     Transaction *income = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
     if (_consider) {
         Account *selectedAccount = [_accountFinder findAccount:selectedAccountName type:Income];
-        if (selectedAccount) {
-            [income setSource:selectedAccount];
-            [income setName:[_name stringValue]];
-        } else {
-            NSAlert *alert = [[NSAlert alloc] init];
-            NSString *error = [NSString stringWithFormat:@"Account with name '%@' is not found.", selectedAccountName];
-            [alert setMessageText:error];
-            [alert setAlertStyle:NSWarningAlertStyle];
-            [alert runModal];
-            return;
-        }
+        [income setSource:selectedAccount];
+        [income setName:[_name stringValue]];
+        
     }
     [income setRecipient:[self recipientAccount]];
     [income setDate:[_transactionDate dateValue]];
     [income setValue:[NSNumber numberWithUnsignedInteger:([_transactionValue doubleValue] * 100)]];
     [self resetFields];
     
+}
+
+- (NSString *)getErrorMessage {
+    NSMutableString *errorInfo = [[NSMutableString alloc] init];
+    NSString *emptyString = @"[ ]*";
+    if (_consider) {
+        if ([[_name stringValue] compare:emptyString options:NSRegularExpressionSearch]) {
+            [errorInfo appendString: NSLocalizedStringFromTable(@"Description is not set! Please type some description.",
+                                                                @"ErrorMessages",
+                                                                @"Description is not set! Please type some description.")];
+            [errorInfo appendString:@"\n"];
+        }
+        if (![_accountFinder findAccount:[_incomeAccountsCB stringValue] type:Income]) {
+            [errorInfo appendString: NSLocalizedStringFromTable(@"Source account is not set! Please choose the appropriate one.",
+                                                                @"ErrorMessages",
+                                                                @"Source account is not set! Please choose the appropriate one.")];
+            [errorInfo appendString:@"\n"];
+        }
+    }
+    if ([_transactionValue doubleValue] <= 0) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Value is not set! Please set some positive value.",
+                                                            @"ErrorMessages",
+                                                            @"Value is not set! Please set some positive value.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if (![_transactionDate dateValue]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Date is not set! Please choose a date of spending.",
+                                                            @"ErrorMessages",
+                                                            @"Date is not set! Please choose a date of spending.")];
+    }
+    return errorInfo;
 }
 
 - (void)resetFields {

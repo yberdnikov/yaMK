@@ -22,30 +22,55 @@
 }
 
 - (IBAction)createMoveTransaction:(id)sender {
-    if ([self isInputFieldsCorrect]) {
-        Account *source = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
-        Account *recipient = [_accountFinder findAccount:[_recipientAccount stringValue] type:Balance];
-        NSLog(@"source account = %@", [source name]);
-        NSLog(@"source account = %@", [recipient name]);
-        if (source && recipient) {
-            NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
-            Transaction *transaction = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
-            [transaction setRecipient:recipient];
-            [transaction setSource:source];
-            [transaction setName:@"-->"];
-            [transaction setDate:[_datePicker dateValue]];
-            [transaction setValue:[NSNumber numberWithInt:([_value doubleValue] * 100)]];
-        } else {
-            //TODO show error
-            return;
-        }
-    } else {
-        //TODO show error
+    if ([self showErrorWindow]) {
         return;
     }
+    Account *source = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
+    Account *recipient = [_accountFinder findAccount:[_recipientAccount stringValue] type:Balance];
+    NSLog(@"source account = %@", [source name]);
+    NSLog(@"source account = %@", [recipient name]);
+    
+    NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
+    Transaction *transaction = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
+    [transaction setRecipient:recipient];
+    [transaction setSource:source];
+    [transaction setName:@"-->"];
+    [transaction setDate:[_datePicker dateValue]];
+    [transaction setValue:[NSNumber numberWithInt:([_value doubleValue] * 100)]];
+    
     [self resetFields];
     [[_sourceAccount window] makeFirstResponder:_sourceAccount];
 }
+
+- (NSString *)getErrorMessage {
+    NSMutableString *errorInfo = [[NSMutableString alloc] init];
+    if (![_accountFinder findAccount:[_sourceAccount stringValue] type:Balance]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Source account is not set! Please choose the appropriate one.",
+                                                            @"ErrorMessages",
+                                                            @"Source account is not set! Please choose the appropriate one.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if (![_accountFinder findAccount:[_recipientAccount stringValue] type:Balance]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Recipient account is not set! Please choose the appropriate one.",
+                                                            @"ErrorMessages",
+                                                            @"Recipient account is not set! Please choose the appropriate one.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if ([_value doubleValue] <= 0) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Value is not set! Please set some positive value.",
+                                                            @"ErrorMessages",
+                                                            @"Value is not set! Please set some positive value.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if (![_datePicker dateValue]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Date is not set! Please choose a date of spending.",
+                                                            @"ErrorMessages",
+                                                            @"Date is not set! Please choose a date of spending.")];
+        [errorInfo appendString:@"\n"];
+    }
+    return errorInfo;
+}
+
 
 - (void) resetFields {
     [self setDate:[NSDate date]];

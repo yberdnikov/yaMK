@@ -15,5 +15,7 @@
 
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)transaction;
 -(void)prepareCreation;
+-(BOOL)showErrorWindow;
+-(NSString *)getErrorMessage;
 
 @end

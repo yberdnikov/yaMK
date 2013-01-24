@@ -36,4 +36,26 @@
     NSLog(@"default implementation, nothing was done!");
 }
 
+-(void)showErrorWindow:(NSString *)infoMessage {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert setIcon:[NSImage imageNamed:@"NSCaution"]];
+    [alert setInformativeText:infoMessage];
+    [alert runModal];
+}
+
+-(BOOL)showErrorWindow {
+    NSString *errorMessage = [self getErrorMessage];
+    if (![errorMessage isEqualToString:@""]) {
+        [self showErrorWindow:errorMessage];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(NSString *)getErrorMessage {
+    return nil;
+}
+
 @end

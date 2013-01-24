@@ -1,0 +1,15 @@
+/* 
+  ErrorMessages.strings
+  iCash
+
+  Created by Vitaly Merenkov on 23.01.13.
+  Copyright (c) 2013 Vitaly Merenkov. All rights reserved.
+*/
+"Source account is not set! Please choose the appropriate one." = "Source account is not set! Please choose the appropriate one.";
+"Recipient account is not set! Please choose the appropriate one." = "Recipient account is not set! Please choose the appropriate one.";
+"Description is not set! Please type some description." = "Description is not set! Please type some description.";
+"Price is not set! Please set some positive price." = "Price is not set! Please set some positive price.";
+"Date is not set! Please choose a date of spending." = "Date is not set! Please choose a date of spending.";
+"Amount should be positive integer! You may live it empty, this is the same as 1." = "Amount should be positive integer! You may live it empty, this is the same as 1.";
+"Volume should be positive! You may live it empty, this is the same as 1." = "Volume should be positive! You may live it empty, this is the same as 1.";
+"Value is not set! Please set some positive value." = "Value is not set! Please set some positive value.";

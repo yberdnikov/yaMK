@@ -16,25 +16,19 @@
 @implementation CreateOutcomeController
 
 - (IBAction)createTransaction:(id)sender {
-    if ([self isInputFieldsCorrect]) {
-        Account *sourceAccount = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
-        NSLog(@"source account = %@", [sourceAccount name]);
-        if (sourceAccount) {
-            if ([_amount intValue]) {
-                for (int i = 0; i < [_amount intValue]; i++) {
-                    [self createTransactionWithAccount:sourceAccount];
-                }
-            } else {
-                [self createTransactionWithAccount:sourceAccount];
-            }
-        } else {
-            //TODO show error
-            return;
-        }
-    } else {
-        //TODO show error
+    if ([self showErrorWindow]) {
         return;
     }
+    Account *sourceAccount = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
+    NSLog(@"source account = %@", [sourceAccount name]);
+    if ([_amount intValue]) {
+        for (int i = 0; i < [_amount intValue]; i++) {
+            [self createTransactionWithAccount:sourceAccount];
+        }
+    } else {
+        [self createTransactionWithAccount:sourceAccount];
+    }
+
     [self resetFields];
     [self computeFilterPredicate:[_date dateValue]];
     [[_name window] makeFirstResponder:_name];
@@ -48,18 +42,45 @@
     
 }
 
-- (BOOL)isInputFieldsCorrect {
-    NSLog(@"name = %@", [_name stringValue]);
-    NSLog(@"amount = %f", [_amount doubleValue]);
-    NSLog(@"price = %f", [_price doubleValue]);
-    NSLog(@"date = %@", [_date dateValue]);
-    NSLog(@"source = %@", [_sourceAccount stringValue]);
-    if ([_name stringValue] && [_price doubleValue] >=0
-        &&[_date dateValue] && [_sourceAccount stringValue]) {
-        return YES;
-    } else {
-        return NO;
+- (NSString *)getErrorMessage {
+    NSMutableString *errorInfo = [[NSMutableString alloc] init];
+    NSString *emptyString = @"[ ]*";
+    if ([[_name stringValue] compare:emptyString options:NSRegularExpressionSearch]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Description is not set! Please type some description.",
+                                                            @"ErrorMessages",
+                                                            @"Description is not set! Please type some description.")];
+        [errorInfo appendString:@"\n"];
     }
+    if (![_accountFinder findAccount:[_sourceAccount stringValue] type:Balance]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Source account is not set! Please choose the appropriate one.",
+                                                            @"ErrorMessages",
+                                                            @"Source account is not set! Please choose the appropriate one.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if ([_price doubleValue] <= 0) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Price is not set! Please set some positive price.",
+                                                            @"ErrorMessages",
+                                                            @"Price is not set! Please set some positive price.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if (![_date dateValue]) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Date is not set! Please choose a date of spending.",
+                                                            @"ErrorMessages",
+                                                            @"Date is not set! Please choose a date of spending.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if ([_amount intValue] <= 0 && !([[_amount stringValue] compare:emptyString options:NSRegularExpressionSearch])) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Amount should be positive integer! You may live it empty, this is the same as 1.",
+                                                            @"ErrorMessages",
+                                                            @"Amount should be positive integer! You may live it empty, this is the same as 1.")];
+        [errorInfo appendString:@"\n"];
+    }
+    if ([_volume doubleValue] <= 0 && !([[_volume stringValue] compare:emptyString options:NSRegularExpressionSearch])) {
+        [errorInfo appendString: NSLocalizedStringFromTable(@"Volume should be positive! You may live it empty, this is the same as 1.",
+                                                            @"ErrorMessages",
+                                                            @"Volume should be positive! You may live it empty, this is the same as 1.")];
+    }
+    return errorInfo;
 }
 
 - (PlaceOfSpending *) findOrCreatePlaceOfSpending:(NSString *) name {

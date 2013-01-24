@@ -1,0 +1,15 @@
+/* 
+  ErrorMessages.strings
+  iCash
+
+  Created by Vitaly Merenkov on 23.01.13.
+  Copyright (c) 2013 Vitaly Merenkov. All rights reserved.
+*/
+"Source account is not set! Please choose the appropriate one." = "Исходящий счет не выбран! Пожалуйста, выберите верный счет.";
+"Recipient account is not set! Please choose the appropriate one." = "Получающий счет не выбран! Пожалуйста, выберите верный счет.";
+"Description is not set! Please type some description." = "Описание не задано! Пожалуйста, напишите что-нибудь в описании.";
+"Price is not set! Please set some positive price." = "Цена не установлена! Пожалуйста, установите положительную цену.";
+"Date is not set! Please choose a date of spending." = "Дата не установлена! Пожалуйста, установите дату произведения затрат.";
+"Amount should be positive integer! You may live it empty, this is the same as 1." = "Количество должно быть положительным целым числом! Вы можете оставить поле пустым, тогда значение будет равно 1.";
+"Volume should be positive! You may live it empty, this is the same as 1." = "Объем должен быть положительным числом! Вы можете оставить поле пустым, тогда значение будет равно 1.";
+"Value is not set! Please set some positive value." = "Сумма не установлена! Пожалуйста, установите положительное число.";

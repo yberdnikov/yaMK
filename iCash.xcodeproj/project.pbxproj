@@ -46,6 +46,7 @@
 		D8DB6FCA16A2A31C0009BEAF /* PieChartAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */; };
 		D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */; };
 		D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */; };
+		D8DED44516B05B4800570C36 /* ErrorMessages.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8DED44316B05B4800570C36 /* ErrorMessages.strings */; };
 		D8F4461E1699D80A006CD4C0 /* PieChartPlotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */; };
 		D8F446241699D83D006CD4C0 /* AccountAddColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446211699D83D006CD4C0 /* AccountAddColor.m */; };
 		D8F446251699D83D006CD4C0 /* PieChartOutcomeAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */; };
@@ -145,6 +146,8 @@
 		D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartIncomeAccounts.m; sourceTree = "<group>"; };
 		D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartBalanceAccounts.h; sourceTree = "<group>"; };
 		D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartBalanceAccounts.m; sourceTree = "<group>"; };
+		D8DED44416B05B4800570C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ErrorMessages.strings; sourceTree = "<group>"; };
+		D8DED44616B05B5D00570C36 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ErrorMessages.strings; sourceTree = "<group>"; };
 		D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Document 2.xcdatamodel"; sourceTree = "<group>"; };
 		D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDatasource.h; sourceTree = "<group>"; };
 		D8F4461C1699D80A006CD4C0 /* PieChartPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartPlotter.h; sourceTree = "<group>"; };
@@ -288,6 +291,7 @@
 				D898120816A32D8D0063C91C /* Transformations */,
 				D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */,
 				D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */,
+				D8DED44716B05B7100570C36 /* Localization */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -353,6 +357,14 @@
 				D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */,
 			);
 			name = DataSources;
+			sourceTree = "<group>";
+		};
+		D8DED44716B05B7100570C36 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D8DED44316B05B4800570C36 /* ErrorMessages.strings */,
+			);
+			name = Localization;
 			sourceTree = "<group>";
 		};
 		D8F4461F1699D817006CD4C0 /* Plotting */ = {
@@ -451,6 +463,7 @@
 				D8A1458C1639AD1900DCB3A2 /* Credits.rtf in Resources */,
 				D8A145921639AD1900DCB3A2 /* Document.xib in Resources */,
 				D8A145951639AD1900DCB3A2 /* MainMenu.xib in Resources */,
+				D8DED44516B05B4800570C36 /* ErrorMessages.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +598,15 @@
 				D85F1E7716AC5CC00015ABCF /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D8DED44316B05B4800570C36 /* ErrorMessages.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8DED44416B05B4800570C36 /* en */,
+				D8DED44616B05B5D00570C36 /* ru */,
+			);
+			name = ErrorMessages.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
