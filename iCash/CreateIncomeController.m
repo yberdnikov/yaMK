@@ -38,9 +38,8 @@
 
 - (NSString *)getErrorMessage {
     NSMutableString *errorInfo = [[NSMutableString alloc] init];
-    NSString *emptyString = @"[ ]*";
     if (_consider) {
-        if ([[_name stringValue] compare:emptyString options:NSRegularExpressionSearch]) {
+        if ([[[_name stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
             [errorInfo appendString: NSLocalizedStringFromTable(@"Description is not set! Please type some description.",
                                                                 @"ErrorMessages",
                                                                 @"Description is not set! Please type some description.")];

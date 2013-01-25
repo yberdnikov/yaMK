@@ -44,8 +44,7 @@
 
 - (NSString *)getErrorMessage {
     NSMutableString *errorInfo = [[NSMutableString alloc] init];
-    NSString *emptyString = @"[ ]*";
-    if ([[_name stringValue] compare:emptyString options:NSRegularExpressionSearch]) {
+    if ([[[_name stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
         [errorInfo appendString: NSLocalizedStringFromTable(@"Description is not set! Please type some description.",
                                                             @"ErrorMessages",
                                                             @"Description is not set! Please type some description.")];
@@ -69,13 +68,13 @@
                                                             @"Date is not set! Please choose a date of spending.")];
         [errorInfo appendString:@"\n"];
     }
-    if ([_amount intValue] <= 0 && !([[_amount stringValue] compare:emptyString options:NSRegularExpressionSearch])) {
+    if ([_amount intValue] <= 0 && !([[[_amount stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0)) {
         [errorInfo appendString: NSLocalizedStringFromTable(@"Amount should be positive integer! You may live it empty, this is the same as 1.",
                                                             @"ErrorMessages",
                                                             @"Amount should be positive integer! You may live it empty, this is the same as 1.")];
         [errorInfo appendString:@"\n"];
     }
-    if ([_volume doubleValue] <= 0 && !([[_volume stringValue] compare:emptyString options:NSRegularExpressionSearch])) {
+    if ([_volume doubleValue] <= 0 && !([[[_volume stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0)) {
         [errorInfo appendString: NSLocalizedStringFromTable(@"Volume should be positive! You may live it empty, this is the same as 1.",
                                                             @"ErrorMessages",
                                                             @"Volume should be positive! You may live it empty, this is the same as 1.")];
