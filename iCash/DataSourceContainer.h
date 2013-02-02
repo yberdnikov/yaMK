@@ -11,6 +11,7 @@
 @interface DataSourceContainer : NSObject
 
 @property double value;
+@property NSInteger intValue;
 @property NSColor *color;
 
 @end

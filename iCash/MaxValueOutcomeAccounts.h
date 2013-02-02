@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PieChartDatasource.h"
+#import "Datasource.h"
 
-@interface MaxValueOutcomeAccounts : NSObject<PieChartDatasource>
+@interface MaxValueOutcomeAccounts : NSObject<DataSource>
 
-@property NSDictionary *data;
+@property NSDictionary *cacheData;
 
 @end

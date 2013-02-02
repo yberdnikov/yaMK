@@ -13,9 +13,9 @@
 
 @implementation MaxValueOutcomeAccounts
 
--(NSDictionary *)getData {
-    if (_data) {
-        return _data;
+-(NSDictionary *)data {
+    if (_cacheData) {
+        return _cacheData;
     } else {
         NSMutableDictionary *result = [NSMutableDictionary dictionary];
         AccountFinder *af = [[AccountFinder alloc] init];
@@ -47,7 +47,7 @@
         [cont setColor:[NSColor grayColor]];
         [cont setValue:othersPercent];
         [result setObject:cont forKey:@"Others"];
-        [self setData:result];
+        [self setCacheData:result];
         return result;
     }
 }

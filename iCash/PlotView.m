@@ -11,6 +11,11 @@
 
 @implementation PlotView
 
+
+-(void)awakeFromNib {
+    [self setZoom:1];
+}
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
@@ -23,7 +28,16 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    [_plotter plot:dirtyRect];
+    [_plotter plot:[self bounds]];
+}
+
+- (void)setZoom:(CGFloat)scaleFactor {
+    NSRect frame = [self frame];
+    NSRect bounds = [self bounds];
+    frame.size.width = bounds.size.width * scaleFactor;
+    frame.size.height = bounds.size.height * scaleFactor;
+    [self setFrameSize: frame.size];    // Change the view's size.
+    [self setBoundsSize: bounds.size];  // Restore the view's bounds, which causes the view to be scaled.
 }
 
 @end

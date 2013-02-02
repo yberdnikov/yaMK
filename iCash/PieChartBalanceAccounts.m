@@ -10,11 +10,11 @@
 
 @implementation PieChartBalanceAccounts
 
--(NSDictionary *)getData {
-    if ([self data]) {
-        return [self data];
+-(NSDictionary *)data {
+    if ([self cacheData]) {
+        return [self cacheData];
     } else {
-        return [self getData:Balance];
+        return [self data:Balance];
     }
 }
 

@@ -12,6 +12,8 @@
 		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
 		D81ED16F16750779007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */; };
 		D81ED172167668D1007BB14C /* OutcomeValumeFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */; };
+		D870970A16B59DDF006EDF4E /* IncomeOutcomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */; };
+		D870970D16B59F6B006EDF4E /* BarChartAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
 		D8782D3E1647ED67008C3055 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3D1647ED67008C3055 /* Account.m */; };
 		D8782D61164AD34D008C3055 /* AccountTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D60164AD34D008C3055 /* AccountTreeController.m */; };
@@ -38,6 +40,8 @@
 		D8A929DD1667D7BF001C6988 /* CreateMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A929DC1667D7BF001C6988 /* CreateMoveController.m */; };
 		D8BD7958169B58AC0055800E /* 2-3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */; };
 		D8BD795B169B5AF80055800E /* PriceValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD795A169B5AF80055800E /* PriceValueTransformer.m */; };
+		D8CDF56916B5B0EE00BB99FF /* TransactionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDF56816B5B0EE00BB99FF /* TransactionFinder.m */; };
+		D8CDF57116B6F31C00BB99FF /* BarChartPlotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDF57016B6F31B00BB99FF /* BarChartPlotter.m */; };
 		D8D9362A16AB163500CD3E94 /* ModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D9362916AB163500CD3E94 /* ModifyController.m */; };
 		D8DB6FB716A1B11B0009BEAF /* PlotDiagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FB616A1B11B0009BEAF /* PlotDiagramController.m */; };
 		D8DB6FBB16A1B1930009BEAF /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DB6FBA16A1B1930009BEAF /* PlotView.m */; };
@@ -78,10 +82,12 @@
 		D85F1E7516AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D85F1E7616AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D85F1E7716AC5CC00015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D85F1E8C16AC722C0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D85F1E8D16AC722C0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D85F1E8E16AC722C0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
 		D85F1E8F16AC722C0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/Document.xib; sourceTree = "<group>"; };
+		D870970816B59DDF006EDF4E /* IncomeOutcomeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeOutcomeBar.h; sourceTree = "<group>"; };
+		D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeOutcomeBar.m; sourceTree = "<group>"; };
+		D870970B16B59F6B006EDF4E /* BarChartAccountsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartAccountsDataSource.h; sourceTree = "<group>"; };
+		D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartAccountsDataSource.m; sourceTree = "<group>"; };
 		D8782D391647ED66008C3055 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
 		D8782D3A1647ED66008C3055 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		D8782D3C1647ED67008C3055 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -130,6 +136,13 @@
 		D8BD7957169B58AC0055800E /* 2-3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "2-3.xcmappingmodel"; sourceTree = "<group>"; };
 		D8BD7959169B5AF70055800E /* PriceValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceValueTransformer.h; sourceTree = "<group>"; };
 		D8BD795A169B5AF80055800E /* PriceValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceValueTransformer.m; sourceTree = "<group>"; };
+		D8CDF56716B5B0EE00BB99FF /* TransactionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionFinder.h; sourceTree = "<group>"; };
+		D8CDF56816B5B0EE00BB99FF /* TransactionFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionFinder.m; sourceTree = "<group>"; };
+		D8CDF56B16B5C1CC00BB99FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D8CDF56D16B5C1E800BB99FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		D8CDF56E16B5C21700BB99FF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		D8CDF56F16B6F31B00BB99FF /* BarChartPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartPlotter.h; sourceTree = "<group>"; };
+		D8CDF57016B6F31B00BB99FF /* BarChartPlotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartPlotter.m; sourceTree = "<group>"; };
 		D8D9362816AB163500CD3E94 /* ModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyController.h; sourceTree = "<group>"; };
 		D8D9362916AB163500CD3E94 /* ModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyController.m; sourceTree = "<group>"; };
 		D8DB6FB516A1B11B0009BEAF /* PlotDiagramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotDiagramController.h; sourceTree = "<group>"; };
@@ -149,7 +162,7 @@
 		D8DED44416B05B4800570C36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ErrorMessages.strings; sourceTree = "<group>"; };
 		D8DED44616B05B5D00570C36 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ErrorMessages.strings; sourceTree = "<group>"; };
 		D8F4461A1699D7BC006CD4C0 /* Document 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Document 2.xcdatamodel"; sourceTree = "<group>"; };
-		D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDatasource.h; sourceTree = "<group>"; };
+		D8F4461B1699D80A006CD4C0 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		D8F4461C1699D80A006CD4C0 /* PieChartPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartPlotter.h; sourceTree = "<group>"; };
 		D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartPlotter.m; sourceTree = "<group>"; };
 		D8F446201699D83D006CD4C0 /* AccountAddColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAddColor.h; sourceTree = "<group>"; };
@@ -292,6 +305,8 @@
 				D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */,
 				D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */,
 				D8DED44716B05B7100570C36 /* Localization */,
+				D8CDF56716B5B0EE00BB99FF /* TransactionFinder.h */,
+				D8CDF56816B5B0EE00BB99FF /* TransactionFinder.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -355,6 +370,10 @@
 				D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */,
 				D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */,
 				D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */,
+				D870970816B59DDF006EDF4E /* IncomeOutcomeBar.h */,
+				D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */,
+				D870970B16B59F6B006EDF4E /* BarChartAccountsDataSource.h */,
+				D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */,
 			);
 			name = DataSources;
 			sourceTree = "<group>";
@@ -371,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				D8DB6FC716A1D2150009BEAF /* DataSources */,
-				D8F4461B1699D80A006CD4C0 /* PieChartDatasource.h */,
+				D8F4461B1699D80A006CD4C0 /* DataSource.h */,
 				D8F4461C1699D80A006CD4C0 /* PieChartPlotter.h */,
 				D8F4461D1699D80A006CD4C0 /* PieChartPlotter.m */,
 				D8F44632169A00EA006CD4C0 /* DataSourceContainer.h */,
@@ -382,6 +401,8 @@
 				D8DB6FBA16A1B1930009BEAF /* PlotView.m */,
 				D8DB6FBC16A1BE4C0009BEAF /* Plotter.h */,
 				D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */,
+				D8CDF56F16B6F31B00BB99FF /* BarChartPlotter.h */,
+				D8CDF57016B6F31B00BB99FF /* BarChartPlotter.m */,
 			);
 			name = Plotting;
 			sourceTree = "<group>";
@@ -533,6 +554,10 @@
 				D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */,
 				D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */,
 				D8D9362A16AB163500CD3E94 /* ModifyController.m in Sources */,
+				D870970A16B59DDF006EDF4E /* IncomeOutcomeBar.m in Sources */,
+				D870970D16B59F6B006EDF4E /* BarChartAccountsDataSource.m in Sources */,
+				D8CDF56916B5B0EE00BB99FF /* TransactionFinder.m in Sources */,
+				D8CDF57116B6F31C00BB99FF /* BarChartPlotter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,8 +610,9 @@
 		D8A145931639AD1900DCB3A2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D85F1E8C16AC722C0015ABCF /* en */,
-				D85F1E8D16AC722C0015ABCF /* ru */,
+				D8CDF56B16B5C1CC00BB99FF /* Base */,
+				D8CDF56D16B5C1E800BB99FF /* en */,
+				D8CDF56E16B5C21700BB99FF /* ru */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

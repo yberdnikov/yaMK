@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PieChartDatasource.h"
+#import "Datasource.h"
 #import "Account.h"
 
-@interface PieChartAccountsDataSource : NSObject<PieChartDatasource>
+@interface PieChartAccountsDataSource : NSObject<DataSource>
 
-@property NSDictionary *data;
+@property NSDictionary *cacheData;
 
--(NSDictionary *)getData:(AccountType)at;
+-(NSDictionary *)data:(AccountType)at;
 
 @end

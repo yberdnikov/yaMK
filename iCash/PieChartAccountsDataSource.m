@@ -12,14 +12,14 @@
 
 @implementation PieChartAccountsDataSource
 
--(NSDictionary *)getData {
+-(NSDictionary *)data {
     return nil;
     
 }
 
--(NSDictionary *)getData:(AccountType)at {
-    if (_data) {
-        return _data;
+-(NSDictionary *)data:(AccountType)at {
+    if (_cacheData) {
+        return _cacheData;
     } else {
         NSMutableDictionary *result = [NSMutableDictionary dictionary];
         AccountFinder *af = [[AccountFinder alloc] init];
@@ -43,7 +43,7 @@
                 }
             }
         }
-        [self setData:result];
+        [self setCacheData:result];
         return result;
     }
 }

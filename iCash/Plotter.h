@@ -7,12 +7,30 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PieChartDatasource.h"
+#import "Datasource.h"
+#import "math.h"
 
 @interface Plotter : NSObject
 
-@property NSObject<PieChartDatasource> *dataSource;
+@property NSObject<DataSource> *dataSource;
+@property CGFloat fontSize;
 
 -(void)plot:(NSRect)rect;
+- (CGRect) drawText:(CGContextRef)context
+             pointX:(CGFloat)pointX
+             pointY:(CGFloat)pointY
+               text:(NSString *)text
+           moveLeft:(BOOL)move;
+
+- (CGRect) drawText:(CGContextRef)context
+             pointX:(CGFloat)pointX
+             pointY:(CGFloat)pointY
+               text:(NSString *)text
+           fontSize:(double)fontSize
+           moveLeft:(BOOL)move;
+
+- (CGContextRef) initContext:(NSRect)rect;
 
 @end
+
+static inline double radians(double degrees) { return degrees * M_PI / 180; }

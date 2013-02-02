@@ -380,53 +380,56 @@
 /* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "532"; */
 "532.title" = "Find and Replace…";
 
-/* Class = "NSMenuItem"; title = "Diagrams"; ObjectID = "534"; */
+/* Class = "NSMenuItem"; title = "Диаграммы"; ObjectID = "534"; */
 "534.title" = "Диаграммы";
 
-/* Class = "NSMenu"; title = "Diagrams"; ObjectID = "535"; */
+/* Class = "NSMenu"; title = "Диаграммы"; ObjectID = "535"; */
 "535.title" = "Диаграммы";
 
-/* Class = "NSMenuItem"; title = "Pie Chart"; ObjectID = "539"; */
+/* Class = "NSMenuItem"; title = "Круговая Диаграмма"; ObjectID = "539"; */
 "539.title" = "Круговая Диаграмма";
 
-/* Class = "NSMenu"; title = "Pie Chart"; ObjectID = "540"; */
+/* Class = "NSMenu"; title = "Круговая Диаграмма"; ObjectID = "540"; */
 "540.title" = "Круговая Диаграмма";
 
-/* Class = "NSMenuItem"; title = "Outcome"; ObjectID = "541"; */
+/* Class = "NSMenuItem"; title = "Расход"; ObjectID = "541"; */
 "541.title" = "Расход";
 
-/* Class = "NSMenuItem"; title = "Bar Chart"; ObjectID = "542"; */
+/* Class = "NSMenuItem"; title = "Гистограмма"; ObjectID = "542"; */
 "542.title" = "Гистограмма";
 
-/* Class = "NSMenu"; title = "Bar Chart"; ObjectID = "543"; */
+/* Class = "NSMenu"; title = "Гистограмма"; ObjectID = "543"; */
 "543.title" = "Гистограмма";
 
-/* Class = "NSMenuItem"; title = "Outcome"; ObjectID = "544"; */
+/* Class = "NSMenuItem"; title = "Расход"; ObjectID = "544"; */
 "544.title" = "Расход";
 
-/* Class = "NSMenuItem"; title = "Line Chart"; ObjectID = "545"; */
+/* Class = "NSMenuItem"; title = "Линейная Диаграмма"; ObjectID = "545"; */
 "545.title" = "Линейная Диаграмма";
 
-/* Class = "NSMenu"; title = "Line Chart"; ObjectID = "546"; */
+/* Class = "NSMenu"; title = "Линейная Диаграмма"; ObjectID = "546"; */
 "546.title" = "Линейная Диаграмма";
 
-/* Class = "NSMenuItem"; title = "Price Dynamic"; ObjectID = "547"; */
+/* Class = "NSMenuItem"; title = "Динамика Цен"; ObjectID = "547"; */
 "547.title" = "Динамика Цен";
 
-/* Class = "NSMenuItem"; title = "Income"; ObjectID = "548"; */
+/* Class = "NSMenuItem"; title = "Приход"; ObjectID = "548"; */
 "548.title" = "Приход";
 
-/* Class = "NSMenuItem"; title = "Balance"; ObjectID = "549"; */
+/* Class = "NSMenuItem"; title = "Баланс"; ObjectID = "549"; */
 "549.title" = "Баланс";
 
-/* Class = "NSMenuItem"; title = "Income"; ObjectID = "550"; */
+/* Class = "NSMenuItem"; title = "Приход"; ObjectID = "550"; */
 "550.title" = "Приход";
 
-/* Class = "NSMenuItem"; title = "Balance"; ObjectID = "551"; */
+/* Class = "NSMenuItem"; title = "Баланс"; ObjectID = "551"; */
 "551.title" = "Баланс";
 
-/* Class = "NSPanel"; title = "Diagram"; ObjectID = "552"; */
+/* Class = "NSPanel"; title = "Диаграмма"; ObjectID = "552"; */
 "552.title" = "Диаграмма";
 
-/* Class = "NSMenuItem"; title = "Generate Default Accounts"; ObjectID = "572"; */
+/* Class = "NSMenuItem"; title = "Сгенерировать счета по умолчанию"; ObjectID = "572"; */
 "572.title" = "Сгенерировать счета по умолчанию";
+
+/* Class = "NSMenuItem"; title = "Income/Outcome"; ObjectID = "575"; */
+"575.title" = "Доходы и Расходы";

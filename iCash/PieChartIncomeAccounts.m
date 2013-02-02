@@ -10,11 +10,11 @@
 
 @implementation PieChartIncomeAccounts
 
--(NSDictionary *)getData {
-    if ([self data]) {
-        return [self data];
+-(NSDictionary *)data {
+    if ([self cacheData]) {
+        return [self cacheData];
     } else {
-        return [self getData:Income];
+        return [self data:Income];
     }
 }
 

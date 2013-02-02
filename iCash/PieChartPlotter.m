@@ -7,12 +7,10 @@
 //
 
 #import "PieChartPlotter.h"
-#import "math.h"
 #import "DataSourceContainer.h"
 
 //#### utility code
 
-static inline double radians(double degrees) { return degrees * M_PI / 180; }
 
 @implementation PieChartPlotter
 
@@ -42,7 +40,7 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
     //  The current path for the context starts out empty
     assert(CGContextIsPathEmpty(context));
     
-    NSDictionary *data = [[self dataSource] getData];
+    NSDictionary *data = [[self dataSource] data];
     double startAngle = 0;
     double endAngle = 0;
     
@@ -123,7 +121,7 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
     if (lineEndX < centerX) {
         moveLeft = YES;
     }
-    CGRect textRect = [self drawText: context rect:rect pointX:lineEndX + 1 pointY:lineEndY + 6 text:labelText moveLeft:moveLeft];
+    CGRect textRect = [self drawText: context pointX:lineEndX + 1 pointY:lineEndY + 6 text:labelText moveLeft:moveLeft];
     
     if (moveLeft) {
         CGContextAddLineToPoint(context, lineEndX - textRect.size.width, lineEndY);
@@ -133,43 +131,6 @@ static inline double radians(double degrees) { return degrees * M_PI / 180; }
     CGContextStrokePath(context);
 }
 
-- (CGRect) drawText:(CGContextRef)context
-               rect:(CGRect)contextRect
-             pointX:(CGFloat)pointX
-             pointY:(CGFloat)pointY
-               text:(NSString *)text
-           moveLeft:(BOOL)move
-{
-    // Prepare font
-    CTFontRef font = CTFontCreateWithName(CFSTR("Times"), 18, NULL);
-    
-    // Create an attributed string
-    CFStringRef keys[] = { kCTFontAttributeName };
-    CFTypeRef values[] = { font };
-    CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
-                                              sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-    CFStringRef str = (__bridge CFStringRef)text;
-    CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, str, attr);
-    CFRelease(attr);
-    
-    // Draw the string
-    CTLineRef line = CTLineCreateWithAttributedString(attrString);
-    CGContextSetTextMatrix(context, CGAffineTransformIdentity);  //Use this one when using standard view coordinates
-    //CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0)); //Use this one if the view's coordinates are flipped
-    CGRect lineBounds = CTLineGetImageBounds(line, context);
-    if (move) {
-        CGContextSetTextPosition(context, pointX - lineBounds.size.width, pointY);
-    } else {
-        CGContextSetTextPosition(context, pointX, pointY);
-    }
-    CTLineDraw(line, context);
-        
-    // Clean up
-    CFRelease(line);
-    CFRelease(attrString);
-    CFRelease(font);
-    return lineBounds;
-}
 
 
 @end

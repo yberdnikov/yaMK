@@ -18,4 +18,6 @@
 -(IBAction)plotPieChartIncome:(id)sender;
 -(IBAction)plotPieChartBalance:(id)sender;
 
+-(IBAction)plotBarChartIncomeOutcome:(id)sender;
+
 @end

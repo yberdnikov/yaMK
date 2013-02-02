@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "PieChartAccountsDataSource.h"
 
-@interface PieChartIncomeAccounts : PieChartAccountsDataSource<PieChartDatasource>
+@interface PieChartIncomeAccounts : PieChartAccountsDataSource<DataSource>
 
 @end

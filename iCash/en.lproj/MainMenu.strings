@@ -430,3 +430,6 @@
 
 /* Class = "NSMenuItem"; title = "Generate Default Accounts"; ObjectID = "572"; */
 "572.title" = "Generate Default Accounts";
+
+/* Class = "NSMenuItem"; title = "Income/Outcome"; ObjectID = "575"; */
+"575.title" = "Income/Outcome";
