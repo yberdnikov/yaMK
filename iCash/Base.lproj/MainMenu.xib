@@ -1616,7 +1616,6 @@
 									<string key="NSFrame">{{595, 1}, {16, 426}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:15</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<reference key="NSTarget" ref="640125216"/>
@@ -2386,6 +2385,14 @@
 						<reference key="destination" ref="233710786"/>
 					</object>
 					<int key="connectionID">618</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotBarChartOutcome:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="656396589"/>
+					</object>
+					<int key="connectionID">619</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -3776,7 +3783,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">618</int>
+			<int key="maxID">619</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3822,6 +3829,7 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="plotBarChartIncomeOutcome:">id</string>
+						<string key="plotBarChartOutcome:">id</string>
 						<string key="plotPieChartBalance:">id</string>
 						<string key="plotPieChartIncome:">id</string>
 						<string key="plotPieChartOutcome:">id</string>
@@ -3829,6 +3837,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="plotBarChartIncomeOutcome:">
 							<string key="name">plotBarChartIncomeOutcome:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="plotBarChartOutcome:">
+							<string key="name">plotBarChartOutcome:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="plotPieChartBalance:">

@@ -38,9 +38,9 @@
     NSManagedObjectModel *_mom = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectModel];
     NSManagedObjectContext *_moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
     NSFetchRequest *findAccountByNameType = [_mom fetchRequestFromTemplateWithName:@"findAccountsByType" substitutionVariables:@{@"TYPE" : [NSNumber numberWithInt:type]}];
-    [findAccountByNameType setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"valueSum" ascending:asc]]];
     NSError *error;
     NSArray *foundAccounts = [_moc executeFetchRequest:findAccountByNameType error:&error];
+    [foundAccounts sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"valueSum" ascending:asc]]];
     return foundAccounts;
 }
 

@@ -19,5 +19,6 @@
 -(IBAction)plotPieChartBalance:(id)sender;
 
 -(IBAction)plotBarChartIncomeOutcome:(id)sender;
+-(IBAction)plotBarChartOutcome:(id)sender;
 
 @end

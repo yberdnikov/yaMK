@@ -20,6 +20,8 @@
 		D8782D7216502604008C3055 /* CreateIncomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D7116502604008C3055 /* CreateIncomeController.m */; };
 		D8782DF616591762008C3055 /* CreateOutcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF516591762008C3055 /* CreateOutcomeController.m */; };
 		D8782DFA16591B14008C3055 /* AccountFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782DF916591B14008C3055 /* AccountFinder.m */; };
+		D8954C8A16C7FD93005AFF39 /* BarChartGroupPlotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C8916C7FD93005AFF39 /* BarChartGroupPlotter.m */; };
+		D8954C8F16C8150F005AFF39 /* OutcomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C8E16C8150F005AFF39 /* OutcomeBar.m */; };
 		D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* ToolbarActionController.m */; };
 		D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
@@ -100,6 +102,10 @@
 		D8782DF516591762008C3055 /* CreateOutcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateOutcomeController.m; sourceTree = "<group>"; };
 		D8782DF816591B14008C3055 /* AccountFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountFinder.h; sourceTree = "<group>"; };
 		D8782DF916591B14008C3055 /* AccountFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountFinder.m; sourceTree = "<group>"; };
+		D8954C8816C7FD93005AFF39 /* BarChartGroupPlotter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartGroupPlotter.h; sourceTree = "<group>"; };
+		D8954C8916C7FD93005AFF39 /* BarChartGroupPlotter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartGroupPlotter.m; sourceTree = "<group>"; };
+		D8954C8D16C8150F005AFF39 /* OutcomeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeBar.h; sourceTree = "<group>"; };
+		D8954C8E16C8150F005AFF39 /* OutcomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeBar.m; sourceTree = "<group>"; };
 		D898120516A32D5E0063C91C /* ToolbarActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarActionController.h; sourceTree = "<group>"; };
 		D898120616A32D5E0063C91C /* ToolbarActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarActionController.m; sourceTree = "<group>"; };
 		D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStandardAccountStructure.h; sourceTree = "<group>"; };
@@ -223,6 +229,36 @@
 				D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		D8954C8B16C81492005AFF39 /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				D8F446221699D83D006CD4C0 /* PieChartOutcomeAccounts.h */,
+				D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */,
+				D8DB6FC316A1D20C0009BEAF /* MaxValueOutcomeAccounts.h */,
+				D8DB6FC416A1D20C0009BEAF /* MaxValueOutcomeAccounts.m */,
+				D8DB6FC816A2A31C0009BEAF /* PieChartAccountsDataSource.h */,
+				D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */,
+				D8DB6FCB16A2A4A70009BEAF /* PieChartIncomeAccounts.h */,
+				D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */,
+				D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */,
+				D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */,
+			);
+			name = PieChart;
+			sourceTree = "<group>";
+		};
+		D8954C8C16C814A5005AFF39 /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				D870970816B59DDF006EDF4E /* IncomeOutcomeBar.h */,
+				D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */,
+				D870970B16B59F6B006EDF4E /* BarChartAccountsDataSource.h */,
+				D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */,
+				D8954C8D16C8150F005AFF39 /* OutcomeBar.h */,
+				D8954C8E16C8150F005AFF39 /* OutcomeBar.m */,
+			);
+			name = BarChart;
 			sourceTree = "<group>";
 		};
 		D898120816A32D8D0063C91C /* Transformations */ = {
@@ -360,20 +396,8 @@
 		D8DB6FC716A1D2150009BEAF /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				D8F446221699D83D006CD4C0 /* PieChartOutcomeAccounts.h */,
-				D8F446231699D83D006CD4C0 /* PieChartOutcomeAccounts.m */,
-				D8DB6FC316A1D20C0009BEAF /* MaxValueOutcomeAccounts.h */,
-				D8DB6FC416A1D20C0009BEAF /* MaxValueOutcomeAccounts.m */,
-				D8DB6FC816A2A31C0009BEAF /* PieChartAccountsDataSource.h */,
-				D8DB6FC916A2A31C0009BEAF /* PieChartAccountsDataSource.m */,
-				D8DB6FCB16A2A4A70009BEAF /* PieChartIncomeAccounts.h */,
-				D8DB6FCC16A2A4A70009BEAF /* PieChartIncomeAccounts.m */,
-				D8DB6FD116A2A5500009BEAF /* PieChartBalanceAccounts.h */,
-				D8DB6FD216A2A5500009BEAF /* PieChartBalanceAccounts.m */,
-				D870970816B59DDF006EDF4E /* IncomeOutcomeBar.h */,
-				D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */,
-				D870970B16B59F6B006EDF4E /* BarChartAccountsDataSource.h */,
-				D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */,
+				D8954C8B16C81492005AFF39 /* PieChart */,
+				D8954C8C16C814A5005AFF39 /* BarChart */,
 			);
 			name = DataSources;
 			sourceTree = "<group>";
@@ -403,6 +427,8 @@
 				D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */,
 				D8CDF56F16B6F31B00BB99FF /* BarChartPlotter.h */,
 				D8CDF57016B6F31B00BB99FF /* BarChartPlotter.m */,
+				D8954C8816C7FD93005AFF39 /* BarChartGroupPlotter.h */,
+				D8954C8916C7FD93005AFF39 /* BarChartGroupPlotter.m */,
 			);
 			name = Plotting;
 			sourceTree = "<group>";
@@ -558,6 +584,8 @@
 				D870970D16B59F6B006EDF4E /* BarChartAccountsDataSource.m in Sources */,
 				D8CDF56916B5B0EE00BB99FF /* TransactionFinder.m in Sources */,
 				D8CDF57116B6F31C00BB99FF /* BarChartPlotter.m in Sources */,
+				D8954C8A16C7FD93005AFF39 /* BarChartGroupPlotter.m in Sources */,
+				D8954C8F16C8150F005AFF39 /* OutcomeBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

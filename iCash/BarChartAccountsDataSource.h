@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "DataSource.h"
+#import "Account.h"
 
 @interface BarChartAccountsDataSource : NSObject<DataSource>
 
 @property NSDictionary *cacheData;
+
+-(void)fillDataWithType:(AccountType)accountType;
 
 @end

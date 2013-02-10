@@ -112,4 +112,11 @@
     return context;
 }
 
+- (void) cleanUp:(CGContextRef) context {
+    CGContextSaveGState(context);
+    CGContextRestoreGState(context);
+    CGContextEndPage(context);
+    CGContextFlush(context);
+}
+
 @end

@@ -40,6 +40,7 @@
 
 
 - (CGContextRef) initContext:(NSRect)rect;
+- (void) cleanUp:(CGContextRef)context;
 
 @end
 

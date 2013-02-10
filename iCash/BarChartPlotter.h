@@ -11,4 +11,20 @@
 
 @interface BarChartPlotter : Plotter
 
+-(void)drawXYAxis:(CGContextRef)context
+             rect:(NSRect)rect
+           xSpace:(double)xSpace
+           ySpace:(double)ySpace;
+
+-(double)findMaxValFromDataSet:(NSDictionary *)dataSet;
+
+-(NSInteger)maxRoundedVal:(double)maxVal;
+
+-(void)drawMajorLines:(CGContextRef)context
+               maxVal:(double)maxVal
+                 rect:(NSRect)rect
+               xSpace:(double)xSpace
+               ySpace:(double)ySpace
+            maxHeigth:(double)maxHeight;
+
 @end
