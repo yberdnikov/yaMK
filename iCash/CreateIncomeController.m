@@ -85,6 +85,6 @@
 }
 
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)t {
-    [_transactionValue setDoubleValue:[[t value] doubleValue]];
+    [_transactionValue setDoubleValue:[[t value] integerValue] / 100.0];
 }
 @end

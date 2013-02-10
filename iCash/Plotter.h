@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "Datasource.h"
 #import "math.h"
+#import "PlotView.h"
 
 @interface Plotter : NSObject
 
 @property NSObject<DataSource> *dataSource;
-@property CGFloat fontSize;
+@property (strong) NSFont *font;
+@property PlotView *plotView;
 
 -(void)plot:(NSRect)rect;
 - (CGRect) drawText:(CGContextRef)context
@@ -28,6 +30,14 @@
                text:(NSString *)text
            fontSize:(double)fontSize
            moveLeft:(BOOL)move;
+
+- (CGRect) drawText:(CGContextRef)context
+             pointX:(CGFloat)pointX
+             pointY:(CGFloat)pointY
+               text:(NSString *)text
+               font:(NSFont *)font
+           moveLeft:(BOOL)move;
+
 
 - (CGContextRef) initContext:(NSRect)rect;
 

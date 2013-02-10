@@ -60,6 +60,43 @@
         return lineBounds;
 }
 
+- (CGRect) drawText:(CGContextRef)context
+             pointX:(CGFloat)pointX
+             pointY:(CGFloat)pointY
+               text:(NSString *)text
+               font:(NSFont *)nsFont
+           moveLeft:(BOOL)move {
+    // Prepare font
+    CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)([[[nsFont fontDescriptor] fontAttributes] valueForKey:NSFontNameAttribute]), [[[[nsFont fontDescriptor] fontAttributes] valueForKey:NSFontSizeAttribute] doubleValue], NULL);
+    
+    // Create an attributed string
+    CFStringRef keys[] = { kCTFontAttributeName };
+    CFTypeRef values[] = { font };
+    CFDictionaryRef attr = CFDictionaryCreate(NULL, (const void **)&keys, (const void **)&values,
+                                              sizeof(keys) / sizeof(keys[0]), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    CFStringRef str = (__bridge CFStringRef)text;
+    CFAttributedStringRef attrString = CFAttributedStringCreate(NULL, str, attr);
+    CFRelease(attr);
+    
+    // Draw the string
+    CTLineRef line = CTLineCreateWithAttributedString(attrString);
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);  //Use this one when using standard view coordinates
+    //CGContextSetTextMatrix(context, CGAffineTransformMakeScale(1.0, -1.0)); //Use this one if the view's coordinates are flipped
+    CGRect lineBounds = CTLineGetImageBounds(line, context);
+    if (move) {
+        CGContextSetTextPosition(context, pointX - lineBounds.size.width, pointY);
+    } else {
+        CGContextSetTextPosition(context, pointX, pointY);
+    }
+    CTLineDraw(line, context);
+    
+    // Clean up
+    CFRelease(line);
+    CFRelease(attrString);
+    CFRelease(font);
+    return lineBounds;
+}
+
 - (CGContextRef) initContext:(NSRect)rect {
     CGRect pageRect;
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];

@@ -12,6 +12,6 @@
 
 @interface PlotView : NSView
 
-@property Plotter *plotter;
+@property (strong) Plotter *plotter;
 
 @end

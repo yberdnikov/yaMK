@@ -44,7 +44,8 @@
 -(IBAction)plotBarChartIncomeOutcome:(id)sender {
     Plotter *plotter = [[BarChartPlotter alloc] init];
     [plotter setDataSource:[[IncomeOutcomeBar alloc] init]];
-    [plotter setFontSize:14];
+    [plotter setFont:[NSFont fontWithName:@"Times" size:14]];
+    [plotter setPlotView:_plotView];
     [_plotView setPlotter:plotter];
     [_plotPanel makeKeyAndOrderFront:sender];
     [_plotPanel display];

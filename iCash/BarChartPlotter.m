@@ -14,14 +14,33 @@
 
 -(void)plot:(NSRect)rect {
     NSLog(@"BarChartPlotter drawRect");
+    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
     
-    double xSpace = 1.0/16.0 * rect.size.width;
-    double ySpace = 1.0/8.0 * rect.size.height;
+    double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
+    double ySpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + 20;
     
-    double maxValue = [self findMaxVal:[[self dataSource] data]];
+    double emptySpaceMul = 0.25;
+    double maxValue = [self findMaxValFromDataSet:[[self dataSource] data]];
     double maxHeight = 15.0/16.0 * (rect.size.height - ySpace * 2);
+    
+    NSString *maxLabelByWidth = [self findMaxLabelByWidthInDataSource];
+    double minGroupWidth = [maxLabelByWidth sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width;
     double groupWidth = (4.0 * (rect.size.width - xSpace * 2)) / (5.0 * [[[self dataSource] data] count] + 1.0);
-    double spaceWidth = groupWidth / 4.0;
+    if (groupWidth < minGroupWidth) {
+        groupWidth = minGroupWidth;
+    }
+    double spaceWidth = groupWidth * emptySpaceMul;
+    
+    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + groupWidth * [[[self dataSource] data] count];
+//    NSRect bounds = [[self plotView] bounds];
+//    NSSize graphSize = rect.size;
+//    if (groupWidth < minGroupWidth) {
+//        graphSize.width = 1000;
+//        bounds.size.width = 1000;
+//    }
+//    [[self plotView] setFrameSize:graphSize];
+//    [[self plotView] setBoundsSize:bounds.size];
+    
     int groupNum = 0;
     
     CGContextRef context = [self initContext:rect];
@@ -48,9 +67,8 @@
         if ([[self dataSource] respondsToSelector:@selector(labelText:)]) {
             groupLabel = [[self dataSource] labelText:groupKey];
         }
-        double fontSize = [self defineMaxFontSizeForString:groupLabel width:groupWidth height:(ySpace - 15)];
-        NSSize labelSize = [groupLabel sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:fontSize] forKey:NSFontAttributeName]];
-        [self drawText:context pointX:(x + (groupWidth - labelSize.width) / 2) pointY:ySpace - labelSize.height - 10 text:groupLabel fontSize:fontSize moveLeft:NO];
+        NSSize labelSize = [groupLabel sizeWithAttributes:[NSDictionary dictionaryWithObject:[self font] forKey:NSFontAttributeName]];
+        [self drawText:context pointX:(x + (groupWidth - labelSize.width) / 2) pointY:ySpace - labelSize.height - 10 text:groupLabel font:[self font] moveLeft:NO];
         groupNum++;
     }
     
@@ -58,44 +76,6 @@
     CGContextRestoreGState(context);
     CGContextEndPage(context);
     CGContextFlush(context);
-}
-
--(double)defineMaxFontSizeForString:(NSString *)string
-                              width:(double)stringWidth
-                             height:(double)stringHeight;
-{
-//    double goldNum = 2.0 / (1.0 + sqrt(5));
-//    double minFont = 1;
-//    double maxFont = 256;
-//    double delta = 0.1;
-//    double minWidth = 0;
-//    double maxWidth = 100000;
-//    minWidth = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:minFont] forKey:NSFontAttributeName]].width;
-//    maxWidth = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:maxFont] forKey:NSFontAttributeName]].width;
-//    NSSize fontSize;
-//    double result = 0;
-//    while ((fabs(maxWidth - stringWidth) > delta && fabs(minWidth - stringWidth) > delta) && (maxFont > 2)) {
-//        if (fabs(maxWidth - stringWidth) < fabs(minWidth - stringWidth)) {
-//            minFont = maxFont - (maxFont - minFont) * goldNum;
-//            fontSize = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:minFont] forKey:NSFontAttributeName]];
-//            minWidth = fontSize.width;
-//            result = minFont;
-//        } else {
-//            maxFont = minFont + (maxFont - minFont) * goldNum;
-//            fontSize = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:maxFont] forKey:NSFontAttributeName]];
-//            maxWidth = fontSize.width;
-//            result = maxFont;
-//        }
-//    }
-//    if (fontSize.height > stringHeight) {
-//        minFont = 1;
-//        maxFont = result;
-//    }
-//    while (fontSize.height > stringHeight && result > 0) {
-//        result -= 0.5;
-//        fontSize = [string sizeWithAttributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Times" size:result] forKey:NSFontAttributeName]];
-//    }
-    return 14;
 }
 
 - (void)drawParenthesis:(double)ySpace x:(double)x context:(CGContextRef)context groupWidth:(double)groupWidth {
@@ -128,7 +108,7 @@
     CGContextStrokePath(context);
 }
 
--(double)findMaxVal:(NSDictionary *)dataSet {
+-(double)findMaxValFromDataSet:(NSDictionary *)dataSet {
     NSArray *monthsVals = [dataSet allValues];
     double result = 0;
     for (NSMutableDictionary *io in monthsVals) {
@@ -168,10 +148,23 @@
         CGContextAddLineToPoint(context, rect.size.width - xSpace, (maxRoundedVal - lineVal * sub) * maxHeight / maxVal + ySpace);
         CGContextStrokePath(context);
         NSString *lbl = [[NSNumber numberWithInteger:maxRoundedVal - lineVal * sub] description];
-        [self drawText:context pointX:5 pointY:(maxRoundedVal - lineVal * sub) * maxHeight / maxVal + ySpace text:lbl fontSize:[self defineMaxFontSizeForString:lbl width:xSpace - 10 height:ySpace] moveLeft:NO];
+        [self drawText:context pointX:5 pointY:(maxRoundedVal - lineVal * sub) * maxHeight / maxVal + ySpace text:lbl font:[self font] moveLeft:NO];
     }
     CGFloat defPattern[1] = {0};
     CGContextSetLineDash(context, 0, defPattern, 0);
+}
+
+-(NSString *)findMaxLabelByWidthInDataSource {
+    NSArray *labels = [[[self dataSource] data] allKeys];
+    NSString *result;
+    double maxWidth = 0;
+    for (id labelId in labels) {
+        double lblWidth = [[labelId description] sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width;
+        if (lblWidth > maxWidth) {
+            result = [[self dataSource] labelText:labelId];
+        }
+    }
+    return result;
 }
 
 @end
