@@ -13,5 +13,6 @@
 @interface PlotView : NSView
 
 @property (strong) Plotter *plotter;
+@property IBOutlet NSPopover *details;
 
 @end

@@ -11,11 +11,13 @@
 #import "math.h"
 #import "PlotView.h"
 
-@interface Plotter : NSObject
+@interface Plotter : NSResponder
 
 @property NSObject<DataSource> *dataSource;
 @property (strong) NSFont *font;
 @property PlotView *plotView;
+@property CGContextRef context;
+@property NSNumber *selectedValue;
 
 -(void)plot:(NSRect)rect;
 - (CGRect) drawText:(CGContextRef)context

@@ -9,6 +9,7 @@
 #import "BarChartPlotter.h"
 #import "DataSourceContainer.h"
 #import "math.h"
+#import "DetailsViewContainer.h"
 
 @implementation BarChartPlotter
 
@@ -48,13 +49,20 @@
     NSArray *keys = [[[self dataSource] data] allKeys];
     keys = [keys sortedArrayUsingSelector:@selector(compare:)];
     int memberNum = 0;
+    [self setDetails:[NSMutableArray array]];
     for (id groupKey in keys) {
         CGContextMoveToPoint(context, spaceWidth + barWidth * memberNum + xSpace, ySpace);
         DataSourceContainer *dataCont = [[[self dataSource] data] objectForKey:groupKey];
         
         CGContextSetFillColorWithColor(context, [[dataCont color] CGColor]);
         double x = xSpace + spaceWidth + (barWidth + spaceWidth + 1) * memberNum;
-        CGContextAddRect(context, CGRectMake(x, ySpace, barWidth, [dataCont value] * maxHeight / maxValue));
+        CGRect barRect = CGRectMake(x, ySpace, barWidth, [dataCont value] * maxHeight / maxValue);
+        CGContextAddRect(context, barRect);
+        NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:barRect
+                                                                    options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
+                                                                      owner:self userInfo:nil];
+        [[self plotView] addTrackingArea:trackingArea];
+        [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:barRect]];
         CGContextFillPath(context);
         memberNum++;
     }
@@ -125,6 +133,44 @@
     }
     CGFloat defPattern[1] = {0};
     CGContextSetLineDash(context, 0, defPattern, 0);
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    NSPoint globalLocation = [theEvent locationInWindow];
+    NSPoint viewLocation = [[self plotView] convertPoint: globalLocation fromView: nil ];
+    for (DetailsViewContainer *dvc in _details) {
+        if (NSPointInRect(viewLocation, [dvc rect])) {
+            NSLog(@"val = %f", [[dvc dataCont] value]);
+            [self showPopover:dvc];
+        }
+    }
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    [[[self plotView] details] close];
+}
+
+- (void)showPopover:(DetailsViewContainer *)dvc {
+    if (![[[self plotView] details] isShown]) {
+        [[[self plotView] details] showRelativeToRect:[dvc rect] ofView:[self plotView] preferredEdge:NSMaxYEdge];
+        [self setSelectedValue:[NSNumber numberWithDouble:[[dvc dataCont] value]]];
+    }
+}
+
+- (void)mouseMoved:(NSEvent *)theEvent {
+    NSPoint globalLocation = [theEvent locationInWindow];
+    NSPoint viewLocation = [[self plotView] convertPoint: globalLocation fromView: nil ];
+    BOOL isShow = NO;
+    for (DetailsViewContainer *dvc in _details) {
+        if (NSPointInRect(viewLocation, [dvc rect])) {
+            NSLog(@"val = %f", [[dvc dataCont] value]);
+            [self showPopover:dvc];
+            isShow = YES;
+        }
+    }
+    if (!isShow) {
+        [[[self plotView] details] close];
+    }
 }
 
 @end

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "PlotView.h"
+#import "Plotter.h"
 
 @interface PlotDiagramController : NSObject
 
 @property IBOutlet PlotView *plotView;
 @property IBOutlet NSPanel *plotPanel;
+@property Plotter *currentPlotter;
 
 -(IBAction)plotPieChartOutcome:(id)sender;
 -(IBAction)plotPieChartIncome:(id)sender;

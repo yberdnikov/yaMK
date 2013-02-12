@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Plotter.h"
 
-@interface BarChartPlotter : Plotter
+@interface BarChartPlotter : Plotter<NSPopoverDelegate>
+
+@property NSMutableArray *details;
+@property IBOutlet NSPopover *detailsPopover;
 
 -(void)drawXYAxis:(CGContextRef)context
              rect:(NSRect)rect

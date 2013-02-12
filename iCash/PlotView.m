@@ -20,7 +20,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
+        
     }
     
     return self;
@@ -38,6 +38,10 @@
     frame.size.height = bounds.size.height * scaleFactor;
     [self setFrameSize: frame.size];    // Change the view's size.
     [self setBoundsSize: bounds.size];  // Restore the view's bounds, which causes the view to be scaled.
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    NSLog(@"mouseEntered");
 }
 
 @end

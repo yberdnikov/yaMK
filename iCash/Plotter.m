@@ -99,17 +99,17 @@
 
 - (CGContextRef) initContext:(NSRect)rect {
     CGRect pageRect;
-    CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    _context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
     pageRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
     
-    CGContextBeginPage(context, &pageRect);
-    CGContextSetRGBFillColor(context, 1, 1, 1, 1);
-    CGContextFillRect(context, NSRectToCGRect(rect));
+    CGContextBeginPage(_context, &pageRect);
+    CGContextSetRGBFillColor(_context, 1, 1, 1, 1);
+    CGContextFillRect(_context, NSRectToCGRect(rect));
     //  Start with black fill and stroke colors
-    CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+    CGContextSetRGBStrokeColor(_context, 0, 0, 0, 1);
     //  The current path for the context starts out empty
-    assert(CGContextIsPathEmpty(context));
-    return context;
+    assert(CGContextIsPathEmpty(_context));
+    return _context;
 }
 
 - (void) cleanUp:(CGContextRef) context {

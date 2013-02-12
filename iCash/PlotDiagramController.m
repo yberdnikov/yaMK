@@ -58,6 +58,7 @@
     [plotter setDataSource:[[OutcomeBar alloc] init]];
     [plotter setFont:[NSFont fontWithName:@"Times" size:14]];
     [plotter setPlotView:_plotView];
+    [self setCurrentPlotter:plotter];
     [_plotView setPlotter:plotter];
     [_plotPanel makeKeyAndOrderFront:sender];
     [_plotPanel display];
