@@ -10,14 +10,16 @@
 #import "Datasource.h"
 #import "math.h"
 #import "PlotView.h"
+#import "DetailsViewContainer.h"
 
 @interface Plotter : NSResponder
 
 @property NSObject<DataSource> *dataSource;
 @property (strong) NSFont *font;
-@property PlotView *plotView;
+@property (weak) PlotView *plotView;
 @property CGContextRef context;
-@property NSNumber *selectedValue;
+@property DetailsViewContainer *selectedDV;
+@property NSMutableArray *trackingAreas;
 
 -(void)plot:(NSRect)rect;
 - (CGRect) drawText:(CGContextRef)context

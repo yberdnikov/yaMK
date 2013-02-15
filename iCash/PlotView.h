@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DetailsViewContainer.h"
 
 @class Plotter;
 
@@ -14,5 +15,6 @@
 
 @property (strong) Plotter *plotter;
 @property IBOutlet NSPopover *details;
+@property DetailsViewContainer *detailsVC;
 
 @end

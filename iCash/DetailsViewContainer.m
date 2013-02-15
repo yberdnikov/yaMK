@@ -12,11 +12,13 @@
 @implementation DetailsViewContainer
 
 -(id)initWithData:(DataSourceContainer *)data
-             rect:(NSRect)rect {
+             rect:(NSRect)rect
+            label:(NSString *)label{
     self = [super init];
     if (self) {
         [self setDataCont:data];
         [self setRect:rect];
+        [self setLabel:label];
     }
     return self;
 }

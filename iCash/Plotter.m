@@ -10,6 +10,14 @@
 
 @implementation Plotter
 
+-(id)init {
+    self = [super init];
+    if (self) {
+        [self setTrackingAreas:[NSMutableArray array]];
+    }
+    return self;
+}
+
 -(void)plot:(NSRect)rect{
     NSLog(@"Plotter plot");
 }

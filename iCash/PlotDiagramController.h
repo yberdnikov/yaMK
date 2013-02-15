@@ -14,7 +14,7 @@
 
 @property IBOutlet PlotView *plotView;
 @property IBOutlet NSPanel *plotPanel;
-@property Plotter *currentPlotter;
+@property (strong, retain) Plotter *currentPlotter;
 
 -(IBAction)plotPieChartOutcome:(id)sender;
 -(IBAction)plotPieChartIncome:(id)sender;
@@ -22,5 +22,7 @@
 
 -(IBAction)plotBarChartIncomeOutcome:(id)sender;
 -(IBAction)plotBarChartOutcome:(id)sender;
+-(IBAction)plotBarChartIncome:(id)sender;
+-(IBAction)plotBarChartBalance:(id)sender;
 
 @end

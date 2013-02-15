@@ -62,7 +62,8 @@
                                                                     options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
                                                                       owner:self userInfo:nil];
         [[self plotView] addTrackingArea:trackingArea];
-        [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:barRect]];
+        [[self trackingAreas] addObject:trackingArea];
+        [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:barRect label:groupKey]];
         CGContextFillPath(context);
         memberNum++;
     }
@@ -142,6 +143,7 @@
         if (NSPointInRect(viewLocation, [dvc rect])) {
             NSLog(@"val = %f", [[dvc dataCont] value]);
             [self showPopover:dvc];
+            break;
         }
     }
 }
@@ -153,7 +155,7 @@
 - (void)showPopover:(DetailsViewContainer *)dvc {
     if (![[[self plotView] details] isShown]) {
         [[[self plotView] details] showRelativeToRect:[dvc rect] ofView:[self plotView] preferredEdge:NSMaxYEdge];
-        [self setSelectedValue:[NSNumber numberWithDouble:[[dvc dataCont] value]]];
+        [[self plotView] setDetailsVC:dvc];
     }
 }
 
@@ -168,9 +170,9 @@
             isShow = YES;
         }
     }
-    if (!isShow) {
-        [[[self plotView] details] close];
-    }
+//    if (!isShow) {
+//        [[[self plotView] details] close];
+//    }
 }
 
 @end

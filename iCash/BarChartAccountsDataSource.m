@@ -16,7 +16,7 @@
 }
 
 -(void)fillDataWithType:(AccountType)accountType {
-    NSArray *accounts = [[[AccountFinder alloc] init] findAccounts:Outcome ascending:NO];
+    NSArray *accounts = [[[AccountFinder alloc] init] findAccounts:accountType ascending:NO];
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     for (Account *a in accounts) {
         if ([a parent]) {

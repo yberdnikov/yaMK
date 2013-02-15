@@ -16,50 +16,69 @@
 #import "DataSourceContainer.h"
 #import "BarChartGroupPlotter.h"
 #import "OutcomeBar.h"
+#import "IncomeBar.h"
+#import "BalanceBar.h"
 
 @implementation PlotDiagramController
 
 -(IBAction)plotPieChartOutcome:(id)sender {
-    Plotter *plotter = [[PieChartPlotter alloc] init];
-    [plotter setDataSource:[[PieChartOutcomeAccounts alloc] init]];
-    [_plotView setPlotter:plotter];
-    [_plotPanel makeKeyAndOrderFront:sender];
-    [_plotPanel display];
+    [self clearView];
+    [_plotView setPlotter:[[PieChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[PieChartOutcomeAccounts alloc] init]];
+    [self redrawView:sender];
 }
 
 -(IBAction)plotPieChartIncome:(id)sender{
-    Plotter *plotter = [[PieChartPlotter alloc] init];
-    [plotter setDataSource:[[PieChartIncomeAccounts alloc] init]];
-    [_plotView setPlotter:plotter];
-    [_plotPanel makeKeyAndOrderFront:sender];
-    [_plotPanel display];
+    [self clearView];
+    [_plotView setPlotter:[[PieChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[PieChartIncomeAccounts alloc] init]];
+    [self redrawView:sender];
 }
 
 -(IBAction)plotPieChartBalance:(id)sender{
-    Plotter *plotter = [[PieChartPlotter alloc] init];
-    [plotter setDataSource:[[PieChartBalanceAccounts alloc] init]];
-    [_plotView setPlotter:plotter];
-    [_plotPanel makeKeyAndOrderFront:sender];
-    [_plotPanel display];
+    [self clearView];
+    [_plotView setPlotter:[[PieChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[PieChartBalanceAccounts alloc] init]];
+    [self redrawView:sender];
 }
 
 -(IBAction)plotBarChartIncomeOutcome:(id)sender {
-    Plotter *plotter = [[BarChartGroupPlotter alloc] init];
-    [plotter setDataSource:[[IncomeOutcomeBar alloc] init]];
-    [plotter setFont:[NSFont fontWithName:@"Times" size:14]];
-    [plotter setPlotView:_plotView];
-    [_plotView setPlotter:plotter];
-    [_plotPanel makeKeyAndOrderFront:sender];
-    [_plotPanel display];
+    [self clearView];
+    [_plotView setPlotter:[[BarChartGroupPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[IncomeOutcomeBar alloc] init]];
+   [self redrawView:sender];
 }
 
 -(IBAction)plotBarChartOutcome:(id)sender {
-    Plotter *plotter = [[BarChartPlotter alloc] init];
-    [plotter setDataSource:[[OutcomeBar alloc] init]];
-    [plotter setFont:[NSFont fontWithName:@"Times" size:14]];
-    [plotter setPlotView:_plotView];
-    [self setCurrentPlotter:plotter];
-    [_plotView setPlotter:plotter];
+    [self clearView];
+    [_plotView setPlotter:[[BarChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[OutcomeBar alloc] init]];
+    [self redrawView:sender];
+}
+
+-(IBAction)plotBarChartIncome:(id)sender {
+    [self clearView];
+    [_plotView setPlotter:[[BarChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[IncomeBar alloc] init]];
+    [self redrawView:sender];
+}
+
+-(IBAction)plotBarChartBalance:(id)sender {
+    [self clearView];
+    [_plotView setPlotter:[[BarChartPlotter alloc] init]];
+    [[_plotView plotter] setDataSource:[[BalanceBar alloc] init]];
+    [self redrawView:sender];
+}
+
+-(void)clearView {
+    for (NSTrackingArea *trackingArea in [[_plotView plotter] trackingAreas]) {
+        [_plotView removeTrackingArea:trackingArea];
+    }
+}
+
+-(void)redrawView:(id)sender {
+    [[_plotView plotter] setFont:[NSFont fontWithName:@"Times" size:14]];
+    [[_plotView plotter] setPlotView:_plotView];
     [_plotPanel makeKeyAndOrderFront:sender];
     [_plotPanel display];
 }

@@ -23,6 +23,8 @@
 		D8954C8A16C7FD93005AFF39 /* BarChartGroupPlotter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C8916C7FD93005AFF39 /* BarChartGroupPlotter.m */; };
 		D8954C8F16C8150F005AFF39 /* OutcomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C8E16C8150F005AFF39 /* OutcomeBar.m */; };
 		D8954C9216C97AF9005AFF39 /* DetailsViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9116C97AF9005AFF39 /* DetailsViewContainer.m */; };
+		D8954C9516CC1CAA005AFF39 /* IncomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9416CC1CAA005AFF39 /* IncomeBar.m */; };
+		D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9716CC1CC2005AFF39 /* BalanceBar.m */; };
 		D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* ToolbarActionController.m */; };
 		D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
@@ -109,6 +111,10 @@
 		D8954C8E16C8150F005AFF39 /* OutcomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeBar.m; sourceTree = "<group>"; };
 		D8954C9016C97AF8005AFF39 /* DetailsViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewContainer.h; sourceTree = "<group>"; };
 		D8954C9116C97AF9005AFF39 /* DetailsViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewContainer.m; sourceTree = "<group>"; };
+		D8954C9316CC1CA9005AFF39 /* IncomeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeBar.h; sourceTree = "<group>"; };
+		D8954C9416CC1CAA005AFF39 /* IncomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBar.m; sourceTree = "<group>"; };
+		D8954C9616CC1CC2005AFF39 /* BalanceBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceBar.h; sourceTree = "<group>"; };
+		D8954C9716CC1CC2005AFF39 /* BalanceBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceBar.m; sourceTree = "<group>"; };
 		D898120516A32D5E0063C91C /* ToolbarActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarActionController.h; sourceTree = "<group>"; };
 		D898120616A32D5E0063C91C /* ToolbarActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarActionController.m; sourceTree = "<group>"; };
 		D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStandardAccountStructure.h; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 				D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */,
 				D8954C8D16C8150F005AFF39 /* OutcomeBar.h */,
 				D8954C8E16C8150F005AFF39 /* OutcomeBar.m */,
+				D8954C9316CC1CA9005AFF39 /* IncomeBar.h */,
+				D8954C9416CC1CAA005AFF39 /* IncomeBar.m */,
+				D8954C9616CC1CC2005AFF39 /* BalanceBar.h */,
+				D8954C9716CC1CC2005AFF39 /* BalanceBar.m */,
 			);
 			name = BarChart;
 			sourceTree = "<group>";
@@ -592,6 +602,8 @@
 				D8954C8A16C7FD93005AFF39 /* BarChartGroupPlotter.m in Sources */,
 				D8954C8F16C8150F005AFF39 /* OutcomeBar.m in Sources */,
 				D8954C9216C97AF9005AFF39 /* DetailsViewContainer.m in Sources */,
+				D8954C9516CC1CAA005AFF39 /* IncomeBar.m in Sources */,
+				D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
