@@ -12,6 +12,7 @@
 		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
 		D81ED16F16750779007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */; };
 		D81ED172167668D1007BB14C /* OutcomeValumeFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */; };
+		D830485016E2761100C57CD4 /* ScrollPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D830484F16E2761100C57CD4 /* ScrollPlotView.m */; };
 		D870970A16B59DDF006EDF4E /* IncomeOutcomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */; };
 		D870970D16B59F6B006EDF4E /* BarChartAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
@@ -84,6 +85,8 @@
 		D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionNameFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeValumeFieldDelegate.h; sourceTree = "<group>"; };
 		D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeValumeFieldDelegate.m; sourceTree = "<group>"; };
+		D830484E16E2761100C57CD4 /* ScrollPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPlotView.h; sourceTree = "<group>"; };
+		D830484F16E2761100C57CD4 /* ScrollPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPlotView.m; sourceTree = "<group>"; };
 		D85F1E7516AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D85F1E7616AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D85F1E7716AC5CC00015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 				D8DB6FBD16A1BE4C0009BEAF /* Plotter.m */,
 				D8CDF56F16B6F31B00BB99FF /* BarChartPlotter.h */,
 				D8CDF57016B6F31B00BB99FF /* BarChartPlotter.m */,
+				D830484E16E2761100C57CD4 /* ScrollPlotView.h */,
+				D830484F16E2761100C57CD4 /* ScrollPlotView.m */,
 				D8954C8816C7FD93005AFF39 /* BarChartGroupPlotter.h */,
 				D8954C8916C7FD93005AFF39 /* BarChartGroupPlotter.m */,
 				D8954C9016C97AF8005AFF39 /* DetailsViewContainer.h */,
@@ -604,6 +609,7 @@
 				D8954C9216C97AF9005AFF39 /* DetailsViewContainer.m in Sources */,
 				D8954C9516CC1CAA005AFF39 /* IncomeBar.m in Sources */,
 				D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */,
+				D830485016E2761100C57CD4 /* ScrollPlotView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

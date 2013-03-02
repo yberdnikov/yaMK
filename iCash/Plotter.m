@@ -127,4 +127,17 @@
     CGContextFlush(context);
 }
 
+- (void)setZoom:(CGFloat)scaleFactor {
+    NSRect frame = [[self plotView] frame];
+    NSRect bounds = [[self plotView] bounds];
+    frame.size.width = bounds.size.width * scaleFactor;
+    frame.size.height = bounds.size.height * scaleFactor;
+    [[self plotView] setFrameSize: frame.size];    // Change the view's size.
+    [[self plotView] setBoundsSize: bounds.size];  // Restore the view's bounds, which causes the view to be scaled.
+}
+
+- (NSRect) getMinSize:(NSRect)rect {
+    return rect;
+}
+
 @end

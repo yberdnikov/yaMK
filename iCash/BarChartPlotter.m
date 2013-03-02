@@ -14,7 +14,7 @@
 @implementation BarChartPlotter
 
 -(void)plot:(NSRect)rect {
-    NSLog(@"BarChartPlotter drawRect");
+    [self clearTrackingAreas];
     NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
@@ -24,27 +24,12 @@
     double maxValue = [maxValString doubleValue];
     double maxHeight = 15.0/16.0 * (rect.size.height - ySpace * 2);
     
-    double minBarWidth = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
-    double barWidth = (rect.size.width - 2.0 * xSpace) / ((double)[[[self dataSource] data] count] / emptySpaceMul);
-    if (barWidth < minBarWidth) {
-        barWidth = minBarWidth;
-    }
+    double barWidth = (rect.size.width - 2.0 * xSpace - 13) / (double)([[[self dataSource] data] count])/(1.0 + emptySpaceMul);
     double spaceWidth = barWidth * emptySpaceMul;
-    
-    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + barWidth * [[[self dataSource] data] count];
-    //    NSRect bounds = [[self plotView] bounds];
-    //    NSSize graphSize = rect.size;
-    //    if (groupWidth < minGroupWidth) {
-    //        graphSize.width = 1000;
-    //        bounds.size.width = 1000;
-    //    }
-    //    [[self plotView] setFrameSize:graphSize];
-    //    [[self plotView] setBoundsSize:bounds.size];
-    
-    
-    CGContextRef context = [self initContext:rect];
-    [self drawXYAxis:context rect:rect xSpace:xSpace ySpace:ySpace];
-    [self drawMajorLines:context maxVal:maxValue rect:rect xSpace:xSpace ySpace:ySpace maxHeigth:maxHeight];
+
+    CGContextRef context = [self initContext:[[self plotView] bounds]];
+    [self drawXYAxis:context rect:[[self plotView] bounds] xSpace:xSpace ySpace:ySpace];
+    [self drawMajorLines:context maxVal:maxValue rect:[[self plotView] bounds] xSpace:xSpace ySpace:ySpace maxHeigth:maxHeight];
     
     NSArray *keys = [[[self dataSource] data] allKeys];
     keys = [keys sortedArrayUsingSelector:@selector(compare:)];
@@ -55,7 +40,7 @@
         DataSourceContainer *dataCont = [[[self dataSource] data] objectForKey:groupKey];
         
         CGContextSetFillColorWithColor(context, [[dataCont color] CGColor]);
-        double x = xSpace + spaceWidth + (barWidth + spaceWidth + 1) * memberNum;
+        double x = xSpace + spaceWidth + (barWidth + spaceWidth) * memberNum;
         CGRect barRect = CGRectMake(x, ySpace, barWidth, [dataCont value] * maxHeight / maxValue);
         CGContextAddRect(context, barRect);
         NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:barRect
@@ -71,6 +56,12 @@
     [self cleanUp:context];
 }
 
+-(void)clearTrackingAreas {
+    for (NSTrackingArea *ta in [self trackingAreas]) {
+        [[self plotView] removeTrackingArea:ta];
+    }
+    [[self trackingAreas] removeAllObjects];
+}
 
 -(void)drawXYAxis:(CGContextRef)context
              rect:(NSRect)rect
@@ -159,6 +150,27 @@
     }
 }
 
+- (NSRect)getMinSize:(NSRect)rect {
+    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
+    
+    double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
+    
+    double emptySpaceMul = 0.25;
+    
+    double barWidth = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
+    double spaceWidth = barWidth * emptySpaceMul;
+    
+    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + barWidth * [[[self dataSource] data] count];
+    
+    NSRect result = rect;
+    result.size.width = minGraphWidth + 2 * xSpace;
+    if (result.size.width > rect.size.width) {
+        return result;
+    } else {
+        return rect;
+    }
+}
+
 - (void)mouseMoved:(NSEvent *)theEvent {
     NSPoint globalLocation = [theEvent locationInWindow];
     NSPoint viewLocation = [[self plotView] convertPoint: globalLocation fromView: nil ];
@@ -170,9 +182,6 @@
             isShow = YES;
         }
     }
-//    if (!isShow) {
-//        [[[self plotView] details] close];
-//    }
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @class Plotter;
 
-@interface PlotView : NSView
+@interface PlotView : NSClipView
 
 @property (strong) Plotter *plotter;
 @property IBOutlet NSPopover *details;

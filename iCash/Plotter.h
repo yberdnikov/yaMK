@@ -17,6 +17,7 @@
 @property NSObject<DataSource> *dataSource;
 @property (strong) NSFont *font;
 @property (weak) PlotView *plotView;
+@property (weak) NSScrollView *scrollView;
 @property CGContextRef context;
 @property DetailsViewContainer *selectedDV;
 @property NSMutableArray *trackingAreas;
@@ -45,6 +46,10 @@
 
 - (CGContextRef) initContext:(NSRect)rect;
 - (void) cleanUp:(CGContextRef)context;
+
+- (void)setZoom:(CGFloat)scaleFactor;
+
+- (NSRect)getMinSize:(NSRect)rect;
 
 @end
 

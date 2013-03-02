@@ -79,6 +79,7 @@
 -(void)redrawView:(id)sender {
     [[_plotView plotter] setFont:[NSFont fontWithName:@"Times" size:14]];
     [[_plotView plotter] setPlotView:_plotView];
+    [[_plotView plotter] setScrollView:_scrollView];
     [_plotPanel makeKeyAndOrderFront:sender];
     [_plotPanel display];
 }

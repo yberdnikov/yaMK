@@ -1592,14 +1592,15 @@
 										<object class="NSView" id="233710786">
 											<reference key="NSNextResponder" ref="289045656"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{610, 426}</string>
+											<array class="NSMutableArray" key="NSSubviews"/>
+											<string key="NSFrameSize">{609, 425}</string>
 											<reference key="NSSuperview" ref="289045656"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="58355879"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 										</object>
 									</array>
-									<string key="NSFrame">{{1, 1}, {610, 426}}</string>
+									<string key="NSFrame">{{1, 1}, {609, 425}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="233710786"/>
@@ -1619,7 +1620,7 @@
 								<object class="NSScroller" id="983131095">
 									<reference key="NSNextResponder" ref="640125216"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{595, 1}, {16, 426}}</string>
+									<string key="NSFrame">{{594, 1}, {16, 425}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView"/>
@@ -1633,7 +1634,7 @@
 								<object class="NSScroller" id="58355879">
 									<reference key="NSNextResponder" ref="640125216"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{1, 411}, {610, 16}}</string>
+									<string key="NSFrame">{{1, 410}, {609, 16}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="983131095"/>
@@ -1645,7 +1646,7 @@
 									<double key="NSPercent">0.50602412223815918</double>
 								</object>
 							</array>
-							<string key="NSFrame">{{0, -1}, {612, 428}}</string>
+							<string key="NSFrameSize">{611, 427}</string>
 							<reference key="NSSuperview" ref="400709471"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="289045656"/>
@@ -2539,12 +2540,28 @@
 					<int key="connectionID">647</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">scrollView</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="640125216"/>
+					</object>
+					<int key="connectionID">652</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">createAccounts:</string>
 						<reference key="source" ref="749301905"/>
 						<reference key="destination" ref="415486750"/>
 					</object>
 					<int key="connectionID">574</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">plotView</string>
+						<reference key="source" ref="640125216"/>
+						<reference key="destination" ref="233710786"/>
+					</object>
+					<int key="connectionID">660</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3779,6 +3796,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">615</int>
 						<reference key="object" ref="233710786"/>
+						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="640125216"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -4016,6 +4034,7 @@
 				<string key="573.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="575.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="614.CustomClassName">ScrollPlotView</string>
 				<string key="614.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="615.CustomClassName">PlotView</string>
 				<string key="615.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -4048,7 +4067,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">651</int>
+			<int key="maxID">660</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4134,6 +4153,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="plotPanel">NSPanel</string>
 						<string key="plotView">PlotView</string>
+						<string key="scrollView">NSScrollView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="plotPanel">
@@ -4144,6 +4164,10 @@
 							<string key="name">plotView</string>
 							<string key="candidateClassName">PlotView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="scrollView">
+							<string key="name">scrollView</string>
+							<string key="candidateClassName">NSScrollView</string>
+						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
@@ -4152,7 +4176,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">PlotView</string>
-					<string key="superclassName">NSView</string>
+					<string key="superclassName">NSClipView</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">details</string>
 						<string key="NS.object.0">NSPopover</string>
@@ -4167,6 +4191,25 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/PlotView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ScrollPlotView</string>
+					<string key="superclassName">NSScrollView</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">plotView</string>
+						<string key="NS.object.0">PlotView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">plotView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">plotView</string>
+							<string key="candidateClassName">PlotView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ScrollPlotView.h</string>
 					</object>
 				</object>
 			</array>

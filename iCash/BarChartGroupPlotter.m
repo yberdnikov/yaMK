@@ -31,16 +31,6 @@
     }
     double spaceWidth = groupWidth * emptySpaceMul;
     
-    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + groupWidth * [[[self dataSource] data] count];
-    //    NSRect bounds = [[self plotView] bounds];
-    //    NSSize graphSize = rect.size;
-    //    if (groupWidth < minGroupWidth) {
-    //        graphSize.width = 1000;
-    //        bounds.size.width = 1000;
-    //    }
-    //    [[self plotView] setFrameSize:graphSize];
-    //    [[self plotView] setBoundsSize:bounds.size];
-    
     int groupNum = 0;
     
     CGContextRef context = [self initContext:rect];

@@ -13,6 +13,7 @@
 @interface PlotDiagramController : NSObject
 
 @property IBOutlet PlotView *plotView;
+@property IBOutlet NSScrollView *scrollView;
 @property IBOutlet NSPanel *plotPanel;
 @property (strong, retain) Plotter *currentPlotter;
 

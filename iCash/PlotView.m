@@ -28,7 +28,8 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    [_plotter plot:[self bounds]];
+    [_plotter plot:[self frame]];
+//    [_plotter plot:[_plotter getMinSize:[self frame]]];
 }
 
 - (void)setZoom:(CGFloat)scaleFactor {
@@ -37,7 +38,7 @@
     frame.size.width = bounds.size.width * scaleFactor;
     frame.size.height = bounds.size.height * scaleFactor;
     [self setFrameSize: frame.size];    // Change the view's size.
-    [self setBoundsSize: bounds.size];  // Restore the view's bounds, which causes the view to be scaled.
+    [self setBoundsSize: frame.size];  // Restore the view's bounds, which causes the view to be scaled.
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
