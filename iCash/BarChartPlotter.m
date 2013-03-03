@@ -15,6 +15,12 @@
 
 -(void)plot:(NSRect)rect {
     [self clearTrackingAreas];
+    NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:rect
+                                                                options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
+                                                                  owner:self userInfo:nil];
+    [[self plotView] addTrackingArea:trackingArea];
+    [[self trackingAreas] addObject:trackingArea];
+
     NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
@@ -43,11 +49,7 @@
         double x = xSpace + spaceWidth + (barWidth + spaceWidth) * memberNum;
         CGRect barRect = CGRectMake(x, ySpace, barWidth, [dataCont value] * maxHeight / maxValue);
         CGContextAddRect(context, barRect);
-        NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:barRect
-                                                                    options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
-                                                                      owner:self userInfo:nil];
-        [[self plotView] addTrackingArea:trackingArea];
-        [[self trackingAreas] addObject:trackingArea];
+        
         [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:barRect label:groupKey]];
         CGContextFillPath(context);
         memberNum++;
@@ -60,7 +62,6 @@
     for (NSTrackingArea *ta in [self trackingAreas]) {
         [[self plotView] removeTrackingArea:ta];
     }
-    [[self trackingAreas] removeAllObjects];
 }
 
 -(void)drawXYAxis:(CGContextRef)context
@@ -127,22 +128,6 @@
     CGContextSetLineDash(context, 0, defPattern, 0);
 }
 
-- (void)mouseEntered:(NSEvent *)theEvent {
-    NSPoint globalLocation = [theEvent locationInWindow];
-    NSPoint viewLocation = [[self plotView] convertPoint: globalLocation fromView: nil ];
-    for (DetailsViewContainer *dvc in _details) {
-        if (NSPointInRect(viewLocation, [dvc rect])) {
-            NSLog(@"val = %f", [[dvc dataCont] value]);
-            [self showPopover:dvc];
-            break;
-        }
-    }
-}
-
-- (void)mouseExited:(NSEvent *)theEvent {
-    [[[self plotView] details] close];
-}
-
 - (void)showPopover:(DetailsViewContainer *)dvc {
     if (![[[self plotView] details] isShown]) {
         [[[self plotView] details] showRelativeToRect:[dvc rect] ofView:[self plotView] preferredEdge:NSMaxYEdge];
@@ -182,10 +167,12 @@
     BOOL isShow = NO;
     for (DetailsViewContainer *dvc in _details) {
         if (NSPointInRect(viewLocation, [dvc rect])) {
-            NSLog(@"val = %f", [[dvc dataCont] value]);
             [self showPopover:dvc];
             isShow = YES;
         }
+    }
+    if (!isShow) {
+        [[[self plotView] details] close];
     }
 }
 
