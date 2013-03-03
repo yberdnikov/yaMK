@@ -154,21 +154,26 @@
     NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
+    double ySpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + 20;
     
     double emptySpaceMul = 0.25;
     
-    double barWidth = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
-    double spaceWidth = barWidth * emptySpaceMul;
+    double letterHeight = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
+    double spaceWidth = letterHeight * emptySpaceMul;
     
-    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + barWidth * [[[self dataSource] data] count];
+    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + letterHeight * [[[self dataSource] data] count] + 2 * xSpace;
     
     NSRect result = rect;
-    result.size.width = minGraphWidth + 2 * xSpace;
-    if (result.size.width > rect.size.width) {
-        return result;
-    } else {
-        return rect;
+    CGFloat width = minGraphWidth + 2 * xSpace;
+    CGFloat height = letterHeight * 5 + 2 * ySpace;
+    
+    if (width > rect.size.width) {
+        result.size.width = width;
     }
+    if (height > rect.size.height) {
+        result.size.height = height;
+    }
+    return result;
 }
 
 - (void)mouseMoved:(NSEvent *)theEvent {
