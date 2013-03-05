@@ -15,6 +15,10 @@
 
 -(void)plot:(NSRect)rect {
     [self clearTrackingAreas];
+    if ([self fastPlot]) {
+        [super plot:rect];
+        return;
+    }
     NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:rect
                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
                                                                   owner:self userInfo:nil];

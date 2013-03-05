@@ -21,6 +21,7 @@
 @property CGContextRef context;
 @property DetailsViewContainer *selectedDV;
 @property NSMutableArray *trackingAreas;
+@property BOOL fastPlot;
 
 -(void)plot:(NSRect)rect;
 - (CGRect) drawText:(CGContextRef)context

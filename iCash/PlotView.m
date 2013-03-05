@@ -29,7 +29,6 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     [_plotter plot:[self frame]];
-//    [_plotter plot:[_plotter getMinSize:[self frame]]];
 }
 
 - (void)setZoom:(CGFloat)scaleFactor {

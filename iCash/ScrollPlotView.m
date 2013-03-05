@@ -25,6 +25,15 @@
 -(void)viewDidEndLiveResize {
     NSRect rect = [self bounds];
     rect.size = [self contentSize];
+    [[_plotView plotter] setFastPlot:NO];
+    [_plotView setFrame:[[_plotView plotter] getMinSize:rect]];
+    [_plotView setNeedsDisplay:YES];
+}
+
+-(void)viewWillStartLiveResize {
+    NSRect rect = [self bounds];
+    rect.size = [self contentSize];
+    [[_plotView plotter] setFastPlot:YES];
     [_plotView setFrame:[[_plotView plotter] getMinSize:rect]];
 }
 

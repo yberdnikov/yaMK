@@ -19,7 +19,8 @@
 }
 
 -(void)plot:(NSRect)rect{
-    NSLog(@"Plotter plot");
+    CGContextRef context = [self initContext:rect];
+    [self cleanUp:context];
 }
 
 - (CGRect) drawText:(CGContextRef)context
