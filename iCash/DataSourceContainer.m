@@ -10,6 +10,14 @@
 
 @implementation DataSourceContainer
 
+-(DataSourceContainer *)initWithName:(NSString *)name {
+    self = [super init];
+    if (self) {
+        [self setName:name];
+    }
+    return self;
+}
+
 -(NSString *)description {
     NSMutableString *result = [[NSMutableString alloc] init];
     [result appendFormat:@"DataSrcCont [value = %f, intValue = %lu]", _value, _intValue];

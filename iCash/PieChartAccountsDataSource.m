@@ -12,16 +12,16 @@
 
 @implementation PieChartAccountsDataSource
 
--(NSDictionary *)data {
+-(NSArray *)data {
     return nil;
     
 }
 
--(NSDictionary *)data:(AccountType)at {
+-(NSArray *)data:(AccountType)at {
     if (_cacheData) {
         return _cacheData;
     } else {
-        NSMutableDictionary *result = [NSMutableDictionary dictionary];
+        NSMutableArray *result = [NSMutableArray array];
         AccountFinder *af = [[AccountFinder alloc] init];
         NSArray *accounts = [af findAccounts:at];
         NSLog(@"accounts = %@", accounts);
@@ -39,7 +39,8 @@
                     DataSourceContainer *cont = [[DataSourceContainer alloc] init];
                     [cont setColor:[account color]];
                     [cont setValue:percentVal];
-                    [result setObject:cont forKey:[account name]];
+                    [cont setName:[account name]];
+                    [result addObject:cont];
                 }
             }
         }

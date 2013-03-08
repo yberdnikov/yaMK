@@ -10,7 +10,7 @@
 
 @implementation IncomeBar
 
--(NSDictionary *)data {
+-(NSArray *)data {
     if (![self cacheData]) {
         [self fillDataWithType:Income];
     }

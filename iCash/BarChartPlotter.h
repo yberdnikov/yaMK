@@ -19,7 +19,7 @@
            xSpace:(double)xSpace
            ySpace:(double)ySpace;
 
--(double)findMaxValFromDataSet:(NSDictionary *)dataSet;
+-(double)findMaxValFromDataSet:(NSArray *)dataSet;
 
 -(NSInteger)maxRoundedVal:(double)maxVal;
 

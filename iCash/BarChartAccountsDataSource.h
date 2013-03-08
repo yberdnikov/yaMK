@@ -12,7 +12,7 @@
 
 @interface BarChartAccountsDataSource : NSObject<DataSource>
 
-@property NSDictionary *cacheData;
+@property NSArray *cacheData;
 
 -(void)fillDataWithType:(AccountType)accountType;
 

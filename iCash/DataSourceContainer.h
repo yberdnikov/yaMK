@@ -10,8 +10,12 @@
 
 @interface DataSourceContainer : NSObject
 
+-(DataSourceContainer *)initWithName:(NSString *)name;
+
+@property NSString *name;
 @property double value;
 @property NSInteger intValue;
 @property NSColor *color;
+@property NSArray *subData;
 
 @end

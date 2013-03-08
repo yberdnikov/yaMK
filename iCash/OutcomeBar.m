@@ -12,7 +12,7 @@
 
 @implementation OutcomeBar
 
--(NSDictionary *)data {
+-(NSArray *)data {
     if (![self cacheData]) {
         [self fillDataWithType:Outcome];
     }

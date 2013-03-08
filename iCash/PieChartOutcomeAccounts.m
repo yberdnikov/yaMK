@@ -10,7 +10,7 @@
 
 @implementation PieChartOutcomeAccounts
 
--(NSDictionary *)data {
+-(NSArray *)data {
     if ([self cacheData]) {
         return [self cacheData];
     } else {

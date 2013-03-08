@@ -12,8 +12,8 @@
 
 @interface PieChartAccountsDataSource : NSObject<DataSource>
 
-@property NSDictionary *cacheData;
+@property NSArray *cacheData;
 
--(NSDictionary *)data:(AccountType)at;
+-(NSArray *)data:(AccountType)at;
 
 @end

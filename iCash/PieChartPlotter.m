@@ -16,7 +16,6 @@
 
 - (void)plot:(NSRect)rect
 {
-    NSLog(@"PieChartView drawRect");
     CGRect pageRect;
     CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
     double centerX = rect.size.width / 2;
@@ -40,15 +39,12 @@
     //  The current path for the context starts out empty
     assert(CGContextIsPathEmpty(context));
     
-    NSDictionary *data = [[self dataSource] data];
     double startAngle = 0;
     double endAngle = 0;
     
     CGContextBeginPath(context);
     
-    NSArray *keys = [data allKeys];
-    for (NSString *name in keys) {
-        DataSourceContainer *cont = [data valueForKey:name];
+    for (DataSourceContainer *cont in [[self dataSource] data]) {
         double perc =[cont value];
         endAngle = startAngle + 360 * perc;
         CGColorRef color = [cont color].CGColor;
@@ -63,7 +59,7 @@
                                   startAngle:startAngle
                                     endAngle:endAngle
                                      percent:perc
-                                       title:name
+                                       title:[cont name]
                                         rect:pageRect];
         }
         startAngle = endAngle;

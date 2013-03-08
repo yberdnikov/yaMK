@@ -11,7 +11,7 @@
 @protocol DataSource <NSObject>
 
 @required
--(NSDictionary *)data;
+-(NSArray *)data;
 
 @optional
 -(NSString *)labelText:(id)label;

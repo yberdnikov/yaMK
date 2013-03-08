@@ -11,6 +11,6 @@
 
 @interface MaxValueOutcomeAccounts : NSObject<DataSource>
 
-@property NSDictionary *cacheData;
+@property NSArray *cacheData;
 
 @end
