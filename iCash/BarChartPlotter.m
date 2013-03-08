@@ -13,6 +13,25 @@
 
 @implementation BarChartPlotter
 
+- (void)drawSubDS:(CGContextRef)context
+         maxValue:(double)maxValue
+        maxHeight:(double)maxHeight
+           yStart_p:(double *)yStart_p
+         barWidth:(double)barWidth
+                x:(double)x
+         dataCont:(DataSourceContainer *)dataCont {
+    CGContextSetFillColorWithColor(context, [[dataCont color] CGColor]);
+    CGRect subBarRect = CGRectMake(x, *yStart_p, barWidth, [dataCont value] * maxHeight / maxValue);
+    CGContextAddRect(context, subBarRect);
+    [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:subBarRect label:[dataCont name]]];
+    CGContextFillPath(context);
+    *yStart_p += [dataCont value] * maxHeight / maxValue;
+    [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:subBarRect label:[dataCont name]]];
+    for (DataSourceContainer *subDS in [dataCont subData]) {
+        [self drawSubDS:context maxValue:maxValue maxHeight:maxHeight yStart_p:yStart_p barWidth:barWidth x:x dataCont:subDS];
+    }
+}
+
 -(void)plot:(NSRect)rect {
     [self clearTrackingAreas];
     if ([self fastPlot]) {
@@ -45,17 +64,11 @@
     [self setDetails:[NSMutableArray array]];
     for (DataSourceContainer *dataCont in [[self dataSource] data]) {
         CGContextMoveToPoint(context, spaceWidth + barWidth * memberNum + xSpace, ySpace);
-        
-        CGContextSetFillColorWithColor(context, [[dataCont color] CGColor]);
         double x = xSpace + spaceWidth + (barWidth + spaceWidth) * memberNum;
-        CGRect barRect = CGRectMake(x, ySpace, barWidth, [dataCont value] * maxHeight / maxValue);
-        CGContextAddRect(context, barRect);
-        
-        [_details addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:barRect label:[dataCont name]]];
-        CGContextFillPath(context);
+        double yStart = ySpace;
+        [self drawSubDS:context maxValue:maxValue maxHeight:maxHeight yStart_p:&yStart barWidth:barWidth x:x dataCont:dataCont];
         memberNum++;
     }
-    
     [self cleanUp:context];
 }
 
@@ -89,9 +102,18 @@
 -(double)findMaxValFromDataSet:(NSArray *)dataArray {
     double result = 0;
     for (DataSourceContainer *ds in dataArray) {
-        if ([ds value] > result) {
-            result = [ds value];
+        double sumVal = [self getSumValue:ds];
+        if (sumVal > result) {
+            result = sumVal;
         }
+    }
+    return result;
+}
+
+-(double)getSumValue:(DataSourceContainer *)dataSC {
+    double result = [dataSC value];
+    for (DataSourceContainer *subDS in [dataSC subData]) {
+        result += [self getSumValue:subDS];
     }
     return result;
 }
@@ -130,6 +152,9 @@
 
 - (void)showPopover:(DetailsViewContainer *)dvc {
     if (![[[self plotView] details] isShown]) {
+        [[[self plotView] details] showRelativeToRect:[dvc rect] ofView:[self plotView] preferredEdge:NSMaxYEdge];
+        [[self plotView] setDetailsVC:dvc];
+    } else {
         [[[self plotView] details] showRelativeToRect:[dvc rect] ofView:[self plotView] preferredEdge:NSMaxYEdge];
         [[self plotView] setDetailsVC:dvc];
     }

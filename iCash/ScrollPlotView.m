@@ -16,13 +16,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
     }
     
     return self;
 }
 
--(void)viewDidEndLiveResize {
+-(void)recalcPlotViewSize {
     NSRect rect = [self bounds];
     rect.size = [self contentSize];
     [[_plotView plotter] setFastPlot:NO];
@@ -30,11 +29,8 @@
     [_plotView setNeedsDisplay:YES];
 }
 
--(void)viewWillStartLiveResize {
-    NSRect rect = [self bounds];
-    rect.size = [self contentSize];
-    [[_plotView plotter] setFastPlot:YES];
-    [_plotView setFrame:[[_plotView plotter] getMinSize:rect]];
+-(void)drawRect:(NSRect)dirtyRect {
+    [self recalcPlotViewSize];
 }
 
 @end

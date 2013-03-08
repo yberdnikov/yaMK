@@ -15,16 +15,26 @@
     return nil;
 }
 
+- (double)addAccount:(Account *)a toArray:(NSMutableArray *)result {
+    DataSourceContainer *dc = [[DataSourceContainer alloc] initWithName:[a name]];
+    double childrenSum = 0;
+    NSMutableArray *subData = [NSMutableArray array];
+    for (Account *subAcc in [a subAccounts]) {
+        childrenSum += [self addAccount:subAcc toArray:subData];
+    }
+    [dc setValue:([a valueSum] / 100.0 - childrenSum)];
+    [dc setColor:[a color]];
+    [dc setSubData:subData];
+    [result addObject:dc];
+    return [dc value];
+}
+
 -(void)fillDataWithType:(AccountType)accountType {
     NSArray *accounts = [[[AccountFinder alloc] init] findAccounts:accountType ascending:NO];
     NSMutableArray *result = [NSMutableArray array];
     for (Account *a in accounts) {
-        if ([a parent]) {
-            DataSourceContainer *dc = [[DataSourceContainer alloc] init];
-            [dc setValue:[a valueSum] / 100.0];
-            [dc setColor:[a color]];
-            [dc setName:[a name]];
-            [result addObject:dc];
+        if ([a parent] && ![[a parent] parent] && [a valueSum] > 0) {
+            [self addAccount:a toArray:result];
         }
     }
     [self setCacheData:result];

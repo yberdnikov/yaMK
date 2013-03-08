@@ -1432,7 +1432,7 @@
 			<object class="NSWindowTemplate" id="974150998">
 				<int key="NSWindowStyleMask">27</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 112}, {610, 426}}</string>
+				<string key="NSWindowRect">{{196, 112}, {588, 361}}</string>
 				<int key="NSWTFlags">-461896704</int>
 				<string key="NSWindowTitle">Diagram</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -1593,16 +1593,14 @@
 											<reference key="NSNextResponder" ref="289045656"/>
 											<int key="NSvFlags">274</int>
 											<array class="NSMutableArray" key="NSSubviews"/>
-											<string key="NSFrameSize">{609, 425}</string>
+											<string key="NSFrameSize">{586, 359}</string>
 											<reference key="NSSuperview" ref="289045656"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="58355879"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 										</object>
 									</array>
-									<string key="NSFrame">{{1, 1}, {609, 425}}</string>
+									<string key="NSFrame">{{1, 1}, {586, 359}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="233710786"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<reference key="NSDocView" ref="233710786"/>
@@ -1620,10 +1618,8 @@
 								<object class="NSScroller" id="983131095">
 									<reference key="NSNextResponder" ref="640125216"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{594, 1}, {16, 425}}</string>
+									<string key="NSFrame">{{571, 1}, {16, 359}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
-									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:15</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<reference key="NSTarget" ref="640125216"/>
@@ -1634,9 +1630,8 @@
 								<object class="NSScroller" id="58355879">
 									<reference key="NSNextResponder" ref="640125216"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{1, 410}, {609, 16}}</string>
+									<string key="NSFrame">{{1, 344}, {586, 16}}</string>
 									<reference key="NSSuperview" ref="640125216"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="983131095"/>
 									<string key="NSReuseIdentifierKey">_NS:26</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -1646,9 +1641,8 @@
 									<double key="NSPercent">0.50602412223815918</double>
 								</object>
 							</array>
-							<string key="NSFrameSize">{611, 427}</string>
+							<string key="NSFrameSize">{588, 361}</string>
 							<reference key="NSSuperview" ref="400709471"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="289045656"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">2098</int>
@@ -1660,9 +1654,8 @@
 							<double key="NSMagnification">1</double>
 						</object>
 					</array>
-					<string key="NSFrameSize">{610, 426}</string>
+					<string key="NSFrameSize">{588, 361}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="640125216"/>
 					<string key="NSReuseIdentifierKey">_NS:21</string>
 				</object>
