@@ -168,7 +168,7 @@
     
     double emptySpaceMul = 0.25;
     
-    double letterHeight = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
+    double letterHeight = [self getMinBarWidth];
     double spaceWidth = letterHeight * emptySpaceMul;
     
     double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + letterHeight * [[[self dataSource] data] count] + 2 * xSpace;
@@ -199,6 +199,10 @@
     if (!isShow) {
         [[[self plotView] details] close];
     }
+}
+
+- (double)getMinBarWidth {
+    return [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height;
 }
 
 @end

@@ -30,4 +30,6 @@
                ySpace:(double)ySpace
             maxHeigth:(double)maxHeight;
 
+- (double)getMinBarWidth;
+
 @end

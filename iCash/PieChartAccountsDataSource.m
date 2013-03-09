@@ -24,7 +24,6 @@
         NSMutableArray *result = [NSMutableArray array];
         AccountFinder *af = [[AccountFinder alloc] init];
         NSArray *accounts = [af findAccounts:at];
-        NSLog(@"accounts = %@", accounts);
         double sum = 0;
         for (Account *account in accounts) {
             if (![account parent]) {

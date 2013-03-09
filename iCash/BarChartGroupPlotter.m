@@ -91,5 +91,8 @@
     return result;
 }
 
+- (double)getMinBarWidth {
+    return [@"9999.99" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width / 1.6;
+}
 
 @end
