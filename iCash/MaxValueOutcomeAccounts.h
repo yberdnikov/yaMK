@@ -12,5 +12,6 @@
 @interface MaxValueOutcomeAccounts : NSObject<DataSource>
 
 @property NSArray *cacheData;
+@property BOOL recalculate;
 
 @end

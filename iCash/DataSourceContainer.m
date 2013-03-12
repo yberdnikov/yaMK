@@ -18,9 +18,22 @@
     return self;
 }
 
+-(DataSourceContainer *)initWithName:(NSString *)name
+                            intValue:(NSInteger)intValue
+                               color:(NSColor *)color {
+    self = [super init];
+    if (self) {
+        [self setName:name];
+        [self setIntValue:intValue];
+        [self setValue:(double)intValue / 100.0];
+        [self setColor:color];
+    }
+    return self;
+}
+
 -(NSString *)description {
     NSMutableString *result = [[NSMutableString alloc] init];
-    [result appendFormat:@"DataSrcCont [value = %f, intValue = %lu]", _value, _intValue];
+    [result appendFormat:@"DataSrcCont [name = %@, value = %f, intValue = %lu, subData = %@]", _name, _value, _intValue, _subData];
     return result;
 }
 

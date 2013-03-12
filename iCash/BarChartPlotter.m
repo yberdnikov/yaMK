@@ -44,7 +44,7 @@
     [[self plotView] addTrackingArea:trackingArea];
     [[self trackingAreas] addObject:trackingArea];
 
-    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
+    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] dataUsingFilter:[self filters]]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
     double ySpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + 20;
@@ -53,7 +53,7 @@
     double maxValue = [maxValString doubleValue];
     double maxHeight = 15.0/16.0 * (rect.size.height - ySpace * 2);
     
-    double barWidth = (rect.size.width - 2.0 * xSpace - 13) / (double)([[[self dataSource] data] count])/(1.0 + emptySpaceMul);
+    double barWidth = (rect.size.width - 2.0 * xSpace - 13) / (double)([[[self dataSource] dataUsingFilter:[self filters]] count])/(1.0 + emptySpaceMul);
     double spaceWidth = barWidth * emptySpaceMul;
 
     CGContextRef context = [self initContext:[[self plotView] bounds]];
@@ -62,7 +62,7 @@
     
     int memberNum = 0;
     [self setDetails:[NSMutableArray array]];
-    for (DataSourceContainer *dataCont in [[self dataSource] data]) {
+    for (DataSourceContainer *dataCont in [[self dataSource] dataUsingFilter:[self filters]]) {
         CGContextMoveToPoint(context, spaceWidth + barWidth * memberNum + xSpace, ySpace);
         double x = xSpace + spaceWidth + (barWidth + spaceWidth) * memberNum;
         double yStart = ySpace;
@@ -161,7 +161,7 @@
 }
 
 - (NSRect)getMinSize:(NSRect)rect {
-    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
+    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] dataUsingFilter:[self filters]]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
     double ySpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + 20;
@@ -171,7 +171,7 @@
     double letterHeight = [self getMinBarWidth];
     double spaceWidth = letterHeight * emptySpaceMul;
     
-    double minGraphWidth = ([[[self dataSource] data] count] + 1.0) * spaceWidth + letterHeight * [[[self dataSource] data] count] + 2 * xSpace;
+    double minGraphWidth = ([[[self dataSource] dataUsingFilter:[self filters]] count] + 1.0) * spaceWidth + letterHeight * [[[self dataSource] dataUsingFilter:[self filters]] count] + 2 * xSpace;
     
     NSRect result = rect;
     CGFloat width = minGraphWidth + 2 * xSpace;

@@ -12,9 +12,9 @@
 
 @implementation OutcomeBar
 
--(NSArray *)data {
-    if (![self cacheData]) {
-        [self fillDataWithType:Outcome];
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    if ([self recalculate]) {
+        [self fillDataWithType:Outcome usingFilter:predicate];
     }
     return [self cacheData];
 }

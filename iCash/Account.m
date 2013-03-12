@@ -42,32 +42,31 @@
 }
 
 - (NSInteger) valueSum {
-//    NSLog(@"[ account %@", [self name]);
+    return [self valueSumUsingFilter:nil];
+}
+
+- (NSInteger) valueSumUsingFilter:(NSPredicate *)predicate {
     NSInteger income = 0;
     NSInteger outcome = 0;
+    NSSet *recipientTransactions = [self recipientTransaction];
+    NSSet *sourceTransactions = [self sourceTransaction];
+    if (predicate) {
+        recipientTransactions = [[self recipientTransaction] filteredSetUsingPredicate:predicate];
+        sourceTransactions = [[self sourceTransaction] filteredSetUsingPredicate:predicate];
+    }
     
     if ([[self type] intValue] == Balance) {
-        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] integerValue];
-        outcome = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] integerValue];
-//        NSLog(@"Balance");
-//        NSLog(@"income = %lu", income);
-//        NSLog(@"outcome = %lu", outcome);
+        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] integerValue];
+        outcome = [[sourceTransactions valueForKeyPath:@"@sum.value"] integerValue];
     } else if ([[self type] intValue] == Outcome) {
-        income = [[[self recipientTransaction] valueForKeyPath:@"@sum.value"] integerValue];
-//        NSLog(@"Outcome");
-//        NSLog(@"income = %lu", income);
-//        NSLog(@"outcome = %lu", outcome);
+        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] integerValue];
     } else if ([[self type] intValue] == Income) {
-        income = [[[self sourceTransaction] valueForKeyPath:@"@sum.value"] integerValue];
-//        NSLog(@"Income");
-//        NSLog(@"income = %lu", income);
-//        NSLog(@"outcome = %lu", outcome);
+        income = [[sourceTransactions valueForKeyPath:@"@sum.value"] integerValue];
     }
     double result = 0;
     for (Account *child in [self subAccounts]) {
-        result += [child valueSum];
+        result += [child valueSumUsingFilter:predicate];
     }
-//    NSLog(@"] %f", result + (income - outcome));
     return result + (income - outcome);
 }
 

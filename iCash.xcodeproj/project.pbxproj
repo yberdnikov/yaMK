@@ -13,6 +13,8 @@
 		D81ED16F16750779007BB14C /* TransactionNameFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */; };
 		D81ED172167668D1007BB14C /* OutcomeValumeFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */; };
 		D830485016E2761100C57CD4 /* ScrollPlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = D830484F16E2761100C57CD4 /* ScrollPlotView.m */; };
+		D830485916EC8BBF00C57CD4 /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D830485816EC8BBE00C57CD4 /* Statistics.m */; };
+		D84B726E16EE521300565D5A /* PlotWindowToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84B726D16EE521300565D5A /* PlotWindowToolbarController.m */; };
 		D870970A16B59DDF006EDF4E /* IncomeOutcomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */; };
 		D870970D16B59F6B006EDF4E /* BarChartAccountsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D870970C16B59F6B006EDF4E /* BarChartAccountsDataSource.m */; };
 		D8782D3B1647ED66008C3055 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = D8782D3A1647ED66008C3055 /* Transaction.m */; };
@@ -26,7 +28,7 @@
 		D8954C9216C97AF9005AFF39 /* DetailsViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9116C97AF9005AFF39 /* DetailsViewContainer.m */; };
 		D8954C9516CC1CAA005AFF39 /* IncomeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9416CC1CAA005AFF39 /* IncomeBar.m */; };
 		D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9716CC1CC2005AFF39 /* BalanceBar.m */; };
-		D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* ToolbarActionController.m */; };
+		D898120716A32D5E0063C91C /* MainWindowToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* MainWindowToolbarController.m */; };
 		D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
@@ -87,11 +89,16 @@
 		D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeValumeFieldDelegate.m; sourceTree = "<group>"; };
 		D830484E16E2761100C57CD4 /* ScrollPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPlotView.h; sourceTree = "<group>"; };
 		D830484F16E2761100C57CD4 /* ScrollPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPlotView.m; sourceTree = "<group>"; };
+		D830485416EB917200C57CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		D830485516EB937200C57CD4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Document.strings; sourceTree = "<group>"; };
+		D830485616EB937800C57CD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Document.strings; sourceTree = "<group>"; };
+		D830485716EC8BBE00C57CD4 /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
+		D830485816EC8BBE00C57CD4 /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
+		D84B726C16EE521300565D5A /* PlotWindowToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotWindowToolbarController.h; sourceTree = "<group>"; };
+		D84B726D16EE521300565D5A /* PlotWindowToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotWindowToolbarController.m; sourceTree = "<group>"; };
 		D85F1E7516AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D85F1E7616AC5CBF0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ru; path = ru.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D85F1E7716AC5CC00015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D85F1E8E16AC722C0015ABCF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
-		D85F1E8F16AC722C0015ABCF /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/Document.xib; sourceTree = "<group>"; };
 		D870970816B59DDF006EDF4E /* IncomeOutcomeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeOutcomeBar.h; sourceTree = "<group>"; };
 		D870970916B59DDF006EDF4E /* IncomeOutcomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeOutcomeBar.m; sourceTree = "<group>"; };
 		D870970B16B59F6B006EDF4E /* BarChartAccountsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartAccountsDataSource.h; sourceTree = "<group>"; };
@@ -118,8 +125,8 @@
 		D8954C9416CC1CAA005AFF39 /* IncomeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeBar.m; sourceTree = "<group>"; };
 		D8954C9616CC1CC2005AFF39 /* BalanceBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceBar.h; sourceTree = "<group>"; };
 		D8954C9716CC1CC2005AFF39 /* BalanceBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceBar.m; sourceTree = "<group>"; };
-		D898120516A32D5E0063C91C /* ToolbarActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarActionController.h; sourceTree = "<group>"; };
-		D898120616A32D5E0063C91C /* ToolbarActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarActionController.m; sourceTree = "<group>"; };
+		D898120516A32D5E0063C91C /* MainWindowToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowToolbarController.h; sourceTree = "<group>"; };
+		D898120616A32D5E0063C91C /* MainWindowToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowToolbarController.m; sourceTree = "<group>"; };
 		D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStandardAccountStructure.h; sourceTree = "<group>"; };
 		D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStandardAccountStructure.m; sourceTree = "<group>"; };
 		D8A136D5168A221000D64A2C /* TransactionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionController.h; sourceTree = "<group>"; };
@@ -351,14 +358,18 @@
 				D81ED1661673C459007BB14C /* AutoCompitionFinder.h */,
 				D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */,
 				D8A136D5168A221000D64A2C /* TransactionController.h */,
-				D898120516A32D5E0063C91C /* ToolbarActionController.h */,
-				D898120616A32D5E0063C91C /* ToolbarActionController.m */,
-				D898120816A32D8D0063C91C /* Transformations */,
+				D898120516A32D5E0063C91C /* MainWindowToolbarController.h */,
+				D898120616A32D5E0063C91C /* MainWindowToolbarController.m */,
 				D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */,
 				D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */,
-				D8DED44716B05B7100570C36 /* Localization */,
 				D8CDF56716B5B0EE00BB99FF /* TransactionFinder.h */,
 				D8CDF56816B5B0EE00BB99FF /* TransactionFinder.m */,
+				D830485716EC8BBE00C57CD4 /* Statistics.h */,
+				D830485816EC8BBE00C57CD4 /* Statistics.m */,
+				D898120816A32D8D0063C91C /* Transformations */,
+				D8DED44716B05B7100570C36 /* Localization */,
+				D84B726C16EE521300565D5A /* PlotWindowToolbarController.h */,
+				D84B726D16EE521300565D5A /* PlotWindowToolbarController.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -597,7 +608,7 @@
 				D8DB6FCA16A2A31C0009BEAF /* PieChartAccountsDataSource.m in Sources */,
 				D8DB6FCD16A2A4A80009BEAF /* PieChartIncomeAccounts.m in Sources */,
 				D8DB6FD316A2A5500009BEAF /* PieChartBalanceAccounts.m in Sources */,
-				D898120716A32D5E0063C91C /* ToolbarActionController.m in Sources */,
+				D898120716A32D5E0063C91C /* MainWindowToolbarController.m in Sources */,
 				D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */,
 				D8D9362A16AB163500CD3E94 /* ModifyController.m in Sources */,
 				D870970A16B59DDF006EDF4E /* IncomeOutcomeBar.m in Sources */,
@@ -610,6 +621,8 @@
 				D8954C9516CC1CAA005AFF39 /* IncomeBar.m in Sources */,
 				D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */,
 				D830485016E2761100C57CD4 /* ScrollPlotView.m in Sources */,
+				D830485916EC8BBF00C57CD4 /* Statistics.m in Sources */,
+				D84B726E16EE521300565D5A /* PlotWindowToolbarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,8 +666,9 @@
 		D8A145901639AD1900DCB3A2 /* Document.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D85F1E8E16AC722C0015ABCF /* en */,
-				D85F1E8F16AC722C0015ABCF /* ru */,
+				D830485416EB917200C57CD4 /* Base */,
+				D830485516EB937200C57CD4 /* ru */,
+				D830485616EB937800C57CD4 /* en */,
 			);
 			name = Document.xib;
 			sourceTree = "<group>";

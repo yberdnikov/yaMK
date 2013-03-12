@@ -12,40 +12,47 @@
 
 @implementation PieChartAccountsDataSource
 
--(NSArray *)data {
-    return nil;
-    
+-(PieChartAccountsDataSource *)init {
+    self = [super init];
+    [self setRecalculate:YES];
+    return self;
 }
 
--(NSArray *)data:(AccountType)at {
-    if (_cacheData) {
-        return _cacheData;
-    } else {
-        NSMutableArray *result = [NSMutableArray array];
-        AccountFinder *af = [[AccountFinder alloc] init];
-        NSArray *accounts = [af findAccounts:at];
-        double sum = 0;
-        for (Account *account in accounts) {
-            if (![account parent]) {
-                sum = [account valueSum];
-            }
+-(NSArray *)data {
+    return [self dataUsingFilter:nil];
+}
+
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    return nil;
+}
+
+-(NSArray *)data:(AccountType)at
+     usingFilter:(NSPredicate *)predicate{
+    NSMutableArray *result = [NSMutableArray array];
+    AccountFinder *af = [[AccountFinder alloc] init];
+    NSArray *accounts = [af findAccounts:at];
+    double sum = 0;
+    for (Account *account in accounts) {
+        if (![account parent]) {
+            sum = [account valueSumUsingFilter:predicate];
         }
-        for (Account *account in accounts) {
-            if (![[account parent] parent] && [account parent]) {
-                NSInteger valueSum = [account valueSum];
-                if (valueSum != 0) {
-                    double percentVal = valueSum / sum;
-                    DataSourceContainer *cont = [[DataSourceContainer alloc] init];
-                    [cont setColor:[account color]];
-                    [cont setValue:percentVal];
-                    [cont setName:[account name]];
-                    [result addObject:cont];
-                }
-            }
-        }
-        [self setCacheData:result];
-        return result;
     }
+    for (Account *account in accounts) {
+        if ([account parent] && ![[account parent] parent]) {
+            NSInteger valueSum = [account valueSumUsingFilter:predicate];
+            if (valueSum != 0) {
+                double percentVal = valueSum / sum;
+                DataSourceContainer *cont = [[DataSourceContainer alloc] init];
+                [cont setColor:[account color]];
+                [cont setValue:percentVal];
+                [cont setName:[account name]];
+                [result addObject:cont];
+            }
+        }
+    }
+    [self setCacheData:result];
+    [self setRecalculate:NO];
+    return result;
 }
 
 @end

@@ -16,4 +16,6 @@
                                    recipientType:(AccountType)recipientType
                                       sourceType:(AccountType)sourceType;
 
++(NSArray *)findTransactionsUsingPredicate:(NSPredicate *)predicate;
+
 @end

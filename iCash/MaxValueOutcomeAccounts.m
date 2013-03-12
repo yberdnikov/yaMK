@@ -52,5 +52,8 @@
     }
 }
 
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    return nil;
+}
 
 @end

@@ -15,7 +15,6 @@
                                      endDate:(NSDate *)endDate
                                    recipientType:(AccountType)recipientType
                                       sourceType:(AccountType)sourceType{
-    NSManagedObjectContext *_moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
     NSMutableArray *predicates = [[NSMutableArray alloc] init];
     if (startDate) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"date >= %@" argumentArray:[NSArray arrayWithObject:startDate]]];
@@ -25,11 +24,16 @@
     }
     [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.type = %@" argumentArray:[NSArray arrayWithObject:[NSNumber numberWithInt:recipientType]]]];
     [predicates addObject:[NSPredicate predicateWithFormat:@"source.type = %@" argumentArray:[NSArray arrayWithObject:[NSNumber numberWithInt:sourceType]]]];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Transaction"];
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+    return [TransactionFinder findTransactionsUsingPredicate:predicate];
+}
+
++(NSArray *)findTransactionsUsingPredicate:(NSPredicate *)predicate {
+    NSManagedObjectContext *moc = [[[NSDocumentController sharedDocumentController] currentDocument] managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Transaction"];
     [request setPredicate:predicate];
     NSError *error;
-    NSArray *result = [_moc executeFetchRequest:request error:&error];
+    NSArray *result = [moc executeFetchRequest:request error:&error];
     return result;
 }
 

@@ -14,37 +14,30 @@
 
 @implementation PieChartPlotter
 
-- (void)plot:(NSRect)rect
+- (double)getRadius:(NSRect)rect
 {
-    CGRect pageRect;
-    CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
-    double centerX = rect.size.width / 2;
-    double centerY = rect.size.height / 2;
-    
     double radius = 0;
     if (rect.size.width < rect.size.height) {
         radius = rect.size.width/3;
     } else {
         radius = rect.size.height/3;
     }
-        
-    pageRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
-    
-    CGContextBeginPage(context, &pageRect);
-    
-    //  Start with black fill and stroke colors
-    
-    CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
-    
-    //  The current path for the context starts out empty
-    assert(CGContextIsPathEmpty(context));
-    
+    return radius;
+}
+
+- (void)plot:(NSRect)rect
+{
+    CGRect pageRect;
+    CGContextRef context = [self initContext:rect];
+    double centerX = rect.size.width / 2;
+    double centerY = rect.size.height / 2;
+    double radius = [self getRadius:rect];
     double startAngle = 0;
     double endAngle = 0;
     
     CGContextBeginPath(context);
-    
-    for (DataSourceContainer *cont in [[self dataSource] data]) {
+    NSArray *data = [[self dataSource] dataUsingFilter:[self filters]];
+    for (DataSourceContainer *cont in data) {
         double perc =[cont value];
         endAngle = startAngle + 360 * perc;
         CGColorRef color = [cont color].CGColor;
@@ -64,14 +57,7 @@
         }
         startAngle = endAngle;
     }
-    
-    CGContextSaveGState(context);
-    
-    CGContextRestoreGState(context);
-    
-    CGContextEndPage(context);
-    
-    CGContextFlush(context);
+    [self cleanUp:context];
 }
 
 - (void) drawSectorWithContext:(CGContextRef)context
@@ -86,6 +72,15 @@
     CGContextAddArc(context, centerX, centerY, radius, radians(startAngle), radians(endAngle), 0);
     CGContextAddLineToPoint(context, centerX, centerY);
     CGContextFillPath(context);
+}
+
+- (NSMutableString *)getLabelText:(NSString *)name perc:(double)perc
+{
+    NSMutableString *labelText = [NSMutableString stringWithString:name];
+    [labelText appendString:@" "];
+    [labelText appendString:[[NSNumber numberWithInt:(perc * 100)] stringValue]];
+    [labelText appendString:@"%"];
+    return labelText;
 }
 
 - (void) drawSectorTitleWithContext:(CGContextRef)context
@@ -109,10 +104,8 @@
     CGContextMoveToPoint(context, pointCenX, pointCenY);
     CGContextAddLineToPoint(context, lineEndX, lineEndY);
     
-    NSMutableString *labelText = [NSMutableString stringWithString:name];
-    [labelText appendString:@" "];
-    [labelText appendString:[[NSNumber numberWithInt:(perc * 100)] stringValue]];
-    [labelText appendString:@"%"];
+    NSMutableString *labelText;
+    labelText = [self getLabelText:name perc:perc];
     BOOL moveLeft = NO;
     if (lineEndX < centerX) {
         moveLeft = YES;
@@ -127,6 +120,30 @@
     CGContextStrokePath(context);
 }
 
+- (NSRect) getMinSize:(NSRect)rect {
+    [self setMinSize:NO];
+    CGFloat width = 2 * [self findMaxLabelWidth] + [self getRadius:rect] * 2.0 + [self getRadius:rect] * 0.4;
+    CGFloat height = [@"C" sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + [self getRadius:rect] * 2.0 + [self getRadius:rect] * 1.6;
+    if (rect.size.width < width) {
+        rect.size.width = width;
+        [self setMinSize:YES];
+    }
+    if (rect.size.height < height) {
+        rect.size.height = height;
+        [self setMinSize:YES];
+    }
+    return rect;
+}
 
+- (double)findMaxLabelWidth {
+    double result = 0;
+    for (DataSourceContainer *dsc in [[self dataSource] data]) {
+        double width = [[self getLabelText:[dsc name] perc:[dsc value]] sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width;
+        if (width > result) {
+            result = width;
+        }
+    }
+    return result;
+}
 
 @end

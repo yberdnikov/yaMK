@@ -10,9 +10,9 @@
 
 @implementation IncomeBar
 
--(NSArray *)data {
-    if (![self cacheData]) {
-        [self fillDataWithType:Income];
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    if ([self recalculate]) {
+        [self fillDataWithType:Income usingFilter:predicate];
     }
     return [self cacheData];
 }

@@ -13,7 +13,9 @@
 @interface PieChartAccountsDataSource : NSObject<DataSource>
 
 @property NSArray *cacheData;
+@property BOOL recalculate;
 
--(NSArray *)data:(AccountType)at;
+-(NSArray *)data:(AccountType)at
+     usingFilter:(NSPredicate *)predicate;
 
 @end

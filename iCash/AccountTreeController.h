@@ -11,7 +11,7 @@
 
 @class CreateIncomeController;
 @class CreateOutcomeController;
-@class ToolbarActionController;
+@class MainWindowToolbarController;
 
 @interface AccountTreeController : NSTreeController 
 
@@ -26,7 +26,7 @@
 - (NSArray *)transactionPredicate;
 - (void)setTransactionPredicate:(NSArray *)arr;
 
-@property (weak) IBOutlet ToolbarActionController *toolbarActionCO;
+@property (weak) IBOutlet MainWindowToolbarController *toolbarActionCO;
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSArrayController *selectedAccountArrC;

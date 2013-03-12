@@ -11,6 +11,9 @@
 @interface DataSourceContainer : NSObject
 
 -(DataSourceContainer *)initWithName:(NSString *)name;
+-(DataSourceContainer *)initWithName:(NSString *)name
+                            intValue:(NSInteger)intValue
+                               color:(NSColor *)color;
 
 @property NSString *name;
 @property double value;

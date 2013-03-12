@@ -21,6 +21,7 @@
 @property CGContextRef context;
 @property DetailsViewContainer *selectedDV;
 @property NSMutableArray *trackingAreas;
+@property NSPredicate *filters;
 @property BOOL fastPlot;
 
 -(void)plot:(NSRect)rect;

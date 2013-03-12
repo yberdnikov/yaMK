@@ -10,12 +10,11 @@
 
 @implementation PieChartIncomeAccounts
 
--(NSArray *)data {
-    if ([self cacheData]) {
-        return [self cacheData];
-    } else {
-        return [self data:Income];
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    if ([self recalculate]) {
+        return [self data:Income usingFilter:predicate];
     }
+    return [self cacheData];
 }
 
 @end

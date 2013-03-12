@@ -9,7 +9,7 @@
 #import "AccountTreeController.h"
 #import "CreateIncomeController.h"
 #import "CreateOutcomeController.h"
-#import "ToolbarActionController.h"
+#import "MainWindowToolbarController.h"
 
 @implementation AccountTreeController
 

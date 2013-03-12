@@ -10,9 +10,9 @@
 
 @implementation BalanceBar
 
--(NSArray *)data {
-    if (![self cacheData]) {
-        [self fillDataWithType:Balance];
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    if ([self recalculate]) {
+        [self fillDataWithType:Balance usingFilter:predicate];
     }
     return [self cacheData];
 }

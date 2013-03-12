@@ -8,6 +8,7 @@
 
 #import "Document.h"
 #import "CreateMoveController.h"
+#import "AccountFinder.h"
 
 @implementation Document
 

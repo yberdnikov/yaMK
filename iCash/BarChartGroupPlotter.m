@@ -13,7 +13,7 @@
 @implementation BarChartGroupPlotter
 
 -(void)plot:(NSRect)rect {
-    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] data]]]];
+    NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] dataUsingFilter:[self filters]]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
     double ySpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].height + 20;
@@ -36,7 +36,7 @@
     [self drawXYAxis:context rect:rect xSpace:xSpace ySpace:ySpace];
     [self drawMajorLines:context maxVal:maxValue rect:rect xSpace:xSpace ySpace:ySpace maxHeigth:maxHeight];
     
-    for (DataSourceContainer *groupDS in [[self dataSource] data]) {
+    for (DataSourceContainer *groupDS in [[self dataSource] dataUsingFilter:[self filters]]) {
         CGContextMoveToPoint(context, groupNum * spaceWidth + (groupNum + 1) * groupWidth + xSpace, ySpace);
         NSInteger groupSize = [[groupDS subData] count];
         int memberNum = 0;

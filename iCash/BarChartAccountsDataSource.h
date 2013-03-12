@@ -13,7 +13,10 @@
 @interface BarChartAccountsDataSource : NSObject<DataSource>
 
 @property NSArray *cacheData;
+@property BOOL recalculate;
 
 -(void)fillDataWithType:(AccountType)accountType;
+-(void)fillDataWithType:(AccountType)accountType
+            usingFilter:(NSPredicate *)predicate;
 
 @end

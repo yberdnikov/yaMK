@@ -18,8 +18,16 @@
 #import "OutcomeBar.h"
 #import "IncomeBar.h"
 #import "BalanceBar.h"
+#import "Statistics.h"
 
 @implementation PlotDiagramController
+
+-(NSPredicate *)defaultPredicate {
+    NSDate *toDate = [NSDate date];
+    NSDateComponents *yearComp = [[NSCalendar currentCalendar] components:NSYearCalendarUnit fromDate:toDate];
+    NSDate *fromDate = [[NSCalendar currentCalendar] dateFromComponents:yearComp];
+    return [Statistics predicateByFromDate:fromDate toDate:toDate];
+}
 
 -(IBAction)plotPieChartOutcome:(id)sender {
     [self clearView];
@@ -80,6 +88,7 @@
     [[_plotView plotter] setFont:[NSFont fontWithName:@"Times" size:14]];
     [[_plotView plotter] setPlotView:_plotView];
     [[_plotView plotter] setScrollView:_scrollView];
+    [[_plotView plotter] setFilters:[self defaultPredicate]];
     [_plotPanel makeKeyAndOrderFront:sender];
     [_plotPanel display];
 }

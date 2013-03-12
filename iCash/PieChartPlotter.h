@@ -11,4 +11,6 @@
 
 @interface PieChartPlotter : Plotter
 
+@property BOOL minSize;
+
 @end

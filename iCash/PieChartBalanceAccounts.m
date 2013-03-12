@@ -10,12 +10,11 @@
 
 @implementation PieChartBalanceAccounts
 
--(NSArray *)data {
-    if ([self cacheData]) {
-        return [self cacheData];
-    } else {
-        return [self data:Balance];
+-(NSArray *)dataUsingFilter:(NSPredicate *)predicate {
+    if ([self recalculate]) {
+        return [self data:Balance usingFilter:predicate];
     }
+    return [self cacheData];
 }
 
 @end

@@ -122,7 +122,7 @@
 /* Class = "NSTableColumn"; headerCell.title = "Description"; ObjectID = "101716"; */
 "101716.headerCell.title" = "Description";
 
-/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101717"; */
+/* Class = "NSTableColumn"; headerCell.title = "Price"; ObjectID = "101717"; */
 "101717.headerCell.title" = "Price";
 
 /* Class = "NSTableColumn"; headerCell.title = "Source"; ObjectID = "101718"; */
@@ -167,7 +167,7 @@
 /* Class = "NSTableColumn"; headerCell.title = "Account"; ObjectID = "101776"; */
 "101776.headerCell.title" = "Account";
 
-/* Class = "NSTableColumn"; headerCell.title = "Value"; ObjectID = "101777"; */
+/* Class = "NSTableColumn"; headerCell.title = "Sum"; ObjectID = "101777"; */
 "101777.headerCell.title" = "Sum";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "101778"; */
@@ -235,3 +235,9 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "102209"; */
 "102209.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "This Month:"; ObjectID = "102237"; */
+"102237.title" = "This Month: ";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "102241"; */
+"102241.title" = "                   ";
