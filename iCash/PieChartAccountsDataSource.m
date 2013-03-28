@@ -34,14 +34,15 @@
     double sum = 0;
     for (Account *account in accounts) {
         if (![account parent]) {
-            sum = [account valueSumUsingFilter:predicate];
+            sum = [[account valueSumUsingFilter:predicate] doubleValue];
         }
     }
     for (Account *account in accounts) {
         if ([account parent] && ![[account parent] parent]) {
-            NSInteger valueSum = [account valueSumUsingFilter:predicate];
-            if (valueSum != 0) {
-                double percentVal = valueSum / sum;
+            NSDecimal valueSum = [[account valueSumUsingFilter:predicate] decimalValue];
+            NSDecimal zero;
+            if (NSDecimalCompare(&valueSum, &zero)) {
+                double percentVal = [[NSDecimalNumber decimalNumberWithDecimal:valueSum] doubleValue] / sum;
                 DataSourceContainer *cont = [[DataSourceContainer alloc] init];
                 [cont setColor:[account color]];
                 [cont setValue:percentVal];

@@ -7,7 +7,8 @@
 //
 
 #import "Statistics.h"
-#include "AccountFinder.h"
+#import "AccountFinder.h"
+#import "Utils.h"
 
 @implementation Statistics
 
@@ -17,23 +18,26 @@
     return self;
 }
 
--(NSInteger)thisMonth {
+-(NSDecimalNumber *)thisMonth {
+    NSDecimal result = DECIMAL_0;
     NSArray *incomes = [[[AccountFinder alloc] init] findAccounts:Income];
     NSArray *outcomes = [[[AccountFinder alloc] init] findAccounts:Outcome];
-    
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    unsigned yearMonthComps = NSYearCalendarUnit | NSMonthCalendarUnit;
-    NSDate *fromDate = [cal dateFromComponents:[cal components:yearMonthComps fromDate:[NSDate date]]];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setMonth:1];
-    NSDate *toDate = [cal dateByAddingComponents:comps toDate:fromDate options:0];
-    NSPredicate *predicate = [Statistics predicateByFromDate:fromDate toDate:toDate];
-    NSInteger incomeVal = [self computeValueUsingFilter:predicate accounts:incomes];
-    NSInteger outcomeVal = [self computeValueUsingFilter:predicate accounts:outcomes];
-    return incomeVal - outcomeVal;
+    if ([incomes count] > 0 || [outcomes count] > 0) {
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        unsigned yearMonthComps = NSYearCalendarUnit | NSMonthCalendarUnit;
+        NSDate *fromDate = [cal dateFromComponents:[cal components:yearMonthComps fromDate:[NSDate date]]];
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setMonth:1];
+        NSDate *toDate = [cal dateByAddingComponents:comps toDate:fromDate options:0];
+        NSPredicate *predicate = [Statistics predicateByFromDate:fromDate toDate:toDate];
+        NSDecimal incomeVal = [self computeValueUsingFilter:predicate accounts:incomes];
+        NSDecimal outcomeVal = [self computeValueUsingFilter:predicate accounts:outcomes];
+        NSDecimalSubtract(&result, &incomeVal, &outcomeVal, NSRoundBankers);
+    }
+    return [NSDecimalNumber decimalNumberWithDecimal:result];
 }
 
--(void)setThisMonth:(NSInteger)val {
+-(void)setThisMonth:(NSDecimalNumber *)val {
 }
 
 +(NSPredicate *)predicateByFromDate:(NSDate *)fromDate
@@ -44,17 +48,18 @@
     return predicate;
 }
 
--(NSInteger)computeValueUsingFilter:(NSPredicate *)predicate accounts:(NSArray *)accounts {
-    NSInteger value = 0;
+-(NSDecimal)computeValueUsingFilter:(NSPredicate *)predicate accounts:(NSArray *)accounts {
+    NSDecimal result = DECIMAL_0;//{0, 0, NO, NO, 0, 0};
     for (Account *a in accounts) {
         if (![a parent]) {
-            value += [a valueSumUsingFilter:predicate];
+            NSDecimal val = [[a valueSumUsingFilter:predicate] decimalValue];
+            NSDecimalAdd(&result, &result, &val, NSRoundBankers);
         }
     }
-    return value;
+    return result;
 }
 
--(NSInteger)sumValueOfType:(AccountType)type
+-(NSDecimal)sumValueOfType:(AccountType)type
                forMonth:(NSInteger)month
                    year:(NSInteger)year{
     NSArray *accounts = [[[AccountFinder alloc] init] findAccounts:type];

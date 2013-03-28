@@ -40,7 +40,7 @@
     for (Account *subAcc in [a subAccounts]) {
         childrenSum += [self addAccount:subAcc toArray:subData usingFilter:predicate];
     }
-    [dc setValue:([a valueSumUsingFilter:predicate] / 100.0 - childrenSum)];
+    [dc setValue:([[a valueSumUsingFilter:predicate] doubleValue] - childrenSum)];
     [dc setColor:[a color]];
     [dc setSubData:subData];
     [result addObject:dc];
@@ -56,7 +56,7 @@
     NSArray *accounts = [[[AccountFinder alloc] init] findAccounts:accountType ascending:NO];
     NSMutableArray *result = [NSMutableArray array];
     for (Account *a in accounts) {
-        if ([a parent] && ![[a parent] parent] && [a valueSum] > 0) {
+        if ([a parent] && ![[a parent] parent] && [[a valueSum] doubleValue] > 0) {
             [self addAccount:a toArray:result usingFilter:predicate];
         }
     }

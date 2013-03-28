@@ -48,15 +48,15 @@
             NSDateComponents *thisComps = [[NSDateComponents alloc] init];
             [thisComps setMonth:m];
             [thisComps setYear:y];
-            NSInteger income = [stat sumValueOfType:Income forMonth:m year:y];
-            NSInteger outcome = [stat sumValueOfType:Outcome forMonth:m year:y];
+            double income = [[NSDecimalNumber decimalNumberWithDecimal:[stat sumValueOfType:Income forMonth:m year:y]] doubleValue];
+            double outcome = [[NSDecimalNumber decimalNumberWithDecimal:[stat sumValueOfType:Outcome forMonth:m year:y]] doubleValue];
             DataSourceContainer *groupDSC = [[DataSourceContainer alloc] initWithName:[self labelText:[cal dateFromComponents:thisComps]]];
             NSMutableArray *subData = [NSMutableArray arrayWithCapacity:2];
             [subData addObject:[[DataSourceContainer alloc] initWithName:@"Income"
-                                                                intValue:income
+                                                                   value:income
                                                                    color:[NSColor colorWithSRGBRed:31.0/255.0 green:92.0/255.0 blue:20.0/255.0 alpha:1]]];
             [subData addObject:[[DataSourceContainer alloc] initWithName:@"Outcome"
-                                                                intValue:outcome
+                                                                   value:outcome
                                                                    color:[NSColor colorWithSRGBRed:195.0/255.0 green:25.0/255.0 blue:32.0/255.0 alpha:1]]];
             [groupDSC setSubData:subData];
             [result addObject:groupDSC];
@@ -127,16 +127,6 @@
         [[[result objectForKey:key] objectForKey:subKey] setColor:color];
     }
     [(DataSourceContainer *)[[result objectForKey:key] objectForKey:subKey] setIntValue:([(DataSourceContainer *)[[result objectForKey:key] objectForKey:subKey] intValue] + [value integerValue])];
-}
-
--(void)computeValue:(NSMutableDictionary *)result {
-    NSArray *monthsVals = [result allValues];
-    for (NSMutableDictionary *io in monthsVals) {
-        NSArray *ioDS = [io allValues];
-        for (DataSourceContainer *ds in ioDS) {
-            [ds setValue:((double)[ds intValue] / 100.0)];
-        }
-    }
 }
 
 -(NSString *)labelText:(id)key {

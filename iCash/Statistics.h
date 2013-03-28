@@ -11,10 +11,10 @@
 
 @interface Statistics : NSObject
 
--(NSInteger)thisMonth;
--(void)setThisMonth:(NSInteger)val;
--(NSInteger)computeValueUsingFilter:(NSPredicate *)predicate accounts:(NSArray *)accounts;
--(NSInteger)sumValueOfType:(AccountType)type
+-(NSDecimalNumber *)thisMonth;
+-(void)setThisMonth:(NSDecimalNumber *)val;
+-(NSDecimal)computeValueUsingFilter:(NSPredicate *)predicate accounts:(NSArray *)accounts;
+-(NSDecimal)sumValueOfType:(AccountType)type
                forMonth:(NSInteger)month
                    year:(NSInteger)year;
 

@@ -31,7 +31,7 @@
     }
     [income setRecipient:[self recipientAccount]];
     [income setDate:[_transactionDate dateValue]];
-    [income setValue:[NSNumber numberWithUnsignedInteger:([_transactionValue doubleValue] * 100)]];
+    [income setValue:[NSDecimalNumber decimalNumberWithString:[_transactionValue stringValue]]];
     [self resetFields];
     
 }
@@ -85,6 +85,6 @@
 }
 
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)t {
-    [_transactionValue setDoubleValue:[[t value] integerValue] / 100.0];
+    [_transactionValue setStringValue:[[t value] stringValue]];
 }
 @end

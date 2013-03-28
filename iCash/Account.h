@@ -43,9 +43,9 @@
 
 - (NSImage *) typeImage;
 - (void) setTypeImage:(NSImage *)image;
-- (NSInteger) valueSum;
-- (NSInteger) valueSumUsingFilter:(NSPredicate *)predicate;
-- (void) setValueSum:(NSInteger)value;
+- (NSDecimalNumber *) valueSum;
+- (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate;
+- (void) setValueSum:(NSDecimalNumber *)value;
 - (NSColor *) color;
 - (void) setColor:(NSColor *)color;
 

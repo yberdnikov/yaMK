@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * value;
+@property (nonatomic, retain) NSDecimalNumber * value;
 @property (nonatomic, retain) Currency *currency;
 @property (nonatomic, retain) PlaceOfSpending *placeOfSpending;
 @property (nonatomic, retain) Account *recipient;

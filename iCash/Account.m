@@ -7,11 +7,11 @@
 //
 
 #import "Account.h"
-#import "Account.h"
 #import "Transaction.h"
-
+#import "Utils.h"
 
 @implementation Account
+    
 
 @dynamic name;
 @dynamic type;
@@ -41,13 +41,13 @@
     
 }
 
-- (NSInteger) valueSum {
+- (NSDecimalNumber *) valueSum {
     return [self valueSumUsingFilter:nil];
 }
 
-- (NSInteger) valueSumUsingFilter:(NSPredicate *)predicate {
-    NSInteger income = 0;
-    NSInteger outcome = 0;
+- (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate {
+    NSDecimal income = DECIMAL_0;
+    NSDecimal outcome = DECIMAL_0;
     NSSet *recipientTransactions = [self recipientTransaction];
     NSSet *sourceTransactions = [self sourceTransaction];
     if (predicate) {
@@ -56,21 +56,26 @@
     }
     
     if ([[self type] intValue] == Balance) {
-        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] integerValue];
-        outcome = [[sourceTransactions valueForKeyPath:@"@sum.value"] integerValue];
+        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] decimalValue];
+        outcome = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     } else if ([[self type] intValue] == Outcome) {
-        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] integerValue];
+        income = [[recipientTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     } else if ([[self type] intValue] == Income) {
-        income = [[sourceTransactions valueForKeyPath:@"@sum.value"] integerValue];
+        income = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     }
-    double result = 0;
+    NSDecimal result = DECIMAL_0;
     for (Account *child in [self subAccounts]) {
-        result += [child valueSumUsingFilter:predicate];
+        NSDecimalNumber *childValueSum = [child valueSumUsingFilter:predicate];
+        NSDecimal childValueSumD = [childValueSum decimalValue];
+        NSDecimalAdd(&result, &result, &childValueSumD, NSRoundBankers);
     }
-    return result + (income - outcome);
+    NSDecimal diff = DECIMAL_0;
+    NSDecimalSubtract(&diff, &income, &outcome, NSRoundBankers);
+    NSDecimalAdd(&result, &result, &diff, NSRoundBankers);
+    return [NSDecimalNumber decimalNumberWithDecimal:result];
 }
 
-- (void) setValueSum:(NSInteger)value {
+- (void) setValueSum:(NSDecimal)value {
     
 }
 

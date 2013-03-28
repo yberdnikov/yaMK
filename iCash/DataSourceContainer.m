@@ -13,20 +13,19 @@
 -(DataSourceContainer *)initWithName:(NSString *)name {
     self = [super init];
     if (self) {
-        [self setName:name];
+        _name = name;
     }
     return self;
 }
 
 -(DataSourceContainer *)initWithName:(NSString *)name
-                            intValue:(NSInteger)intValue
+                               value:(double)value
                                color:(NSColor *)color {
     self = [super init];
     if (self) {
-        [self setName:name];
-        [self setIntValue:intValue];
-        [self setValue:(double)intValue / 100.0];
-        [self setColor:color];
+        _name = name;
+        _value = value;
+        _color = color;
     }
     return self;
 }

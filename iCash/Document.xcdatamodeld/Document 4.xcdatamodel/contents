@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="colorBlue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="colorGreen" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="colorRed" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="..." syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="subAccounts" inverseEntity="Account" syncable="YES"/>
+        <relationship name="recipientTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="recipient" inverseEntity="Transaction" syncable="YES"/>
+        <relationship name="sourceTransaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="source" inverseEntity="Transaction" syncable="YES"/>
+        <relationship name="subAccounts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Account" inverseName="parent" inverseEntity="Account" syncable="YES"/>
+    </entity>
+    <entity name="Currency" representedClassName="Currency" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sign" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="currency" inverseEntity="Transaction" syncable="YES"/>
+    </entity>
+    <entity name="PlaceOfSpending" representedClassName="PlaceOfSpending" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="placeOfSpending" inverseEntity="Transaction" syncable="YES"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="currency" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="transaction" inverseEntity="Currency" syncable="YES"/>
+        <relationship name="placeOfSpending" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PlaceOfSpending" inverseName="transaction" inverseEntity="PlaceOfSpending" syncable="YES"/>
+        <relationship name="recipient" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="recipientTransaction" inverseEntity="Account" syncable="YES"/>
+        <relationship name="source" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="sourceTransaction" inverseEntity="Account" syncable="YES"/>
+    </entity>
+    <fetchRequest name="findAccountByName" entity="Account" predicateString="name == $NAME"/>
+    <fetchRequest name="findAccountByNameType" entity="Account" predicateString="name == $NAME AND type == $TYPE"/>
+    <fetchRequest name="findAccountsByType" entity="Account" predicateString="type == $TYPE"/>
+    <fetchRequest name="findIncomeAccounts" entity="Account" predicateString="type == 1"/>
+    <fetchRequest name="findPlaceOfSpendingByName" entity="PlaceOfSpending" predicateString="name == $NAME"/>
+    <fetchRequest name="findPlaceOfSpendingStartsWithName" entity="PlaceOfSpending" predicateString="name BEGINSWITH $NAME"/>
+    <fetchRequest name="findTransactionByName" entity="Transaction" predicateString="name == $NAME"/>
+    <elements>
+        <element name="Account" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="Currency" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="PlaceOfSpending" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="Transaction" positionX="0" positionY="0" width="128" height="165"/>
+    </elements>
+</model>

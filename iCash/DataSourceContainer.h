@@ -12,8 +12,9 @@
 
 -(DataSourceContainer *)initWithName:(NSString *)name;
 -(DataSourceContainer *)initWithName:(NSString *)name
-                            intValue:(NSInteger)intValue
+                               value:(double)value
                                color:(NSColor *)color;
+
 
 @property NSString *name;
 @property double value;
