@@ -133,7 +133,7 @@
     } else {
         [transaction setAmount:[NSNumber numberWithInt:1]];
     }
-    [transaction setValue:[NSDecimalNumber decimalNumberWithString:[_price stringValue]]];
+    [transaction setValue:[NSDecimalNumber decimalNumberWithDecimal:[[[self nf] numberFromString:[_price stringValue]] decimalValue]]];
     if ([_placeOfSpendig stringValue]) {
         [transaction setPlaceOfSpending:[self findOrCreatePlaceOfSpending:[_placeOfSpendig stringValue]]];
     }
@@ -165,7 +165,8 @@
    
     if ([_volume doubleValue] <= 0) {
         [_volume setDoubleValue:[[t amount] doubleValue]];
-        [_price setDoubleValue:[[t value] doubleValue]];
+       
+        [_price setStringValue:[[self nf] stringFromNumber:[t value]]];
     } else {
         [_price setDoubleValue:([[t value] doubleValue] / [[t amount] doubleValue] * [_volume doubleValue])];
     }

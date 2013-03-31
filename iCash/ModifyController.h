@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Transaction.h"
+#import "BasicTrsansactionController.h"
 
-@interface ModifyController : NSObject<NSComboBoxDelegate>
+@interface ModifyController : BasicTrsansactionController<NSComboBoxDelegate>
 
 @property Transaction *transaction;
 @property (weak) IBOutlet NSTableView *allTransactionsTable;

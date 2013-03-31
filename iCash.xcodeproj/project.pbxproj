@@ -87,7 +87,6 @@
 		D81ED16E16750779007BB14C /* TransactionNameFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionNameFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED170167668D0007BB14C /* OutcomeValumeFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutcomeValumeFieldDelegate.h; sourceTree = "<group>"; };
 		D81ED171167668D0007BB14C /* OutcomeValumeFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutcomeValumeFieldDelegate.m; sourceTree = "<group>"; };
-		D83045111704B79300542683 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D830484E16E2761100C57CD4 /* ScrollPlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPlotView.h; sourceTree = "<group>"; };
 		D830484F16E2761100C57CD4 /* ScrollPlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPlotView.m; sourceTree = "<group>"; };
 		D830485416EB917200C57CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
@@ -372,7 +371,6 @@
 				D8DED44716B05B7100570C36 /* Localization */,
 				D84B726C16EE521300565D5A /* PlotWindowToolbarController.h */,
 				D84B726D16EE521300565D5A /* PlotWindowToolbarController.m */,
-				D83045111704B79300542683 /* Utils.h */,
 			);
 			path = iCash;
 			sourceTree = "<group>";

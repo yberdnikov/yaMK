@@ -32,7 +32,7 @@
 -(IBAction)modify:(id)sender {
     [_transaction setName:[_name stringValue]];
     [_transaction setAmount:[NSNumber numberWithDouble:[_amount doubleValue]]];
-    [_transaction setValue:[NSDecimalNumber decimalNumberWithString:[_price stringValue]]];
+    [_transaction setValue:[NSDecimalNumber decimalNumberWithDecimal:[[[self nf] numberFromString:[_price stringValue]] decimalValue]]];
     [_transaction setDate:[_date dateValue]];
     if ([_sourceCB indexOfSelectedItem] >= 0) {
         [_transaction setSource:[[_sourceAccountAC arrangedObjects] objectAtIndex:[_sourceCB indexOfSelectedItem]]];
@@ -53,7 +53,7 @@
         [_placeOfSpending setStringValue:[[_transaction placeOfSpending] name]];
     }
     [_amount setDoubleValue:[[_transaction amount] doubleValue]];
-    [_price setStringValue:([[_transaction value] stringValue])];
+    [_price setStringValue:[[self nf] stringFromNumber:[_transaction value]]];
     [_sourceCB selectItemAtIndex:[[_sourceAccountAC arrangedObjects] indexOfObject:[_transaction source]]];
     [_sourceCB setObjectValue:[_sourceCB objectValueOfSelectedItem]];
     [_recipientCB selectItemAtIndex:[[_recipientAccountAC arrangedObjects] indexOfObject:[_transaction recipient]]];

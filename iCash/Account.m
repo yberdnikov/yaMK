@@ -8,7 +8,6 @@
 
 #import "Account.h"
 #import "Transaction.h"
-#import "Utils.h"
 
 @implementation Account
     
@@ -46,8 +45,8 @@
 }
 
 - (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate {
-    NSDecimal income = DECIMAL_0;
-    NSDecimal outcome = DECIMAL_0;
+    NSDecimal income = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
+    NSDecimal outcome = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSSet *recipientTransactions = [self recipientTransaction];
     NSSet *sourceTransactions = [self sourceTransaction];
     if (predicate) {
@@ -63,13 +62,13 @@
     } else if ([[self type] intValue] == Income) {
         income = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     }
-    NSDecimal result = DECIMAL_0;
+    NSDecimal result = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     for (Account *child in [self subAccounts]) {
         NSDecimalNumber *childValueSum = [child valueSumUsingFilter:predicate];
         NSDecimal childValueSumD = [childValueSum decimalValue];
         NSDecimalAdd(&result, &result, &childValueSumD, NSRoundBankers);
     }
-    NSDecimal diff = DECIMAL_0;
+    NSDecimal diff = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSDecimalSubtract(&diff, &income, &outcome, NSRoundBankers);
     NSDecimalAdd(&result, &result, &diff, NSRoundBankers);
     return [NSDecimalNumber decimalNumberWithDecimal:result];

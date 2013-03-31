@@ -8,8 +8,6 @@
 
 #import "Statistics.h"
 #import "AccountFinder.h"
-#import "Utils.h"
-
 @implementation Statistics
 
 -(Statistics *)init{
@@ -19,7 +17,7 @@
 }
 
 -(NSDecimalNumber *)thisMonth {
-    NSDecimal result = DECIMAL_0;
+    NSDecimal result = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSArray *incomes = [[[AccountFinder alloc] init] findAccounts:Income];
     NSArray *outcomes = [[[AccountFinder alloc] init] findAccounts:Outcome];
     if ([incomes count] > 0 || [outcomes count] > 0) {
@@ -49,7 +47,7 @@
 }
 
 -(NSDecimal)computeValueUsingFilter:(NSPredicate *)predicate accounts:(NSArray *)accounts {
-    NSDecimal result = DECIMAL_0;//{0, 0, NO, NO, 0, 0};
+    NSDecimal result = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     for (Account *a in accounts) {
         if (![a parent]) {
             NSDecimal val = [[a valueSumUsingFilter:predicate] decimalValue];

@@ -36,7 +36,7 @@
     [transaction setSource:source];
     [transaction setName:@"-->"];
     [transaction setDate:[_datePicker dateValue]];
-    [transaction setValue:[NSDecimalNumber decimalNumberWithString:[_value stringValue]]];
+    [transaction setValue:[NSDecimalNumber decimalNumberWithDecimal:[[[self nf] numberFromString:[_value stringValue]] decimalValue]]];
     
     [self resetFields];
     [[_sourceAccount window] makeFirstResponder:_sourceAccount];

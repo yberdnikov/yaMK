@@ -13,6 +13,8 @@
 
 @interface BasicTrsansactionController : NSObject<TransactionController>
 
+@property (weak) IBOutlet NSNumberFormatter *nf;
+
 -(void)setDefaultValuesFromTrsansaction:(Transaction *)transaction;
 -(void)prepareCreation;
 -(BOOL)showErrorWindow;
