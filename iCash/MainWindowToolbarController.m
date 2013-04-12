@@ -22,7 +22,6 @@
 - (IBAction)showAddTransaction:(id)sender {
     if ([[[self selectedAccount] type] intValue] == Outcome) {
         [_outcomePanel makeKeyAndOrderFront:sender];
-        [_createOutcomeCO setRecipientAccount:_selectedAccount];
         [_createOutcomeCO prepareCreation];
     } else if ([[[self selectedAccount] type] intValue] == Balance) {
         [_incomePanel makeKeyAndOrderFront:sender];

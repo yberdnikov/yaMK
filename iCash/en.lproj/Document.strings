@@ -241,3 +241,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "102241"; */
 "102241.title" = "                   ";
+
+"102292.placeholderString" = "Target Account";
+"102292.ibShadowedToolTip" = "Target Account";

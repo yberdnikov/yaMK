@@ -10,7 +10,6 @@
 #import "Account.h"
 
 @class CreateIncomeController;
-@class CreateOutcomeController;
 @class MainWindowToolbarController;
 
 @interface AccountTreeController : NSTreeController 

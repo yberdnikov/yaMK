@@ -36,6 +36,9 @@
     [transaction setSource:source];
     [transaction setName:@"-->"];
     [transaction setDate:[_datePicker dateValue]];
+    NSLog(@"%@", [_value stringValue]);
+    NSLog(@"%@", [self nf]);
+    NSLog(@"%@", [NSDecimalNumber decimalNumberWithDecimal:[[[self nf] numberFromString:[_value stringValue]] decimalValue]]);
     [transaction setValue:[NSDecimalNumber decimalNumberWithDecimal:[[[self nf] numberFromString:[_value stringValue]] decimalValue]]];
     
     [self resetFields];

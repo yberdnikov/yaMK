@@ -20,13 +20,15 @@
         return;
     }
     Account *sourceAccount = [_accountFinder findAccount:[_sourceAccount stringValue] type:Balance];
+    Account *recipientAccount = [_accountFinder findAccount:[_recipientAccount stringValue] type:Outcome];
     NSLog(@"source account = %@", [sourceAccount name]);
+    NSLog(@"recipient account = %@", [recipientAccount name]);
     if ([_amount intValue]) {
         for (int i = 0; i < [_amount intValue]; i++) {
-            [self createTransactionWithAccount:sourceAccount];
+            [self createTransactionWithSource:sourceAccount recipient:recipientAccount];
         }
     } else {
-        [self createTransactionWithAccount:sourceAccount];
+        [self createTransactionWithSource:sourceAccount recipient:recipientAccount];
     }
 
     [self resetFields];
@@ -104,10 +106,10 @@
     [_date setDateValue:[NSDate date]];
     [_placeOfSpendig setStringValue:@""];
     [_sourceAccount setStringValue:@""];
+    [_recipientAccount setStringValue:@""];
     [_addButton setKeyEquivalent:@"\r"];
         
     [self computeFilterPredicate:[_date dateValue]];
-    [_nameFieldDelegate setRecipientName:[_recipientAccount name]];
     [_balanceAccountsAC rearrangeObjects];
     [[_placeOfSpendig window] makeFirstResponder:_placeOfSpendig];
     [self resetFields];
@@ -121,10 +123,11 @@
     [_price setStringValue:@""];
 }
 
-- (void) createTransactionWithAccount:(Account *)sourceAccount {
+- (void) createTransactionWithSource:(Account *)sourceAccount
+                           recipient:(Account *)recipientAccount{
     NSEntityDescription *transactionEntity = [[_mom entitiesByName] objectForKey:@"Transaction"];
     Transaction *transaction = [[Transaction alloc] initWithEntity:transactionEntity insertIntoManagedObjectContext:_moc];
-    [transaction setRecipient:_recipientAccount];
+    [transaction setRecipient:recipientAccount];
     [transaction setSource:sourceAccount];
     [transaction setName:[_name stringValue]];
     [transaction setDate:[_date dateValue]];
@@ -145,7 +148,7 @@
 
 - (void)computeFilterPredicate:(NSDate *) ddate {
     NSLog(@"computeFilterPredicate Begin");
-    NSMutableArray *predicates = [NSMutableArray arrayWithObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[_recipientAccount name]]]];
+    NSMutableArray *predicates = [NSMutableArray array];
     if (ddate) {
         NSCalendar *cal = [NSCalendar currentCalendar];
         unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
@@ -168,6 +171,7 @@
        
         [_price setStringValue:[[self nf] stringFromNumber:[t value]]];
     } else {
+        
         [_price setDoubleValue:([[t value] doubleValue] / [[t amount] doubleValue] * [_volume doubleValue])];
     }
     
