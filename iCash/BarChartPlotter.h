@@ -32,4 +32,6 @@
 
 - (double)getMinBarWidth;
 
+-(void)clearTrackingAreas;
+
 @end

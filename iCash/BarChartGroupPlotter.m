@@ -13,6 +13,18 @@
 @implementation BarChartGroupPlotter
 
 -(void)plot:(NSRect)rect {
+    [self clearTrackingAreas];
+    if ([self fastPlot]) {
+        [super plot:rect];
+        return;
+    }
+    NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:rect
+                                                                options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
+                                                                  owner:self userInfo:nil];
+    [[self plotView] addTrackingArea:trackingArea];
+    [[self trackingAreas] addObject:trackingArea];
+    [self setDetails:[NSMutableArray array]];
+    
     NSString *maxValString = [NSString stringWithFormat:@"%lu ", [self maxRoundedVal:[self findMaxValFromDataSet:[[self dataSource] dataUsingFilter:[self filters]]]]];
     
     double xSpace = [maxValString sizeWithAttributes:[[[self font] fontDescriptor] fontAttributes]].width + 5;
@@ -43,9 +55,11 @@
         for (DataSourceContainer *dataCont in [groupDS subData]) {
             CGContextSetFillColorWithColor(context, [[dataCont color] CGColor]);
             double x = xSpace + groupWidth * groupNum + (1 + groupNum) * spaceWidth + (groupWidth / groupSize) * memberNum;
-            CGContextAddRect(context, CGRectMake(x, ySpace, groupWidth / groupSize, [dataCont value] * maxHeight / maxValue));
+            CGRect rect = CGRectMake(x, ySpace, groupWidth / groupSize, [dataCont value] * maxHeight / maxValue);
+            CGContextAddRect(context, rect);
             CGContextFillPath(context);
             memberNum++;
+            [[self details] addObject:[[DetailsViewContainer alloc] initWithData:dataCont rect:rect label:[dataCont name]]];
         }
         double x = xSpace + groupWidth * groupNum + (1 + groupNum) * spaceWidth;
         [self drawParenthesis:ySpace x:x context:context groupWidth:groupWidth];
