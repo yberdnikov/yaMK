@@ -150,4 +150,20 @@
 - (void)setTransactionPredicate:(NSArray *)arr {
     
 }
+
+- (IBAction)searchFilter:(id)sender {
+    NSLog(@"searchFilter '%ld'", [[_searchField stringValue] compare:@""]);
+    [self setTransactionNameForSearch:[_searchField stringValue]];
+    NSMutableArray *predicates = [NSMutableArray array];
+    if ([_searchField stringValue] && [[_searchField stringValue] compare:@""] != 0) {
+        [predicates addObject:[NSPredicate predicateWithFormat:@"name BEGINSWITH %@" argumentArray:[NSArray arrayWithObject:[_searchField stringValue]]]];
+    }
+    if ([self selectedAccount]) {
+        [predicates addObject:[NSCompoundPredicate orPredicateWithSubpredicates:[self buildPredicate:[self selectedAccount]]]];
+    }
+    if ([self selectedAccount] || ([_searchField stringValue]  && [[_searchField stringValue] compare:@""] != 0))
+        [_selectedAccountArrC setFilterPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:predicates]];
+    else
+        [_selectedAccountArrC setFilterPredicate:nil];
+}
 @end

@@ -17,9 +17,11 @@
 - (IBAction)addIncomeAccount:(id)sender;
 - (IBAction)addOutcomeAccount:(id)sender;
 - (IBAction)addBalanceAccount:(id)sender;
+- (IBAction)removeAccount:(id)sender;
+- (IBAction)searchFilter:(id)sender;
+
 - (void)addAccount:(id)sender
               type:(AccountType)t;
-- (IBAction)removeAccount:(id)sender;
 - (Account *)selectedAccount;
 - (void)selectionDidChange:(NSNotification *)notification;
 - (NSArray *)transactionPredicate;
@@ -29,6 +31,8 @@
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSArrayController *selectedAccountArrC;
+@property (weak) IBOutlet NSSearchField *searchField;
 @property (weak) NSArray *transactionsSortDescriptors;
+@property (strong) NSString *transactionNameForSearch;
 
 @end
