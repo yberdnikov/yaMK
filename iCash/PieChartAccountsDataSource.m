@@ -37,19 +37,30 @@
             sum = [[account valueSumUsingFilter:predicate] doubleValue];
         }
     }
+    NSLog(@"sum = %f", sum);
+    double percentSum = 0;
     for (Account *account in accounts) {
+        NSDecimal valueSum = [[NSNumber numberWithInt:0] decimalValue];
         if ([account parent] && ![[account parent] parent]) {
-            NSDecimal valueSum = [[account valueSumUsingFilter:predicate] decimalValue];
-            NSDecimal zero;
-            if (NSDecimalCompare(&valueSum, &zero)) {
-                double percentVal = [[NSDecimalNumber decimalNumberWithDecimal:valueSum] doubleValue] / sum;
-                DataSourceContainer *cont = [[DataSourceContainer alloc] init];
-                [cont setColor:[account color]];
-                [cont setValue:percentVal];
-                [cont setName:[account name]];
-                [result addObject:cont];
-            }
+            valueSum = [[account valueSumUsingFilter:predicate] decimalValue];
+        } else if (![account parent]) {
+            valueSum = [[account valueSumUsingFilter:predicate recursive:NO] decimalValue];
         }
+        NSDecimal zero = [[NSNumber numberWithInt:0] decimalValue];
+        NSLog(@"account name = %@", [account name]);
+        NSLog(@"valuesum = %f", [[NSDecimalNumber decimalNumberWithDecimal:valueSum] doubleValue]);
+        if (NSDecimalCompare(&valueSum, &zero) != 0) {
+            double percentVal = [[NSDecimalNumber decimalNumberWithDecimal:valueSum] doubleValue] / sum;
+            NSLog(@"percentVal = %f", percentVal);
+//            NSLog(@"percentVal = %f", percentVal);
+            DataSourceContainer *cont = [[DataSourceContainer alloc] init];
+            [cont setColor:[account color]];
+            [cont setValue:percentVal];
+            [cont setName:[account name]];
+            [result addObject:cont];
+            percentSum += percentVal;
+        }
+        NSLog(@"percentSum = %f", percentSum);
     }
     [self setCacheData:result];
     [self setRecalculate:NO];

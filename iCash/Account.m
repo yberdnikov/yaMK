@@ -45,6 +45,10 @@
 }
 
 - (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate {
+    return [self valueSumUsingFilter:predicate recursive:YES];
+}
+
+- (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate recursive:(BOOL)rec {
     NSDecimal income = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSDecimal outcome = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSSet *recipientTransactions = [self recipientTransaction];
@@ -63,10 +67,12 @@
         income = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     }
     NSDecimal result = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
-    for (Account *child in [self subAccounts]) {
-        NSDecimalNumber *childValueSum = [child valueSumUsingFilter:predicate];
-        NSDecimal childValueSumD = [childValueSum decimalValue];
-        NSDecimalAdd(&result, &result, &childValueSumD, NSRoundBankers);
+    if (rec) {
+        for (Account *child in [self subAccounts]) {
+            NSDecimalNumber *childValueSum = [child valueSumUsingFilter:predicate];
+            NSDecimal childValueSumD = [childValueSum decimalValue];
+            NSDecimalAdd(&result, &result, &childValueSumD, NSRoundBankers);
+        }
     }
     NSDecimal diff = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSDecimalSubtract(&diff, &income, &outcome, NSRoundBankers);

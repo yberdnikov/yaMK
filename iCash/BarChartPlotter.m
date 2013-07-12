@@ -119,11 +119,11 @@
 }
 
 -(NSInteger)maxRoundedVal:(double)maxVal {
-    NSNumber *maxNum = [NSNumber numberWithInt:(int)maxVal];
-    NSString *maxStr = [maxNum description];
-    NSUInteger length = [maxStr length];
-    NSInteger firstDigit = ([maxStr characterAtIndex:1] - 48 < 5 ) ? [maxStr characterAtIndex:0] - 48 : [maxStr characterAtIndex:0] - 48 + 1;
-    NSInteger maxInt = firstDigit * powf(10, length - 1);
+//    NSNumber *maxNum = [NSNumber numberWithInt:(int)maxVal];
+//    NSString *maxStr = [maxNum description];
+//    NSUInteger length = [maxStr length];
+//    NSInteger firstDigit = ([maxStr characterAtIndex:1] - 48 < 5 ) ? [maxStr characterAtIndex:0] - 48 : [maxStr characterAtIndex:0] - 48 + 1;
+//    NSInteger maxInt = firstDigit * powf(10, length - 1);
     return maxVal;
 }
 
