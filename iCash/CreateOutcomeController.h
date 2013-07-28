@@ -13,6 +13,7 @@
 @class AccountFinder;
 @class Account;
 @class TransactionNameFieldDelegate;
+@class ScanViewController;
 
 @interface CreateOutcomeController : BasicTrsansactionController<NSDatePickerCellDelegate, TransactionController>
 
@@ -30,6 +31,7 @@
 @property (weak) IBOutlet NSTableView *outcomeTransactions;
 @property (weak) IBOutlet TransactionNameFieldDelegate *nameFieldDelegate;
 @property (weak) IBOutlet NSArrayController *balanceAccountsAC;
+@property (weak) IBOutlet ScanViewController *scanController;
 
 @property (weak) NSManagedObjectContext *moc;
 @property (weak) NSManagedObjectModel *mom;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81681A61790446D009FA201 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81681A51790446D009FA201 /* ScanViewController.m */; };
+		D81681A817904595009FA201 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81681A717904595009FA201 /* Quartz.framework */; };
 		D81ED15E166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */; };
 		D81ED1621673A530007BB14C /* TextFieldWithAutoComplition.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1611673A530007BB14C /* TextFieldWithAutoComplition.m */; };
 		D81ED1681673C45A007BB14C /* AutoCompitionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D81ED1671673C45A007BB14C /* AutoCompitionFinder.m */; };
@@ -77,6 +79,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D81681A41790446D009FA201 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		D81681A51790446D009FA201 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		D81681A717904595009FA201 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		D81ED15C166E7050007BB14C /* PlaceOfSpendingFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOfSpendingFieldDelegate.h; sourceTree = "<group>"; };
 		D81ED15D166E7050007BB14C /* PlaceOfSpendingFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOfSpendingFieldDelegate.m; sourceTree = "<group>"; };
 		D81ED1601673A530007BB14C /* TextFieldWithAutoComplition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithAutoComplition.h; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81681A817904595009FA201 /* Quartz.framework in Frameworks */,
 				D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +326,7 @@
 		D8A1457A1639AD1900DCB3A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D81681A717904595009FA201 /* Quartz.framework */,
 				D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */,
 				D8A1459F1639AD1900DCB3A2 /* SenTestingKit.framework */,
 				D8A1457D1639AD1900DCB3A2 /* Other Frameworks */,
@@ -371,6 +378,8 @@
 				D8DED44716B05B7100570C36 /* Localization */,
 				D84B726C16EE521300565D5A /* PlotWindowToolbarController.h */,
 				D84B726D16EE521300565D5A /* PlotWindowToolbarController.m */,
+				D81681A41790446D009FA201 /* ScanViewController.h */,
+				D81681A51790446D009FA201 /* ScanViewController.m */,
 			);
 			path = iCash;
 			sourceTree = "<group>";
@@ -623,6 +632,7 @@
 				D84B726E16EE521300565D5A /* PlotWindowToolbarController.m in Sources */,
 				D8FD465417035BBF00376A8E /* 3-4.xcmappingmodel in Sources */,
 				D8FD465717035CAC00376A8E /* TransactionIntegerToDecimal.m in Sources */,
+				D81681A61790446D009FA201 /* ScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

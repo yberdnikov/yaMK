@@ -12,6 +12,7 @@
 #import "AccountFinder.h"
 #import "PlaceOfSpending.h"
 #import "TransactionNameFieldDelegate.h"
+#import "ScanViewController.h"
 
 @implementation CreateOutcomeController
 
@@ -113,6 +114,7 @@
     [_balanceAccountsAC rearrangeObjects];
     [[_placeOfSpendig window] makeFirstResponder:_placeOfSpendig];
     [self resetFields];
+    [_scanController prepareScan];
     NSLog(@"prepareCreation End");
 }
 
@@ -170,6 +172,7 @@
         [_volume setDoubleValue:[[t amount] doubleValue]];
        
         [_price setStringValue:[[self nf] stringFromNumber:[t value]]];
+        [_recipientAccount setStringValue:[[t recipient] name]];
     } else {
         
         [_price setDoubleValue:([[t value] doubleValue] / [[t amount] doubleValue] * [_volume doubleValue])];
