@@ -25,7 +25,7 @@ indexOfSelectedItem:(NSInteger *)index {
         
     NSMutableArray *predicates = [NSMutableArray array];
 
-    [predicates addObject:[NSPredicate predicateWithFormat:@"name BEGINSWITH %@" argumentArray:[NSArray arrayWithObject:nameStartsWith]]];
+    [predicates addObject:[NSPredicate predicateWithFormat:@"name BEGINSWITH[c] %@" argumentArray:[NSArray arrayWithObject:nameStartsWith]]];
     if (_recipientName) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:_recipientName]]];
     }

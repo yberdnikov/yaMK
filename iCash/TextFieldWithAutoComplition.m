@@ -26,9 +26,7 @@
 }
 
 - (void) keyUp:(NSEvent *)theEvent {
-    NSLog(@"keyUp");
     int keyCode = [theEvent.characters characterAtIndex:0];
-    NSLog(@"keyCode = %d", keyCode);
 //    The if block checks to make sure that the key pressed is not
 //        backspace, delete, an arrow key, or any of that stuff that you really
 //        don't want completion to happen after, then calls complete: on its
@@ -82,7 +80,6 @@
 }
 
 -(void) complete:(id)sender {
-    NSLog(@"complete");
     [super complete:sender];
 }
 
