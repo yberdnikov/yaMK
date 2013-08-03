@@ -3,7 +3,7 @@
 //  iCash
 //
 //  Created by Vitaly Merenkov on 07.11.12.
-//  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
+
 //
 
 #import "AccountTreeController.h"

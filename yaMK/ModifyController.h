@@ -3,7 +3,7 @@
 //  iCash
 //
 //  Created by Vitaly Merenkov on 19.01.13.
-//  Copyright (c) 2013 Vitaly Merenkov. All rights reserved.
+
 //
 
 #import <Foundation/Foundation.h>

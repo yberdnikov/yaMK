@@ -3,7 +3,7 @@
 //  iCash
 //
 //  Created by Vitaly Merenkov on 26.12.12.
-//  Copyright (c) 2012 Vitaly Merenkov. All rights reserved.
+
 //
 
 #import "BasicTrsansactionController.h"
