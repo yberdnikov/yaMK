@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'iCash' target in the 'iCash' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
