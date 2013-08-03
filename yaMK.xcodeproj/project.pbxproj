@@ -74,7 +74,7 @@
 			containerPortal = D8A1456E1639AD1900DCB3A2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D8A145761639AD1900DCB3A2;
-			remoteInfo = iCash;
+			remoteInfo = yaMK;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -382,7 +382,7 @@
 				D81681A51790446D009FA201 /* ScanViewController.m */,
 			);
 			name = yaMK;
-			path = iCash;
+			path = yaMK;
 			sourceTree = "<group>";
 		};
 		D8A145821639AD1900DCB3A2 /* Supporting Files */ = {
@@ -403,7 +403,7 @@
 				D8A145A51639AD1900DCB3A2 /* Supporting Files */,
 			);
 			name = yaMKTests;
-			path = iCashTests;
+			path = yaMKTests;
 			sourceTree = "<group>";
 		};
 		D8A145A51639AD1900DCB3A2 /* Supporting Files */ = {
@@ -490,7 +490,7 @@
 			dependencies = (
 			);
 			name = yaMK;
-			productName = iCash;
+			productName = yaMK;
 			productReference = D8A145771639AD1900DCB3A2 /* yaMK.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -509,7 +509,7 @@
 				D8A145A31639AD1900DCB3A2 /* PBXTargetDependency */,
 			);
 			name = yaMKTests;
-			productName = iCashTests;
+			productName = yaMKTests;
 			productReference = D8A1459E1639AD1900DCB3A2 /* yaMKTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -775,8 +775,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCash/yaMK-Prefix.pch";
-				INFOPLIST_FILE = "iCash/yaMK-Info.plist";
+				GCC_PREFIX_HEADER = "yaMK/yaMK-Prefix.pch";
+				INFOPLIST_FILE = "yaMK/yaMK-Info.plist";
 				PRODUCT_NAME = yaMK;
 				WRAPPER_EXTENSION = app;
 			};
@@ -787,8 +787,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCash/yaMK-Prefix.pch";
-				INFOPLIST_FILE = "iCash/yaMK-Info.plist";
+				GCC_PREFIX_HEADER = "yaMK/yaMK-Prefix.pch";
+				INFOPLIST_FILE = "yaMK/yaMK-Info.plist";
 				PRODUCT_NAME = yaMK;
 				WRAPPER_EXTENSION = app;
 			};
@@ -797,12 +797,12 @@
 		D8A145B31639AD1900DCB3A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCash.app/Contents/MacOS/iCash";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yaMK.app/Contents/MacOS/yaMK";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCash/iCash-Prefix.pch";
-				INFOPLIST_FILE = "iCashTests/yaMKTests-Info.plist";
+				GCC_PREFIX_HEADER = "yaMK/yaMK-Prefix.pch";
+				INFOPLIST_FILE = "yaMKTests/yaMKTests-Info.plist";
 				PRODUCT_NAME = yaMKTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -812,12 +812,12 @@
 		D8A145B41639AD1900DCB3A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iCash.app/Contents/MacOS/iCash";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/yaMK.app/Contents/MacOS/yaMK";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCash/iCash-Prefix.pch";
-				INFOPLIST_FILE = "iCashTests/yaMKTests-Info.plist";
+				GCC_PREFIX_HEADER = "yaMK/yaMK-Prefix.pch";
+				INFOPLIST_FILE = "yaMKTests/yaMKTests-Info.plist";
 				PRODUCT_NAME = yaMKTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
