@@ -392,8 +392,8 @@
 /* Class = "NSMenu"; title = "Pie Chart"; ObjectID = "540"; */
 "540.title" = "Pie Chart";
 
-/* Class = "NSMenuItem"; title = "Outcome"; ObjectID = "541"; */
-"541.title" = "Outcome";
+/* Class = "NSMenuItem"; title = "Expense"; ObjectID = "541"; */
+"541.title" = "Expense";
 
 /* Class = "NSMenuItem"; title = "Bar Chart"; ObjectID = "542"; */
 "542.title" = "Bar Chart";
@@ -401,8 +401,8 @@
 /* Class = "NSMenu"; title = "Bar Chart"; ObjectID = "543"; */
 "543.title" = "Bar Chart";
 
-/* Class = "NSMenuItem"; title = "Outcome"; ObjectID = "544"; */
-"544.title" = "Outcome";
+/* Class = "NSMenuItem"; title = "Expense"; ObjectID = "544"; */
+"544.title" = "Expense";
 
 /* Class = "NSMenuItem"; title = "Line Chart"; ObjectID = "545"; */
 "545.title" = "Line Chart";
@@ -431,5 +431,5 @@
 /* Class = "NSMenuItem"; title = "Generate Default Accounts"; ObjectID = "572"; */
 "572.title" = "Generate Default Accounts";
 
-/* Class = "NSMenuItem"; title = "Income/Outcome"; ObjectID = "575"; */
-"575.title" = "Income/Outcome";
+/* Class = "NSMenuItem"; title = "Income/Expense"; ObjectID = "575"; */
+"575.title" = "Income/Expense";

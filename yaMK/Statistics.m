@@ -19,8 +19,8 @@
 -(NSDecimalNumber *)thisMonth {
     NSDecimal result = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSArray *incomes = [[[AccountFinder alloc] init] findAccounts:Income];
-    NSArray *outcomes = [[[AccountFinder alloc] init] findAccounts:Outcome];
-    if ([incomes count] > 0 || [outcomes count] > 0) {
+    NSArray *Expenses = [[[AccountFinder alloc] init] findAccounts:Expense];
+    if ([incomes count] > 0 || [Expenses count] > 0) {
         NSCalendar *cal = [NSCalendar currentCalendar];
         unsigned yearMonthComps = NSYearCalendarUnit | NSMonthCalendarUnit;
         NSDate *fromDate = [cal dateFromComponents:[cal components:yearMonthComps fromDate:[NSDate date]]];
@@ -29,8 +29,8 @@
         NSDate *toDate = [cal dateByAddingComponents:comps toDate:fromDate options:0];
         NSPredicate *predicate = [Statistics predicateByFromDate:fromDate toDate:toDate];
         NSDecimal incomeVal = [self computeValueUsingFilter:predicate accounts:incomes];
-        NSDecimal outcomeVal = [self computeValueUsingFilter:predicate accounts:outcomes];
-        NSDecimalSubtract(&result, &incomeVal, &outcomeVal, NSRoundBankers);
+        NSDecimal ExpenseVal = [self computeValueUsingFilter:predicate accounts:Expenses];
+        NSDecimalSubtract(&result, &incomeVal, &ExpenseVal, NSRoundBankers);
     }
     return [NSDecimalNumber decimalNumberWithDecimal:result];
 }

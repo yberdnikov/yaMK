@@ -55,6 +55,6 @@
 typedef enum {
     Unknown = 0,
     Income = 1,
-    Outcome = 2,
+    Expense = 2,
     Balance = 3
 } AccountType;

@@ -8,7 +8,7 @@
 
 #import "MainWindowToolbarController.h"
 #import "CreateMoveController.h"
-#import "CreateOutcomeController.h"
+#import "CreateExpenseController.h"
 #import "CreateIncomeController.h"
 #import "Account.h"
 
@@ -20,9 +20,9 @@
 }
 
 - (IBAction)showAddTransaction:(id)sender {
-    if ([[[self selectedAccount] type] intValue] == Outcome) {
-        [_outcomePanel makeKeyAndOrderFront:sender];
-        [_createOutcomeCO prepareCreation];
+    if ([[[self selectedAccount] type] intValue] == Expense) {
+        [_expensePanel makeKeyAndOrderFront:sender];
+        [_createExpenseCO prepareCreation];
     } else if ([[[self selectedAccount] type] intValue] == Balance) {
         [_incomePanel makeKeyAndOrderFront:sender];
         [_createIncomeCO setRecipientAccount:_selectedAccount];

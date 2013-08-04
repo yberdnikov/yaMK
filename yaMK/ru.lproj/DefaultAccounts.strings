@@ -8,7 +8,7 @@
 
 //root accounts
 "Income" = "Доход";
-"Outcome" = "Расход";
+"Expense" = "Расход";
 "Balance" = "Баланс";
 
 //incomes
@@ -16,7 +16,7 @@
 "Supplemental Earnings" = "Дополнительный заработок";
 "Gifts" = "Подарки";
 
-//outcomes
+//Expenses
 "Car" = "Автомобиль";
 "Banking Service" = "Банковское Обслуживание";
 "Stationary" = "Канцтовары";

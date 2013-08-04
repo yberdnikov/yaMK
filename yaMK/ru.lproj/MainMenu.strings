@@ -431,5 +431,5 @@
 /* Class = "NSMenuItem"; title = "Сгенерировать счета по умолчанию"; ObjectID = "572"; */
 "572.title" = "Сгенерировать счета по умолчанию";
 
-/* Class = "NSMenuItem"; title = "Income/Outcome"; ObjectID = "575"; */
+/* Class = "NSMenuItem"; title = "Income/Expense"; ObjectID = "575"; */
 "575.title" = "Доходы и Расходы";

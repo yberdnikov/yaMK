@@ -7,7 +7,7 @@
 
 //root accounts
 "Income" = "Income";
-"Outcome" = "Outcome";
+"Expense" = "Expense";
 "Balance" = "Balance";
 
 //incomes
@@ -15,7 +15,7 @@
 "Supplemental Earnings" = "Supplemental earnings";
 "Gifts" = "Gifts";
 
-//outcomes
+//Expenses
 "Car" = "Car";
 "Banking Service" = "Banking Service";
 "Stationary" = "Stationary";

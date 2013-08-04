@@ -16,9 +16,9 @@
     Account *rootIncome = [self createAccount:Income name:NSLocalizedStringFromTable(@"Income",
                                                                                      @"DefaultAccounts",
                                                                                      @"Income") parent:nil];
-    Account *rootOutcome = [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Outcome",
+    Account *rootExpense = [self createAccount:Expense name:NSLocalizedStringFromTable(@"Expense",
                                                                                        @"DefaultAccounts",
-                                                                                       @"Outcome") parent:nil];
+                                                                                       @"Expense") parent:nil];
     Account *rootBalance = [self createAccount:Balance name:NSLocalizedStringFromTable(@"Balance",
                                                                                        @"DefaultAccounts",
                                                                                        @"Balance") parent:nil];
@@ -33,58 +33,58 @@
     [self createAccount:Income name:NSLocalizedStringFromTable(@"Gifts",
                                                                @"DefaultAccounts",
                                                                @"Gifts") parent:rootIncome];
-    //outcomes
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Car",
+    //Expenses
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Car",
                                                                 @"DefaultAccounts",
-                                                                @"Car") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Banking Service",
+                                                                @"Car") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Banking Service",
                                                                 @"DefaultAccounts",
-                                                                @"Banking Service") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Stationary",
+                                                                @"Banking Service") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Stationary",
                                                                 @"DefaultAccounts",
-                                                                @"stationary") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Public Service",
+                                                                @"stationary") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Public Service",
                                                                 @"DefaultAccounts",
-                                                                @"Public Service") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Health and Beauty",
+                                                                @"Public Service") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Health and Beauty",
                                                                 @"DefaultAccounts",
-                                                                @"Health and Beauty") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Medical Expences",
+                                                                @"Health and Beauty") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Medical Expences",
                                                                 @"DefaultAccounts",
-                                                                @"Medical Expences") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Launch",
+                                                                @"Medical Expences") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Launch",
                                                                 @"DefaultAccounts",
-                                                                @"Launch") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Education",
+                                                                @"Launch") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Education",
                                                                 @"DefaultAccounts",
-                                                                @"Education") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Public Transport",
+                                                                @"Education") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Public Transport",
                                                                 @"DefaultAccounts",
-                                                                @"Public Transport") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Clothes",
+                                                                @"Public Transport") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Clothes",
                                                                 @"DefaultAccounts",
-                                                                @"Clothes") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Food",
+                                                                @"Clothes") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Food",
                                                                 @"DefaultAccounts",
-                                                                @"Food") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Gifts",
+                                                                @"Food") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Gifts",
                                                                 @"DefaultAccounts",
-                                                                @"Gifts") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Entertainment",
+                                                                @"Gifts") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Entertainment",
                                                                 @"DefaultAccounts",
-                                                                @"entertainment") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Others",
+                                                                @"entertainment") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Others",
                                                                 @"DefaultAccounts",
-                                                                @"Others") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Insurance",
+                                                                @"Others") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Insurance",
                                                                 @"DefaultAccounts",
-                                                                @"Insurance") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Hobby",
+                                                                @"Insurance") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Hobby",
                                                                 @"DefaultAccounts",
-                                                                @"Hobby") parent:rootOutcome];
-    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Household Goods",
+                                                                @"Hobby") parent:rootExpense];
+    [self createAccount:Expense name:NSLocalizedStringFromTable(@"Household Goods",
                                                                 @"DefaultAccounts",
-                                                                @"Household Goods") parent:rootOutcome];
+                                                                @"Household Goods") parent:rootExpense];
     //balance
     [self createAccount:Balance name:NSLocalizedStringFromTable(@"Cash",
                                                                 @"DefaultAccounts",

@@ -8,7 +8,7 @@
 
 #import "AccountTreeController.h"
 #import "CreateIncomeController.h"
-#import "CreateOutcomeController.h"
+#import "CreateExpenseController.h"
 #import "MainWindowToolbarController.h"
 
 @implementation AccountTreeController
@@ -38,8 +38,8 @@
     [self addAccount:sender type:Income];
 }
 
-- (IBAction)addOutcomeAccount:(id)sender {
-    [self addAccount:sender type:Outcome];
+- (IBAction)addExpenseAccount:(id)sender {
+    [self addAccount:sender type:Expense];
 }
 
 - (IBAction)addBalanceAccount:(id)sender {
@@ -115,7 +115,7 @@
     if ([[account type] intValue] == Balance) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
         [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
-    } else if ([[account type] intValue] == Outcome) {
+    } else if ([[account type] intValue] == Expense) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
     } else if ([[account type] intValue] == Income) {
         [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
@@ -133,7 +133,7 @@
         if ([[account type] intValue] == Balance) {
             [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
             [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
-        } else if ([[account type] intValue] == Outcome) {
+        } else if ([[account type] intValue] == Expense) {
             [predicates addObject:[NSPredicate predicateWithFormat:@"recipient.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];
         } else if ([[account type] intValue] == Income) {
             [predicates addObject:[NSPredicate predicateWithFormat:@"source.name == %@" argumentArray:[NSArray arrayWithObject:[account name]]]];

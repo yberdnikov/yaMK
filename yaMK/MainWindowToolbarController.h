@@ -10,7 +10,7 @@
 
 @class CreateMoveController;
 @class CreateIncomeController;
-@class CreateOutcomeController;
+@class CreateExpenseController;
 @class Account;
 
 @interface MainWindowToolbarController : NSObject
@@ -19,10 +19,10 @@
 - (IBAction)showAddTransaction:(id)sender;
 @property (weak) IBOutlet CreateMoveController *createMoveCO;
 @property (weak) IBOutlet CreateIncomeController *createIncomeCO;
-@property (weak) IBOutlet CreateOutcomeController *createOutcomeCO;
+@property (weak) IBOutlet CreateExpenseController *createExpenseCO;
 @property (strong) IBOutlet NSPanel *movePanel;
 @property (strong) IBOutlet NSPanel *incomePanel;
-@property (strong) IBOutlet NSPanel *outcomePanel;
+@property (strong) IBOutlet NSPanel *expensePanel;
 
 @property Account *selectedAccount;
 

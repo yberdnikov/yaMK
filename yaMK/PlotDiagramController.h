@@ -17,12 +17,12 @@
 @property IBOutlet NSPanel *plotPanel;
 @property (strong, retain) Plotter *currentPlotter;
 
--(IBAction)plotPieChartOutcome:(id)sender;
+-(IBAction)plotPieChartExpense:(id)sender;
 -(IBAction)plotPieChartIncome:(id)sender;
 -(IBAction)plotPieChartBalance:(id)sender;
 
--(IBAction)plotBarChartIncomeOutcome:(id)sender;
--(IBAction)plotBarChartOutcome:(id)sender;
+-(IBAction)plotBarChartIncomeExpense:(id)sender;
+-(IBAction)plotBarChartExpense:(id)sender;
 -(IBAction)plotBarChartIncome:(id)sender;
 -(IBAction)plotBarChartBalance:(id)sender;
 

@@ -8,8 +8,8 @@
 /* Class = "NSMenuItem"; title = "Create Income Account"; ObjectID = "100368"; */
 "100368.title" = "Create Income Account";
 
-/* Class = "NSMenuItem"; title = "Create Outcome Account"; ObjectID = "100369"; */
-"100369.title" = "Create Outcome Account";
+/* Class = "NSMenuItem"; title = "Create Expense Account"; ObjectID = "100369"; */
+"100369.title" = "Create Expense Account";
 
 /* Class = "NSMenuItem"; title = "Create Balance Account"; ObjectID = "100370"; */
 "100370.title" = "Create Balance Account";
@@ -203,8 +203,8 @@
 /* Class = "NSPanel"; title = "Move Funds"; ObjectID = "101856"; */
 "101856.title" = "Move Funds";
 
-/* Class = "NSPanel"; title = "Create Outcome"; ObjectID = "101883"; */
-"101883.title" = "Create Outcome";
+/* Class = "NSPanel"; title = "Create Expense"; ObjectID = "101883"; */
+"101883.title" = "Create Expense";
 
 /* Class = "NSPanel"; title = "Create Income"; ObjectID = "101924"; */
 "101924.title" = "Create Income";

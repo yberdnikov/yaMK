@@ -747,7 +747,7 @@
 										<array class="NSMutableArray" key="NSMenuItems">
 											<object class="NSMenuItem" id="845210927">
 												<reference key="NSMenu" ref="859583670"/>
-												<string key="NSTitle">Outcome</string>
+												<string key="NSTitle">Expense</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -785,7 +785,7 @@
 										<array class="NSMutableArray" key="NSMenuItems">
 											<object class="NSMenuItem" id="656396589">
 												<reference key="NSMenu" ref="237342730"/>
-												<string key="NSTitle">Outcome</string>
+												<string key="NSTitle">Expense</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="1033313550"/>
@@ -2633,14 +2633,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<int key="connectionID">424</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">plotPieChartOutcome:</string>
-						<reference key="source" ref="320552351"/>
-						<reference key="destination" ref="845210927"/>
-					</object>
-					<int key="connectionID">566</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">plotPanel</string>
 						<reference key="source" ref="320552351"/>
@@ -2665,28 +2657,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<int key="connectionID">571</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">plotBarChartIncomeOutcome:</string>
-						<reference key="source" ref="320552351"/>
-						<reference key="destination" ref="297384106"/>
-					</object>
-					<int key="connectionID">576</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">plotView</string>
 						<reference key="source" ref="320552351"/>
 						<reference key="destination" ref="233710786"/>
 					</object>
 					<int key="connectionID">618</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">plotBarChartOutcome:</string>
-						<reference key="source" ref="320552351"/>
-						<reference key="destination" ref="656396589"/>
-					</object>
-					<int key="connectionID">619</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2711,6 +2687,30 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<reference key="destination" ref="640125216"/>
 					</object>
 					<int key="connectionID">652</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotBarChartIncomeExpense:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="297384106"/>
+					</object>
+					<int key="connectionID">684</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotPieChartExpense:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="845210927"/>
+					</object>
+					<int key="connectionID">685</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">plotBarChartExpense:</string>
+						<reference key="source" ref="320552351"/>
+						<reference key="destination" ref="656396589"/>
+					</object>
+					<int key="connectionID">686</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -3879,6 +3879,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 						<int key="objectID">541</int>
 						<reference key="object" ref="845210927"/>
 						<reference key="parent" ref="859583670"/>
+						<string key="objectName">Menu Item - Expense</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">542</int>
@@ -4398,7 +4399,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">682</int>
+			<int key="maxID">686</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4444,40 +4445,40 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA</b
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="plotBarChartBalance:">id</string>
+						<string key="plotBarChartExpense:">id</string>
 						<string key="plotBarChartIncome:">id</string>
-						<string key="plotBarChartIncomeOutcome:">id</string>
-						<string key="plotBarChartOutcome:">id</string>
+						<string key="plotBarChartIncomeExpense:">id</string>
 						<string key="plotPieChartBalance:">id</string>
+						<string key="plotPieChartExpense:">id</string>
 						<string key="plotPieChartIncome:">id</string>
-						<string key="plotPieChartOutcome:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="plotBarChartBalance:">
 							<string key="name">plotBarChartBalance:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="plotBarChartExpense:">
+							<string key="name">plotBarChartExpense:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="plotBarChartIncome:">
 							<string key="name">plotBarChartIncome:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="plotBarChartIncomeOutcome:">
-							<string key="name">plotBarChartIncomeOutcome:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="plotBarChartOutcome:">
-							<string key="name">plotBarChartOutcome:</string>
+						<object class="IBActionInfo" key="plotBarChartIncomeExpense:">
+							<string key="name">plotBarChartIncomeExpense:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="plotPieChartBalance:">
 							<string key="name">plotPieChartBalance:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="plotPieChartIncome:">
-							<string key="name">plotPieChartIncome:</string>
+						<object class="IBActionInfo" key="plotPieChartExpense:">
+							<string key="name">plotPieChartExpense:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="plotPieChartOutcome:">
-							<string key="name">plotPieChartOutcome:</string>
+						<object class="IBActionInfo" key="plotPieChartIncome:">
+							<string key="name">plotPieChartIncome:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

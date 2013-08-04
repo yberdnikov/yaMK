@@ -27,7 +27,7 @@
     switch ([[self type] intValue]) {
         case Income:
             return [NSImage imageNamed:@"NSStatusAvailable"];
-        case Outcome:
+        case Expense:
             return [NSImage imageNamed:@"NSStatusUnavailable"];
         case Balance:
             return [NSImage imageNamed:@"NSStatusPartiallyAvailable"];
@@ -50,7 +50,7 @@
 
 - (NSDecimalNumber *) valueSumUsingFilter:(NSPredicate *)predicate recursive:(BOOL)rec {
     NSDecimal income = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
-    NSDecimal outcome = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
+    NSDecimal expense = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
     NSSet *recipientTransactions = [self recipientTransaction];
     NSSet *sourceTransactions = [self sourceTransaction];
     if (predicate) {
@@ -60,8 +60,8 @@
     
     if ([[self type] intValue] == Balance) {
         income = [[recipientTransactions valueForKeyPath:@"@sum.value"] decimalValue];
-        outcome = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
-    } else if ([[self type] intValue] == Outcome) {
+        expense = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
+    } else if ([[self type] intValue] == Expense) {
         income = [[recipientTransactions valueForKeyPath:@"@sum.value"] decimalValue];
     } else if ([[self type] intValue] == Income) {
         income = [[sourceTransactions valueForKeyPath:@"@sum.value"] decimalValue];
@@ -75,7 +75,7 @@
         }
     }
     NSDecimal diff = [[NSDecimalNumber decimalNumberWithMantissa:0 exponent:0 isNegative:NO] decimalValue];
-    NSDecimalSubtract(&diff, &income, &outcome, NSRoundBankers);
+    NSDecimalSubtract(&diff, &income, &expense, NSRoundBankers);
     NSDecimalAdd(&result, &result, &diff, NSRoundBankers);
     return [NSDecimalNumber decimalNumberWithDecimal:result];
 }

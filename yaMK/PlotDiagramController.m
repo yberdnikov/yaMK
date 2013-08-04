@@ -9,13 +9,13 @@
 #import "PlotDiagramController.h"
 #import "PieChartPlotter.h"
 #import "BarChartPlotter.h"
-#import "PieChartOutcomeAccounts.h"
+#import "PieChartExpenseAccounts.h"
 #import "PieChartIncomeAccounts.h"
 #import "PieChartBalanceAccounts.h"
-#import "IncomeOutcomeBar.h"
+#import "IncomeExpenseBar.h"
 #import "DataSourceContainer.h"
 #import "BarChartGroupPlotter.h"
-#import "OutcomeBar.h"
+#import "ExpenseBar.h"
 #import "IncomeBar.h"
 #import "BalanceBar.h"
 #import "Statistics.h"
@@ -29,10 +29,10 @@
     return [Statistics predicateByFromDate:fromDate toDate:toDate];
 }
 
--(IBAction)plotPieChartOutcome:(id)sender {
+-(IBAction)plotPieChartExpense:(id)sender {
     [self clearView];
     [_plotView setPlotter:[[PieChartPlotter alloc] init]];
-    [[_plotView plotter] setDataSource:[[PieChartOutcomeAccounts alloc] init]];
+    [[_plotView plotter] setDataSource:[[PieChartExpenseAccounts alloc] init]];
     [self redrawView:sender];
 }
 
@@ -50,17 +50,17 @@
     [self redrawView:sender];
 }
 
--(IBAction)plotBarChartIncomeOutcome:(id)sender {
+-(IBAction)plotBarChartIncomeExpense:(id)sender {
     [self clearView];
     [_plotView setPlotter:[[BarChartGroupPlotter alloc] init]];
-    [[_plotView plotter] setDataSource:[[IncomeOutcomeBar alloc] init]];
+    [[_plotView plotter] setDataSource:[[IncomeExpenseBar alloc] init]];
    [self redrawView:sender];
 }
 
--(IBAction)plotBarChartOutcome:(id)sender {
+-(IBAction)plotBarChartExpense:(id)sender {
     [self clearView];
     [_plotView setPlotter:[[BarChartPlotter alloc] init]];
-    [[_plotView plotter] setDataSource:[[OutcomeBar alloc] init]];
+    [[_plotView plotter] setDataSource:[[ExpenseBar alloc] init]];
     [self redrawView:sender];
 }
 

@@ -15,7 +15,7 @@
 @interface AccountTreeController : NSTreeController 
 
 - (IBAction)addIncomeAccount:(id)sender;
-- (IBAction)addOutcomeAccount:(id)sender;
+- (IBAction)addExpenseAccount:(id)sender;
 - (IBAction)addBalanceAccount:(id)sender;
 - (IBAction)removeAccount:(id)sender;
 - (IBAction)searchFilter:(id)sender;
