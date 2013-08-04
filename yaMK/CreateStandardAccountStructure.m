@@ -13,36 +13,88 @@
 
 - (IBAction)createAccounts:(id)sender {
     
-    Account *rootIncome = [self createAccount:Income name:@"Приход" parent:nil];
-    Account *rootOutcome = [self createAccount:Outcome name:@"Расход" parent:nil];
-    Account *rootBalance = [self createAccount:Balance name:@"Баланс" parent:nil];
+    Account *rootIncome = [self createAccount:Income name:NSLocalizedStringFromTable(@"Income",
+                                                                                     @"DefaultAccounts",
+                                                                                     @"Income") parent:nil];
+    Account *rootOutcome = [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Outcome",
+                                                                                       @"DefaultAccounts",
+                                                                                       @"Outcome") parent:nil];
+    Account *rootBalance = [self createAccount:Balance name:NSLocalizedStringFromTable(@"Balance",
+                                                                                       @"DefaultAccounts",
+                                                                                       @"Balance") parent:nil];
     
     //incomes
-    [self createAccount:Income name:@"Зарплата" parent:rootIncome];
-    [self createAccount:Income name:@"Дополнительный заработок" parent:rootIncome];
-    [self createAccount:Income name:@"Подарки" parent:rootIncome];
+    [self createAccount:Income name:NSLocalizedStringFromTable(@"Salary",
+                                                               @"DefaultAccounts",
+                                                               @"Salary") parent:rootIncome];
+    [self createAccount:Income name:NSLocalizedStringFromTable(@"Supplemental Earnings",
+                                                               @"DefaultAccounts",
+                                                               @"Supplemental Earnings") parent:rootIncome];
+    [self createAccount:Income name:NSLocalizedStringFromTable(@"Gifts",
+                                                               @"DefaultAccounts",
+                                                               @"Gifts") parent:rootIncome];
     //outcomes
-    [self createAccount:Outcome name:@"Автомобиль" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Банковское Обслуживание" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Канцтовары" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Коммунальные Услуги" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Красота и Здоровье" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Медицинские Расходы" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Обеды" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Образование" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Общественный Транспорт" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Одежда" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Питание" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Подарки" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Развлечения" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Разное" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Страхование" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Хобби" parent:rootOutcome];
-    [self createAccount:Outcome name:@"Хозтовары" parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Car",
+                                                                @"DefaultAccounts",
+                                                                @"Car") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Banking Service",
+                                                                @"DefaultAccounts",
+                                                                @"Banking Service") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Stationary",
+                                                                @"DefaultAccounts",
+                                                                @"stationary") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Public Service",
+                                                                @"DefaultAccounts",
+                                                                @"Public Service") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Health and Beauty",
+                                                                @"DefaultAccounts",
+                                                                @"Health and Beauty") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Medical Expences",
+                                                                @"DefaultAccounts",
+                                                                @"Medical Expences") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Launch",
+                                                                @"DefaultAccounts",
+                                                                @"Launch") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Education",
+                                                                @"DefaultAccounts",
+                                                                @"Education") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Public Transport",
+                                                                @"DefaultAccounts",
+                                                                @"Public Transport") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Clothes",
+                                                                @"DefaultAccounts",
+                                                                @"Clothes") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Food",
+                                                                @"DefaultAccounts",
+                                                                @"Food") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Gifts",
+                                                                @"DefaultAccounts",
+                                                                @"Gifts") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Entertainment",
+                                                                @"DefaultAccounts",
+                                                                @"entertainment") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Others",
+                                                                @"DefaultAccounts",
+                                                                @"Others") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Insurance",
+                                                                @"DefaultAccounts",
+                                                                @"Insurance") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Hobby",
+                                                                @"DefaultAccounts",
+                                                                @"Hobby") parent:rootOutcome];
+    [self createAccount:Outcome name:NSLocalizedStringFromTable(@"Household Goods",
+                                                                @"DefaultAccounts",
+                                                                @"Household Goods") parent:rootOutcome];
     //balance
-    [self createAccount:Balance name:@"Наличные" parent:rootBalance];
-    [self createAccount:Balance name:@"Банковские счета" parent:rootBalance];
-    [self createAccount:Balance name:@"Спрятано" parent:rootBalance];
+    [self createAccount:Balance name:NSLocalizedStringFromTable(@"Cash",
+                                                                @"DefaultAccounts",
+                                                                @"Cash") parent:rootBalance];
+    [self createAccount:Balance name:NSLocalizedStringFromTable(@"Bank Accounts",
+                                                                @"DefaultAccounts",
+                                                                @"Bank Accounts") parent:rootBalance];
+    [self createAccount:Balance name:NSLocalizedStringFromTable(@"Stash",
+                                                                @"DefaultAccounts",
+                                                                @"Stash") parent:rootBalance];
 }
 
 -(Account *) createAccount:(int)type

@@ -1,0 +1,40 @@
+/* 
+  DefaultAccounts.strings
+  yaMK
+
+  Created by Vitaly Merenkov on 04.08.13.
+*/
+
+//root accounts
+"Income" = "Income";
+"Outcome" = "Outcome";
+"Balance" = "Balance";
+
+//incomes
+"Salary" = "Salary";
+"Supplemental Earnings" = "Supplemental earnings";
+"Gifts" = "Gifts";
+
+//outcomes
+"Car" = "Car";
+"Banking Service" = "Banking Service";
+"Stationary" = "Stationary";
+"Public Service" = "Public Service";
+"Health and Beauty" = "Health and Beauty";
+"Medical Expences" = "Medical Expences";
+"Lunch" = "Lunch";
+"Education" = "Education";
+"Public Transport" = "Public Transport";
+"Clothes" = "Clothes";
+"Food" = "Food";
+"Gifts" = "Gifts";
+"Entertainment" = "Entertainment";
+"Others" = "Others";
+"Insurance" = "Insurance";
+"Hobby" = "Hobby";
+"Household Goods" = "Household Goods";
+
+//balance
+"Cash" = "Cash"
+"Bank Accounts" = "Bank Accounts"
+"Stash" = "Stash"

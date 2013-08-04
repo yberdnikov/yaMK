@@ -32,6 +32,7 @@
 		D8954C9816CC1CC2005AFF39 /* BalanceBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D8954C9716CC1CC2005AFF39 /* BalanceBar.m */; };
 		D898120716A32D5E0063C91C /* MainWindowToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D898120616A32D5E0063C91C /* MainWindowToolbarController.m */; };
 		D898121816A5E0420063C91C /* CreateStandardAccountStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */; };
+		D89C297D17AE3F88006E7ABC /* DefaultAccounts.strings in Resources */ = {isa = PBXBuildFile; fileRef = D89C297F17AE3F88006E7ABC /* DefaultAccounts.strings */; };
 		D8A136D8168B7D0D00D64A2C /* BasicTrsansactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */; };
 		D8A1457C1639AD1900DCB3A2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1457B1639AD1900DCB3A2 /* Cocoa.framework */; };
 		D8A145861639AD1900DCB3A2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8A145841639AD1900DCB3A2 /* InfoPlist.strings */; };
@@ -134,6 +135,8 @@
 		D898120616A32D5E0063C91C /* MainWindowToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowToolbarController.m; sourceTree = "<group>"; };
 		D898121616A5E0410063C91C /* CreateStandardAccountStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateStandardAccountStructure.h; sourceTree = "<group>"; };
 		D898121716A5E0410063C91C /* CreateStandardAccountStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateStandardAccountStructure.m; sourceTree = "<group>"; };
+		D89C297E17AE3F88006E7ABC /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/DefaultAccounts.strings; sourceTree = "<group>"; };
+		D89C298017AE3F8C006E7ABC /* ru */ = {isa = PBXFileReference; lastKnownFileType = file; name = ru; path = ru.lproj/DefaultAccounts.strings; sourceTree = "<group>"; };
 		D8A136D5168A221000D64A2C /* TransactionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransactionController.h; sourceTree = "<group>"; };
 		D8A136D6168B7D0D00D64A2C /* BasicTrsansactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTrsansactionController.h; sourceTree = "<group>"; };
 		D8A136D7168B7D0D00D64A2C /* BasicTrsansactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTrsansactionController.m; sourceTree = "<group>"; };
@@ -381,7 +384,6 @@
 				D81681A41790446D009FA201 /* ScanViewController.h */,
 				D81681A51790446D009FA201 /* ScanViewController.m */,
 			);
-			name = yaMK;
 			path = yaMK;
 			sourceTree = "<group>";
 		};
@@ -402,7 +404,6 @@
 			children = (
 				D8A145A51639AD1900DCB3A2 /* Supporting Files */,
 			);
-			name = yaMKTests;
 			path = yaMKTests;
 			sourceTree = "<group>";
 		};
@@ -443,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				D8DED44316B05B4800570C36 /* ErrorMessages.strings */,
+				D89C297F17AE3F88006E7ABC /* DefaultAccounts.strings */,
 			);
 			name = Localization;
 			sourceTree = "<group>";
@@ -552,6 +554,7 @@
 				D8A145921639AD1900DCB3A2 /* Document.xib in Resources */,
 				D8A145951639AD1900DCB3A2 /* MainMenu.xib in Resources */,
 				D8DED44516B05B4800570C36 /* ErrorMessages.strings in Resources */,
+				D89C297D17AE3F88006E7ABC /* DefaultAccounts.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +659,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D89C297F17AE3F88006E7ABC /* DefaultAccounts.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D89C297E17AE3F88006E7ABC /* en */,
+				D89C298017AE3F8C006E7ABC /* ru */,
+			);
+			name = DefaultAccounts.strings;
+			sourceTree = "<group>";
+		};
 		D8A145841639AD1900DCB3A2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

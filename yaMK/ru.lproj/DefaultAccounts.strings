@@ -1,0 +1,41 @@
+/* 
+  DefaultAccounts.strings
+  yaMK
+
+  Created by Vitaly Merenkov on 04.08.13.
+  Copyright (c) 2013 Vitaly Merenkov. All rights reserved.
+*/
+
+//root accounts
+"Income" = "Доход";
+"Outcome" = "Расход";
+"Balance" = "Баланс";
+
+//incomes
+"Salary" = "Зарплата";
+"Supplemental Earnings" = "Дополнительный заработок";
+"Gifts" = "Подарки";
+
+//outcomes
+"Car" = "Автомобиль";
+"Banking Service" = "Банковское Обслуживание";
+"Stationary" = "Канцтовары";
+"Public Service" = "Коммунальные Услуги";
+"Health and Beauty" = "Красота и Здоровье";
+"Medical Expences" = "Медицинские Расходы";
+"Lunch" = "Обеды";
+"Education" = "Образование";
+"Public Transport" = "Общественный Транспорт";
+"Clothes" = "Одежда";
+"Food" = "Питание";
+"Gifts" = "Подарки";
+"Entertainment" = "Развлечения";
+"Others" = "Разное";
+"Insurance" = "Страхование";
+"Hobby" = "Хобби";
+"Household Goods" = "Хозтовары";
+
+//balance
+"Cash" = "Наличные";
+"Bank Accounts" = "Банковские Счета";
+"Stash" = "Заначка";
